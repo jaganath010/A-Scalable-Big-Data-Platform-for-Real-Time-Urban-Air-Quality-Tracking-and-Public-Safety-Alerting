@@ -19,7 +19,6 @@ Built on **Hadoop HDFS, YARN, Spark 3.5 (Scala 2.12 + PySpark MLlib), Spark Stru
 | | |
 |---|---|
 | Full project report (25 pages) | [`docs/PROJECT_REPORT.pdf`](docs/PROJECT_REPORT.pdf) · [`docs/PROJECT_REPORT.docx`](docs/PROJECT_REPORT.docx) |
-| Final presentation (10 slides + evidence appendix) | [`presentation/Final_Project_Presentation.pptx`](presentation/Final_Project_Presentation.pptx) |
 | First review presentation | [`presentation/1st_Review_Presentation.pptx`](presentation/1st_Review_Presentation.pptx) |
 
 ## Results at a glance
@@ -77,7 +76,7 @@ Lambda-style: a **batch layer** trains on 13 years of history; a **speed layer**
 | `hadoop/` | Docker Compose for HDFS, YARN and Spark (11 containers) |
 | `dashboard/` | Export from Hive → one JSON → static warning board (`AirWatch_India.html`) |
 | `demo/` | Review demo: Spark job on YARN against HDFS (`start_demo.ps1`) |
-| `presentation/` | Final review deck (10 slides + evidence appendix) and the first-review deck |
+| `presentation/` | First-review deck |
 | `docs/` | `PROJECT_REPORT.pdf` / `.docx`, `WORK_LOG.md`, `ARCHITECTURE.md`, `ALERTING.md`, `CODE_GUIDE.md`, dataset report, **`run_logs/`** (evidence) |
 | `RUNBOOK.md` | Every command, in order |
 
@@ -104,7 +103,7 @@ Delivery is a dry run until `TELEGRAM_BOT_TOKEN` is set (people subscribe by mes
 
 ## Evidence
 
-Every number above traces to a preserved log in `docs/run_logs/` (training evaluation, Phase 4 summary, Spark-on-YARN recount, October live cycle and stream scoring, cross-validation, Hive queries, de-duplication replay) and to the screenshots in the appendix of `presentation/Final_Project_Presentation.pptx`.
+Every number above traces to a preserved log in `docs/run_logs/` (training evaluation, Phase 4 summary, Spark-on-YARN recount, October live cycle and stream scoring, cross-validation, Hive queries, de-duplication replay).
 
 ## Honest limitations
 
