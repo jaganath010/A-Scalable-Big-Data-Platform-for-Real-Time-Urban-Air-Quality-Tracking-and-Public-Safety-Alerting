@@ -130,6 +130,12 @@
   .alertme button.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;cursor:pointer}
   .alertme .status{flex-basis:100%;font-size:13px;margin:0}
   .btnwa{display:inline-block;margin-top:8px;font-size:12px;text-decoration:none;color:#0b6b3a;border-color:#bfe3cf;background:#f2fbf6}
+
+  .livebadge{display:inline-flex;align-items:center;gap:8px;font-size:12px;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel);margin-top:6px}
+  .livebadge i{width:9px;height:9px;border-radius:50%;background:#9aa5b1;display:inline-block}
+  .livebadge.on i{background:#1e8e5a;animation:lp 1.4s infinite}
+  .livebadge.off i{background:#c9342b}
+  @keyframes lp{0%{opacity:1}50%{opacity:.25}100%{opacity:1}}
 </style>
 
 <header>
@@ -137,7 +143,7 @@
     <h1>Air<span>Watch</span> India</h1>
     <p>Public air-quality warnings · next-hour forecast · CPCB National AQI</p>
   </div>
-  <div class="updated">Latest data hour<b class="mono" id="m-updated">—</b></div>
+  <div class="updated">Latest data hour<b class="mono" id="m-updated">—</b><span class="livebadge" id="live-badge"><i></i><span id="live-text">Snapshot</span></span></div>
 </header>
 
 <main>
@@ -438,4 +444,27 @@ if (errors.length) {
   box.textContent = 'Some sections could not render:\n' + errors.join('\n');
   document.body.appendChild(box);
 }
+
+/* ---------- live mode: when served by dashboard/serve_live.py the page re-checks every 10 s ---------- */
+(function(){
+  const badge = document.getElementById('live-badge'), txt = document.getElementById('live-text');
+  if (!badge || !D) return;
+  const hh = () => new Date().toLocaleTimeString('en-GB');
+  if (!/^https?:/.test(location.protocol)) { txt.textContent = 'Snapshot of the 1\u201315 Oct run (open via serve_live.py for live mode)'; return; }
+  const mine = D.generated_utc;
+  async function tick(){
+    try {
+      const r = await fetch('/api/version?_=' + Date.now(), {cache:'no-store'});
+      if (!r.ok) throw new Error(r.status);
+      const v = await r.json();
+      if (v.generated_utc && v.generated_utc !== mine) { txt.textContent = 'New data published - reloading\u2026'; location.reload(); return; }
+      badge.className = 'livebadge on';
+      txt.textContent = 'LIVE \u00b7 checked ' + hh() + ' (every 10 s) \u00b7 data from ' + String(v.observed_to||'').slice(0,16);
+    } catch (e) {
+      badge.className = 'livebadge off';
+      txt.textContent = 'Live server not reachable \u00b7 last check ' + hh();
+    }
+  }
+  tick(); setInterval(tick, 10000);
+})();
 </script>

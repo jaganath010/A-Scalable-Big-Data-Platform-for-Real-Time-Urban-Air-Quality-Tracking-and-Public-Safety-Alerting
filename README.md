@@ -10,6 +10,8 @@ Built on **Hadoop HDFS, YARN, Spark 3.5 (Scala 2.12 + PySpark MLlib), Spark Stru
 
 **Public warning board:** https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/
 
+> **Live mode:** `python dashboard/serve_live.py` serves the same page at http://localhost:8000; it re-checks every 10 s and reloads when the pipeline publishes new data. The GitHub Pages copy is a static snapshot.
+>
 > Served by GitHub Pages from `docs/index.html` (enable once under *Settings → Pages → Branch: main, folder: /docs*).
 > It is a single static file: it also opens directly from `dashboard/AirWatch_India.html` with no server.
 > It shows the warnings from the October 1–15, 2026 live run (221 cities), the message each city would receive, a map, and an "Alert me" notification button.

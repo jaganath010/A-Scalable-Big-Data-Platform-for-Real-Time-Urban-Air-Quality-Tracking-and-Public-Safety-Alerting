@@ -36,3 +36,8 @@ python scripts\run_hourly_cycle.py --loop --manage-docker         # forever: dis
 - Ran: Docker auto-start -> fetch (230 cities) -> upload -> LiveEnrichment on YARN (16,560 rows) -> watermark filter -> Docker auto-stop. Result: 0 hours newer than the watermark (2026-10-15 23:00), so nothing was handed to the stream - correct, the source only extends to the end of the current day.
 - Bug found and fixed in that run: the weather fetcher skipped existing files and reused the 1-15 Oct weather next to the fresh 2-day air-quality pull. step_fetch now clears both staging folders first.
 - NOT exercised yet: the stream hand-off, batch wait and export inside run_hourly_cycle.py. They run the first time a new day of hours exists (16 Oct onward).
+
+## Live mode of the website (dashboard/serve_live.py)
+`python dashboard/serve_live.py` serves the page at http://localhost:8000 and rebuilds it from `dashboard_data.json` on every request. The page polls `/api/version` every 10 seconds and reloads itself when the pipeline publishes new data; the header badge shows "LIVE - checked HH:MM:SS". Tested by changing the data file while the page was open (page reloaded within one poll).
+- The numbers change only when a scoring cycle finishes and publishes (`run_hourly_cycle.py --once score`); CAMS itself refreshes a few times a day.
+- Opened as a file, or on GitHub Pages, the page is a static snapshot and its badge says so.
