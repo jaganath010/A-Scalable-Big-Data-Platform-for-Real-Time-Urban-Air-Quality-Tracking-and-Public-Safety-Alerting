@@ -420,13 +420,15 @@ refs = ["[1] Air Quality Prediction using Multi-Source Remote Sensing Data Integ
         "[8] Copernicus Atmosphere Monitoring Service (CAMS), via Open-Meteo Air Quality API (CC-BY 4.0). open-meteo.com",
         "[9] Apache Hive and Apache Parquet Documentation. hive.apache.org, parquet.apache.org"]
 bullets_free = None
-tb = text(s, refs, 0.6, 1.3, 12.15, 3.9, 14.5, False, INK)
+tb = text(s, refs, 0.6, 1.25, 12.15, 3.6, 13.5, False, INK)
 for p in tb.text_frame.paragraphs:
     p.space_after = Pt(8)
-rect(s, 0.6, 5.3, 12.15, 1.45, PANEL, LINE)
-text(s, "GitHub repository", 0.8, 5.4, 4, 0.35, 14, True, BLUE)
-text(s, "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting", 0.8, 5.8, 11.7, 0.4, 13, True, INK)
-text(s, "Uploaded: this PPT (presentation/) + PROJECT_REPORT.pdf (docs/), code (scala/, scripts/, hive/, dashboard/), run logs (docs/run_logs/)", 0.8, 6.25, 11.7, 0.4, 12, False, GREY)
+rect(s, 0.6, 5.0, 12.15, 1.95, PANEL, LINE)
+text(s, "GitHub repository", 0.8, 5.08, 4, 0.35, 14, True, BLUE)
+text(s, "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting", 0.8, 5.43, 11.7, 0.35, 12.5, True, INK)
+text(s, "Website (warning board, GitHub Pages)", 0.8, 5.85, 6, 0.35, 14, True, BLUE)
+text(s, "https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/", 0.8, 6.2, 11.7, 0.35, 12.5, True, INK)
+text(s, "Uploaded: this PPT (presentation/) + PROJECT_REPORT.pdf (docs/), code (scala/, scripts/, hive/, dashboard/), run logs (docs/run_logs/)", 0.8, 6.58, 11.7, 0.3, 10.5, False, GREY)
 
 # ============================================================================
 # APPENDIX - EVIDENCE (after the 10 required slides; every item is a real screenshot or a verbatim log excerpt)
