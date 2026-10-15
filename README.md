@@ -29,6 +29,10 @@ Accuracy is quoted on **real** station rows: 88.9 % of the structured rows are v
 
 ## Architecture
 
+![System architecture](docs/images/architecture.png)
+
+<details><summary>Diagram as Mermaid</summary>
+
 ```mermaid
 flowchart LR
   A[CPCB stations CSV<br/>2010-2023, 146.3 M rows] --> H
@@ -50,6 +54,8 @@ flowchart LR
   HV --> W[Warning board]
   AL --> T[Telegram / e-mail dispatch<br/>de-duplicated]
 ```
+
+</details>
 
 Lambda-style: a **batch layer** trains on 13 years of history; a **speed layer** scores live data against the same model stored in HDFS.
 

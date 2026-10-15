@@ -237,10 +237,6 @@ table(s, ["Team member", "Register number"], [
 text(s, "Faculty:", 7.6, 3.9, 1.3, 0.4, 14, True)
 text(s, "[ enter faculty name ]", 8.7, 3.9, 4.2, 0.4, 14, False, RED)
 text(s, "Stack:  Hadoop HDFS · YARN · Spark 3.5 · Scala 2.12 · PySpark MLlib · Structured Streaming · Hive", 7.6, 4.5, 5.2, 1.0, 13, False, GREY)
-text(s, "GitHub:", 0.9, 6.2, 1.1, 0.35, 12, True)
-link(text(s, GH_URL, 2.0, 6.2, 10.8, 0.35, 11.5, False, BLUE), GH_URL)
-text(s, "Website:", 0.9, 6.65, 1.1, 0.35, 12, True)
-link(text(s, WS_URL, 2.0, 6.65, 10.8, 0.35, 11.5, False, BLUE), WS_URL)
 s.notes_slide.notes_text_frame.text = ("(1 min) Introduce the team and the one-line goal: forecast each city's PM2.5 one hour ahead on a distributed platform and warn people before it arrives. "
                                       "Fill in the faculty name on this slide before presenting.")
 
@@ -289,51 +285,95 @@ bullets(s, ["Identity / time: station_id, city, state, timestamp (hourly)",
 
 # ============================ SLIDE 4 - architecture ============================
 s = new_slide("System Architecture",
-              "(1.5 min) Walk left to right: sources land in HDFS; the Spark-on-YARN cluster runs Scala jobs for cleaning, features, enrichment and streaming, and PySpark for ML; the model is written to HDFS and loaded by the stream; outputs are Hive, the website and alert messages.")
+              "(1.5 min) Left to right: sources are fetched by Python scripts and land in HDFS; Spark on YARN runs the batch layer (Scala cleaning and features, PySpark GBT training) and the speed layer (live enrichment and the streaming scorer); the trained model is loaded by the stream; the alert engine feeds Hive, the warning board and Telegram.")
+
+NAVY, TEALC = RGBColor(0x0D, 0x3B, 0x5E), RGBColor(0x0E, 0x7C, 0x86)
+LIGHT, LIGHT_T = RGBColor(0xDC, 0xEB, 0xF4), RGBColor(0xD9, 0xEF, 0xF0)
+ORANGE = RGBColor(0xE8, 0x73, 0x1A)
 
 
-def box(x, y, w, h, t, fill, color=WHITE, size=12):
-    rect(s, x, y, w, h, fill)
-    text(s, t.split("\n"), x + 0.06, y, w - 0.12, h, size, True, color, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+def box(x, y, w, h, t, fill, color=WHITE, size=11, bold=True, line=None):
+    rect(s, x, y, w, h, fill, line)
+    text(s, t.split("\n"), x + 0.05, y, w - 0.1, h, size, bold, color, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
 
 
-def arrow(x1, y1, x2, y2):
-    c = s.shapes.add_connector(1, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
-    c.line.color.rgb = MUTED
-    c.line.width = Pt(2)
-    ln = c.line._get_or_add_ln()
+def arrow(x1, y1, x2, y2, color=MUTED, width=2.0, dash=False):
     from lxml import etree
+    c = s.shapes.add_connector(1, Inches(x1), Inches(y1), Inches(x2), Inches(y2))
+    c.line.color.rgb = color
+    c.line.width = Pt(width)
+    ln = c.line._get_or_add_ln()
+    if dash:
+        d = etree.SubElement(ln, "{http://schemas.openxmlformats.org/drawingml/2006/main}prstDash")
+        d.set("val", "dash")
     tail = etree.SubElement(ln, "{http://schemas.openxmlformats.org/drawingml/2006/main}tailEnd")
     tail.set("type", "triangle")
 
 
-NAVY, TEALC = RGBColor(0x0D, 0x3B, 0x5E), RGBColor(0x0E, 0x7C, 0x86)
-text(s, "DATA SOURCES", 0.6, 1.2, 2.6, 0.3, 11, True, MUTED)
-box(0.6, 1.5, 2.6, 0.9, "CPCB stations CSV\n146.3 M rows", NAVY)
-box(0.6, 2.6, 2.6, 0.9, "CAMS history JSON\n8.3 M rows", TEALC)
-box(0.6, 3.7, 2.6, 0.9, "CAMS + weather\nlive APIs (230 cities)", TEALC)
-box(0.6, 4.8, 2.6, 0.9, "city_profiles.csv\ntraffic, urbanization", NAVY)
-for y in (1.95, 3.05, 4.15, 5.25):
-    arrow(3.2, y, 3.75, 3.6)
-text(s, "STORAGE", 3.75, 1.2, 2.4, 0.3, 11, True, MUTED)
-box(3.75, 1.5, 2.4, 4.2, "HDFS lakehouse\n\n1 NameNode\n4 DataNodes\n128 MB blocks\n3× replication\n\nraw → clean → features\n→ unified → stream", BLUE, WHITE, 13)
-arrow(6.15, 3.6, 6.75, 3.6)
-text(s, "SPARK CLUSTER (YARN: 1 RM + 4 NM)", 6.75, 1.2, 4.0, 0.3, 11, True, MUTED)
-rect(s, 6.75, 1.5, 3.9, 4.2, RGBColor(0xE9, 0xF1, 0xF6), LINE)
-text(s, "Scala 2.12 jobs (sbt jar)", 6.9, 1.55, 3.6, 0.3, 11, True, BLUE)
-box(6.9, 1.9, 1.75, 0.8, "CleanSelect\nclean + impute", RGBColor(0xDC, 0xEB, 0xF4), INK, 11)
-box(8.8, 1.9, 1.75, 0.8, "FeatureExtraction\n86 features", RGBColor(0xDC, 0xEB, 0xF4), INK, 11)
-box(6.9, 2.8, 1.75, 0.8, "LiveEnrichment\nCAMS+weather", RGBColor(0xDC, 0xEB, 0xF4), INK, 11)
-box(8.8, 2.8, 1.75, 0.8, "AirQualityStream\n10 s micro-batch", RGBColor(0xD9, 0xEF, 0xF0), INK, 11)
-text(s, "PySpark + MLlib", 6.9, 3.75, 3.6, 0.3, 11, True, BLUE)
-box(6.9, 4.1, 3.65, 0.7, "GBTRegressor — 300 trees, delta target", MAROON, WHITE, 12)
-box(6.9, 4.9, 3.65, 0.65, "Validation + cross-check (5 paired tests)", RGBColor(0xDC, 0xEB, 0xF4), INK, 11)
-arrow(10.65, 3.6, 11.2, 3.6)
-text(s, "OUTPUT", 11.2, 1.2, 1.6, 0.3, 11, True, MUTED)
-box(11.2, 1.5, 1.55, 1.2, "Hive\nexternal\ntables", NAVY, WHITE, 11)
-box(11.2, 2.85, 1.55, 1.2, "Alert\nengine\nAQI > 150", MAROON, WHITE, 11)
-box(11.2, 4.2, 1.55, 1.5, "Warning\nboard +\nTelegram", TEALC, WHITE, 11)
-callout(s, "Lambda-style: a batch layer trains on 13 years of history; a speed layer scores live data against the same model. The trained model is stored in HDFS and loaded by the streaming job.", 0.6, 5.95, 12.15, 0.9, 13)
+def colhead(x, w, t):
+    text(s, t, x, 1.12, w, 0.28, 10.5, True, MUTED, align=PP_ALIGN.CENTER)
+    rect(s, x, 1.4, w, 0.03, LINE)
+
+
+# column headers
+colhead(0.45, 2.4, "1  DATA SOURCES")
+colhead(3.1, 1.6, "2  INGEST")
+colhead(4.95, 1.9, "3  STORAGE")
+colhead(7.1, 4.15, "4  PROCESSING")
+colhead(11.5, 1.4, "5  SERVE / ALERT")
+
+# 1 sources
+for i, (t, f) in enumerate([("CPCB stations CSV\n2010–2023 · 146.3 M rows", NAVY), ("CAMS history JSON\n2022–26 · 8.3 M rows", TEALC),
+                            ("CAMS + weather APIs\nlive · 230 cities (keyless)", TEALC), ("city_profiles.csv\ntraffic, urbanization", NAVY)]):
+    box(0.45, 1.6 + i * 1.05, 2.4, 0.9, t, f, size=10.5)
+# 2 ingest
+rect(s, 3.1, 1.6, 1.6, 3.9, PANEL, LINE)
+text(s, ["Python fetchers", "", "00e / 00f / 00g", "HTTP, no API key", "", "run_daily_live_cycle", "run_hourly_cycle", "", "upload to HDFS"], 3.15, 1.7, 1.5, 3.7, 10.5, False, INK, align=PP_ALIGN.CENTER)
+for i in range(4):
+    arrow(2.85, 2.05 + i * 1.05, 3.1, 2.05 + i * 1.05)
+# 3 storage
+rect(s, 4.95, 1.6, 1.9, 3.9, BLUE)
+text(s, "HDFS lakehouse", 5.0, 1.65, 1.8, 0.35, 13, True, WHITE, align=PP_ALIGN.CENTER)
+for j, t in enumerate(["raw (CSV / JSON)", "clean (Parquet, by city)", "features (86-dim)", "unified table", "stream: input · history", "models: GBT + pipeline"]):
+    box(5.05, 2.1 + j * 0.5, 1.7, 0.4, t, RGBColor(0x2A, 0x7F, 0xAE), WHITE, 9.5, False)
+text(s, "1 NN + 4 DN\n128 MB · 3×", 5.0, 5.1, 1.8, 0.4, 9.5, False, RGBColor(0xDC, 0xEB, 0xF4), align=PP_ALIGN.CENTER)
+arrow(4.7, 3.55, 4.95, 3.55)
+# 4 processing
+rect(s, 7.1, 1.6, 4.15, 3.9, RGBColor(0xE9, 0xF1, 0xF6), BLUE)
+text(s, "Apache Spark 3.5.6 on YARN  (1 RM + 4 NM)", 7.2, 1.65, 3.95, 0.3, 11, True, BLUE)
+text(s, "BATCH LAYER — trains on 13 years of history", 7.2, 2.05, 3.95, 0.25, 9.5, True, MUTED)
+box(7.25, 2.35, 1.15, 0.85, "CleanSelect\n(Scala)\nclean + impute", LIGHT, INK, 9.5)
+box(8.65, 2.35, 1.15, 0.85, "Feature-\nExtraction\n(Scala) 86 feat.", LIGHT, INK, 9.5)
+box(10.05, 2.35, 1.1, 0.85, "GBT training\n(PySpark MLlib)\n300 trees", MAROON, WHITE, 9.5)
+arrow(8.4, 2.78, 8.65, 2.78)
+arrow(9.8, 2.78, 10.05, 2.78)
+rect(s, 7.25, 3.55, 3.9, 0.02, LINE)
+text(s, "SPEED LAYER — scores live data every 10 s", 7.2, 3.62, 3.95, 0.25, 9.5, True, MUTED)
+box(7.25, 3.95, 1.5, 0.95, "LiveEnrichment\n(Scala)\nCAMS+weather+profile", LIGHT_T, INK, 9.5)
+box(9.1, 3.95, 2.05, 0.95, "AirQualityStream (Scala)\nfoodBatch: features → GBT\n→ AQI → alerts".replace("food", "for"), TEALC, WHITE, 9.5)
+arrow(8.75, 4.42, 9.1, 4.42)
+arrow(10.6, 3.2, 10.6, 3.95, MAROON, 2.2)
+text(s, "model", 10.7, 3.4, 0.5, 0.25, 9, True, MAROON)
+text(s, "state: 30 h history + checkpoint (HDFS)", 7.25, 5.0, 3.9, 0.3, 9, False, GREY, True)
+# storage <-> processing
+arrow(6.85, 2.5, 7.1, 2.5)
+arrow(7.1, 2.9, 6.85, 2.9)
+arrow(6.85, 4.2, 7.1, 4.2)
+arrow(7.1, 4.6, 6.85, 4.6)
+# 5 outputs
+box(11.5, 1.6, 1.4, 0.8, "Hive\nexternal tables", NAVY, WHITE, 10)
+box(11.5, 2.75, 1.4, 0.8, "Warning board\n(HTML / Pages)", NAVY, WHITE, 10)
+box(11.5, 3.9, 1.4, 0.8, "Alert engine\nAQI > 150", MAROON, WHITE, 10)
+box(11.5, 5.05, 1.4, 0.45, "Telegram", TEALC, WHITE, 10)
+arrow(11.25, 2.0, 11.5, 2.0)
+arrow(11.25, 4.3, 11.5, 4.3)
+arrow(12.2, 2.4, 12.2, 2.75)
+arrow(12.2, 4.7, 12.2, 5.05)
+# bottom strip
+for i, t in enumerate(["Docker Compose · 11 containers", "HDFS 128 MB blocks · 3× replication", "Parquet (snappy), partitioned by city",
+                       "Scala 2.12.18 = Spark 3.5.6 build", "Lambda: batch + speed over one lakehouse"]):
+    box(0.45 + i * 2.5, 5.85, 2.4, 0.5, t, PANEL, INK, 10, False, LINE)
+text(s, "Blue = storage · light = Scala jobs · maroon = ML model / alert logic · teal = live path. Arrows show data flow; the model is read from HDFS by the streaming job.", 0.45, 6.55, 12.4, 0.5, 10.5, False, MUTED, True)
 
 # ============================ SLIDE 5 - Spark workflow ============================
 s = new_slide("Spark Workflow — DataFrame Operations, DAG, Partitioning, Caching",
