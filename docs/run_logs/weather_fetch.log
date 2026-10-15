@@ -1,0 +1,232 @@
+Fetching weather for 230 cities (past 2d + 1d forecast, 4 workers)
+
+[  4/230] Aizawl                 OK  72 records
+[  5/230] Alwar                  OK  72 records
+[  6/230] Amaravati              OK  72 records
+[  7/230] Ajmer                  OK  72 records
+[  8/230] Anantapur              OK  72 records
+[  9/230] Amritsar               OK  72 records
+[ 10/230] Ankleshwar             OK  72 records
+[ 11/230] Ambala                 OK  72 records
+[ 12/230] Arrah                  OK  72 records
+[ 13/230] Araria                 OK  72 records
+[ 14/230] Ariyalur               OK  72 records
+[ 15/230] Asansol                OK  72 records
+[ 16/230] Aurangabad             OK  72 records
+[ 17/230] Baddi                  OK  72 records
+[ 18/230] Bagalkot               OK  72 records
+[ 19/230] Baghpat                OK  72 records
+[ 20/230] Bahadurgarh            OK  72 records
+[ 21/230] Ballabgarh             OK  72 records
+[ 22/230] Banswara               OK  72 records
+[ 23/230] Bareilly               OK  72 records
+[ 24/230] Bathinda               OK  72 records
+[ 25/230] Baripada               OK  72 records
+[ 26/230] Begusarai              OK  72 records
+[ 27/230] Barmer                 OK  72 records
+[ 28/230] Belgaum                OK  72 records
+[ 29/230] Bettiah                OK  72 records
+[ 30/230] Bhagalpur              OK  72 records
+[ 31/230] Bengaluru              OK  72 records
+[ 32/230] Bhiwani                OK  72 records
+[ 33/230] Bharatpur              OK  72 records
+[ 34/230] Bhiwadi                OK  72 records
+[ 35/230] Bihar Sharif           OK  72 records
+[ 36/230] Bhopal                 OK  72 records
+[ 37/230] Bidar                  OK  72 records
+[ 38/230] Bikaner                OK  72 records
+[ 39/230] Brajrajnagar           OK  72 records
+[ 40/230] Bilaspur               OK  72 records
+[ 41/230] Bulandshahr            OK  72 records
+[ 42/230] Chamarajanagar         OK  72 records
+[ 43/230] Buxar                  OK  72 records
+[ 44/230] Chandigarh             OK  72 records
+[ 45/230] Chandrapur             OK  72 records
+[ 46/230] Charkhi Dadri          OK  72 records
+[ 47/230] Chengalpattu           OK  72 records
+[ 48/230] Chennai                OK  72 records
+[ 49/230] Chhal                  OK  72 records
+[ 50/230] Chhapra                OK  72 records
+[ 51/230] Chikkamagaluru         OK  72 records
+[ 52/230] Chittoor               OK  72 records
+[ 53/230] Chittorgarh            OK  72 records
+[ 54/230] Churu                  OK  72 records
+[ 55/230] Coimbatore             OK  72 records
+[ 56/230] Cuddalore              OK  72 records
+[ 57/230] Damoh                  OK  72 records
+[ 58/230] Darbhanga              OK  72 records
+[ 59/230] Dausa                  OK  72 records
+[ 60/230] Dewas                  OK  72 records
+[ 61/230] Dehradun               OK  72 records
+[ 62/230] Delhi                  OK  72 records
+[ 63/230] Dharwad                OK  72 records
+[ 64/230] Dhanbad                OK  72 records
+[ 65/230] Dharuhera              OK  72 records
+[ 66/230] Dindigul               OK  72 records
+[ 67/230] Durgapur               OK  72 records
+[ 68/230] Dholpur                OK  72 records
+[ 69/230] Ernakulam              OK  72 records
+[ 70/230] Bhilai                 OK  72 records
+[ 71/230] Faridabad              OK  72 records
+[ 72/230] Fatehabad              OK  72 records
+[ 73/230] Gadag                  OK  72 records
+[ 74/230] Firozabad              OK  72 records
+[ 75/230] Gandhinagar            OK  72 records
+[ 76/230] Gangtok                OK  72 records
+[ 77/230] Gaya                   OK  72 records
+[ 78/230] Ghaziabad              OK  72 records
+[ 79/230] Gorakhpur              OK  72 records
+[ 80/230] Greater Noida          OK  72 records
+[ 81/230] Gurugram               OK  72 records
+[ 82/230] Guwahati               OK  72 records
+[ 83/230] Gwalior                OK  72 records
+[ 84/230] Hajipur                OK  72 records
+[ 85/230] Hanumangarh            OK  72 records
+[ 86/230] Haldia                 OK  72 records
+[ 87/230] Hapur                  OK  72 records
+[ 88/230] Hassan                 OK  72 records
+[ 89/230] Haveri                 OK  72 records
+[ 90/230] Hosur                  OK  72 records
+[ 91/230] Hisar                  OK  72 records
+[ 92/230] Howrah                 OK  72 records
+[ 93/230] Hubballi               OK  72 records
+[ 94/230] Hyderabad              OK  72 records
+[ 95/230] Imphal                 OK  72 records
+[ 96/230] Indore                 OK  72 records
+[ 97/230] Jabalpur               OK  72 records
+[ 98/230] Jaipur                 OK  72 records
+[ 99/230] Jaisalmer              OK  72 records
+[100/230] Jalandhar              OK  72 records
+[101/230] Jhalawar               OK  72 records
+[102/230] Jhansi                 OK  72 records
+[103/230] Jhunjhunu              OK  72 records
+[104/230] Jind                   OK  72 records
+[105/230] Jodhpur                OK  72 records
+[106/230] Jorapokhar             OK  72 records
+[107/230] Kadapa                 OK  72 records
+[108/230] Kaithal                OK  72 records
+[109/230] Kalaburagi             OK  72 records
+[110/230] Kalyan                 OK  72 records
+[111/230] Kanchipuram            OK  72 records
+[112/230] Kannur                 OK  72 records
+[113/230] Kanpur                 OK  72 records
+[114/230] Karnal                 OK  72 records
+[115/230] Karauli                OK  72 records
+[116/230] Kashipur               OK  72 records
+[117/230] Katihar                OK  72 records
+[118/230] Keonjhar               OK  72 records
+[119/230] Katni                  OK  72 records
+[120/230] Khanna                 OK  72 records
+[121/230] Khurja                 OK  72 records
+[122/230] Kishanganj             OK  72 records
+[123/230] Kohima                 OK  72 records
+[124/230] Kochi                  OK  72 records
+[125/230] Kolar                  OK  72 records
+[126/230] Kolkata                OK  72 records
+[127/230] Kollam                 OK  72 records
+[128/230] Koppal                 OK  72 records
+[129/230] Korba                  OK  72 records
+[130/230] Kozhikode              OK  72 records
+[131/230] Kurukshetra            OK  72 records
+[132/230] Kota                   OK  72 records
+[133/230] Lucknow                OK  72 records
+[134/230] Ludhiana               OK  72 records
+[135/230] Madikeri               OK  72 records
+[136/230] Maihar                 OK  72 records
+[137/230] Mandideep              OK  72 records
+[138/230] Manesar                OK  72 records
+[139/230] Mangalore              OK  72 records
+[140/230] Mandikhera             OK  72 records
+[141/230] Manguraha              OK  72 records
+[142/230] Milupara               OK  72 records
+[143/230] Meerut                 OK  72 records
+[144/230] Moradabad              OK  72 records
+[145/230] Motihari               OK  72 records
+[146/230] Mumbai                 OK  72 records
+[147/230] Munger                 OK  72 records
+[148/230] Muzaffarnagar          OK  72 records
+[149/230] Muzaffarpur            OK  72 records
+[150/230] Mysuru                 OK  72 records
+[151/230] Nagaon                 OK  72 records
+[152/230] Nagpur                 OK  72 records
+[153/230] Naharlagun             OK  72 records
+[154/230] Nalbari                OK  72 records
+[155/230] Narnaul                OK  72 records
+[156/230] Nandesari              OK  72 records
+[157/230] Nashik                 OK  72 records
+[158/230] Navi Mumbai            OK  72 records
+[159/230] Noida                  OK  72 records
+[160/230] Nayagarh               OK  72 records
+[161/230] Ooty                   OK  72 records
+[162/230] Pali                   OK  72 records
+[163/230] Palwal                 OK  72 records
+[164/230] Panchkula              OK  72 records
+[165/230] Panipat                OK  72 records
+[166/230] Patiala                OK  72 records
+[167/230] Patna                  OK  72 records
+[168/230] Pithampur              OK  72 records
+[169/230] Pratapgarh             OK  72 records
+[170/230] Prayagraj              OK  72 records
+[171/230] Puducherry             OK  72 records
+[172/230] Pune                   OK  72 records
+[173/230] Purnia                 OK  72 records
+[174/230] Raichur                OK  72 records
+[175/230] Raipur                 OK  72 records
+[176/230] Rairangpur             OK  72 records
+[177/230] Rajamahendravaram      OK  72 records
+[178/230] Rajgir                 OK  72 records
+[179/230] Rajsamand              OK  72 records
+[180/230] Ramanagara             OK  72 records
+[181/230] Ramanathapuram         OK  72 records
+[182/230] Ratlam                 OK  72 records
+[183/230] Rishikesh              OK  72 records
+[184/230] Rohtak                 OK  72 records
+[185/230] Rourkela               OK  72 records
+[186/230] Rupnagar               OK  72 records
+[187/230] Sagar                  OK  72 records
+[188/230] Saharsa                OK  72 records
+[189/230] Salem                  OK  72 records
+[190/230] Samastipur             OK  72 records
+[191/230] Satna                  OK  72 records
+[192/230] Sasaram                OK  72 records
+[193/230] Sawai Madhopur         OK  72 records
+[194/230] Shillong               OK  72 records
+[195/230] Shivamogga             OK  72 records
+[196/230] Sikar                  OK  72 records
+[197/230] Silchar                OK  72 records
+[198/230] Siliguri               OK  72 records
+[199/230] Singrauli              OK  72 records
+[200/230] Sirohi                 OK  72 records
+[201/230] Siwan                  OK  72 records
+[202/230] Sirsa                  OK  72 records
+[203/230] Solapur                OK  72 records
+[204/230] Sonipat                OK  72 records
+[205/230] Sri Ganganagar         OK  72 records
+[206/230] Srinagar               OK  72 records
+[207/230] Suakati                OK  72 records
+[208/230] Surat                  OK  72 records
+[209/230] Talcher                OK  72 records
+[210/230] Tensa                  OK  72 records
+[211/230] Thane                  OK  72 records
+[212/230] Thiruvananthapuram     OK  72 records
+[213/230] Thoothukudi            OK  72 records
+[214/230] Thrissur               OK  72 records
+[215/230] Tirupati               OK  72 records
+[216/230] Tirupur                OK  72 records
+[217/230] Tumakuru               OK  72 records
+[218/230] Tumidih                OK  72 records
+[219/230] Udaipur                OK  72 records
+[220/230] Udupi                  OK  72 records
+[221/230] Ujjain                 OK  72 records
+[222/230] Vapi                   OK  72 records
+[223/230] Varanasi               OK  72 records
+[224/230] Vellore                OK  72 records
+[225/230] Vijayapura             OK  72 records
+[226/230] Vijayawada             OK  72 records
+[227/230] Visakhapatnam          OK  72 records
+[228/230] Vrindavan              OK  72 records
+[229/230] Yamuna Nagar           OK  72 records
+[230/230] Yadgir                 OK  72 records
+
+fetched=227 skipped=3 failed=0 elapsed=1.2 min
+manifest: F:/SEM 5 NOTES/Big Data/Project_Final/airquality_expanded/live_weather\manifest.json (230 cities)

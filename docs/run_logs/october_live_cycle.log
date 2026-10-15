@@ -1,0 +1,548 @@
+==========================================================================
+  DAILY LIVE CYCLE  2026-10-15 12:57:53
+  steps: fetch, upload, enrich, handoff
+==========================================================================
+
+[1/4] fetching both live feeds (same window, on purpose)
+    $ C:\Users\jagan\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe -u F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\00e_fetch_semistructured_json.py --out F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams --days 14 --sleep 0.4
+Fetching 241 cities from F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\..\..\..\Dataset final\city_profiles.csv
+[  1/241] Agartala, Tripura ... OK  (360 hourly records, fields=9)
+[  2/241] Agra, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[  3/241] Ahmedabad, Gujarat ... OK  (360 hourly records, fields=9)
+[  4/241] Aizawl, Mizoram ... OK  (360 hourly records, fields=9)
+[  5/241] Ajmer, Rajasthan ... OK  (360 hourly records, fields=9)
+[  6/241] Alwar, Rajasthan ... OK  (360 hourly records, fields=9)
+[  7/241] Amaravati, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[  8/241] Ambala, Haryana ... OK  (360 hourly records, fields=9)
+[  9/241] Amritsar, Punjab ... OK  (360 hourly records, fields=9)
+[ 10/241] Anantapur, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[ 11/241] Ankleshwar, Gujarat ... OK  (360 hourly records, fields=9)
+[ 12/241] Araria, Bihar ... OK  (360 hourly records, fields=9)
+[ 13/241] Ariyalur, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 14/241] Arrah, Bihar ... OK  (360 hourly records, fields=9)
+[ 15/241] Asansol, West Bengal ... OK  (360 hourly records, fields=9)
+[ 16/241] Aurangabad, Bihar ... OK  (360 hourly records, fields=9)
+[ 17/241] Baddi, Himachal Pradesh ... OK  (360 hourly records, fields=9)
+[ 18/241] Bagalkot, Karnataka ... OK  (360 hourly records, fields=9)
+[ 19/241] Baghpat, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 20/241] Bahadurgarh, Haryana ... OK  (360 hourly records, fields=9)
+[ 21/241] Ballabgarh, Haryana ... OK  (360 hourly records, fields=9)
+[ 22/241] Banswara, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 23/241] Bareilly, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 24/241] Baripada, Odisha ... OK  (360 hourly records, fields=9)
+[ 25/241] Barmer, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 26/241] Bathinda, Punjab ... OK  (360 hourly records, fields=9)
+[ 27/241] Begusarai, Bihar ... OK  (360 hourly records, fields=9)
+[ 28/241] Belgaum, Karnataka ... OK  (360 hourly records, fields=9)
+[ 29/241] Bengaluru, Karnataka ... OK  (360 hourly records, fields=9)
+[ 30/241] Bettiah, Bihar ... OK  (360 hourly records, fields=9)
+[ 31/241] Bhagalpur, Bihar ... OK  (360 hourly records, fields=9)
+[ 32/241] Bharatpur, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 33/241] Bhilai, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[ 34/241] Bhiwadi, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 35/241] Bhiwani, Haryana ... OK  (360 hourly records, fields=9)
+[ 36/241] Bhopal, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[ 37/241] Bidar, Karnataka ... OK  (360 hourly records, fields=9)
+[ 38/241] Bihar Sharif, Bihar ... OK  (360 hourly records, fields=9)
+[ 39/241] Bikaner, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 40/241] Bilaspur, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[ 41/241] Bileipada, Odisha ... GEOCODE MISS - skipped
+[ 42/241] Brajrajnagar, Odisha ... OK  (360 hourly records, fields=9)
+[ 43/241] Bulandshahr, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 44/241] Buxar, Bihar ... OK  (360 hourly records, fields=9)
+[ 45/241] Byrnihat, Assam ... GEOCODE MISS - skipped
+[ 46/241] Chamarajanagar, Karnataka ... OK  (360 hourly records, fields=9)
+[ 47/241] Chandigarh, Chandigarh ... OK  (360 hourly records, fields=9)
+[ 48/241] Chandrapur, Maharashtra ... OK  (360 hourly records, fields=9)
+[ 49/241] Charkhi Dadri, Haryana ... OK  (360 hourly records, fields=9)
+[ 50/241] Chengalpattu, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 51/241] Chennai, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 52/241] Chhal, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[ 53/241] Chhapra, Bihar ... OK  (360 hourly records, fields=9)
+[ 54/241] Chikkaballapur, Karnataka ... GEOCODE MISS - skipped
+[ 55/241] Chikkamagaluru, Karnataka ... OK  (360 hourly records, fields=9)
+[ 56/241] Chittoor, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[ 57/241] Chittorgarh, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 58/241] Churu, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 59/241] Coimbatore, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 60/241] Cuddalore, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 61/241] Damoh, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[ 62/241] Darbhanga, Bihar ... OK  (360 hourly records, fields=9)
+[ 63/241] Dausa, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 64/241] Davanagere, Karnataka ... GEOCODE MISS - skipped
+[ 65/241] Dehradun, Uttarakhand ... OK  (360 hourly records, fields=9)
+[ 66/241] Delhi, Delhi ... OK  (360 hourly records, fields=9)
+[ 67/241] Dewas, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[ 68/241] Dhanbad, Jharkhand ... OK  (360 hourly records, fields=9)
+[ 69/241] Dharuhera, Haryana ... OK  (360 hourly records, fields=9)
+[ 70/241] Dharwad, Karnataka ... OK  (360 hourly records, fields=9)
+[ 71/241] Dholpur, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 72/241] Dindigul, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 73/241] Durgapur, West Bengal ... OK  (360 hourly records, fields=9)
+[ 74/241] Eloor, Kerala ... GEOCODE MISS - skipped
+[ 75/241] Ernakulam, Kerala ... OK  (360 hourly records, fields=9)
+[ 76/241] Faridabad, Haryana ... OK  (360 hourly records, fields=9)
+[ 77/241] Fatehabad, Haryana ... OK  (360 hourly records, fields=9)
+[ 78/241] Firozabad, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 79/241] Gadag, Karnataka ... OK  (360 hourly records, fields=9)
+[ 80/241] Gandhinagar, Gujarat ... OK  (360 hourly records, fields=9)
+[ 81/241] Gangtok, Sikkim ... OK  (360 hourly records, fields=9)
+[ 82/241] Gaya, Bihar ... OK  (360 hourly records, fields=9)
+[ 83/241] Ghaziabad, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 84/241] Gorakhpur, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 85/241] Greater Noida, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 86/241] Gummidipoondi, Tamil Nadu ... GEOCODE MISS - skipped
+[ 87/241] Gurugram, Haryana ... OK  (360 hourly records, fields=9)
+[ 88/241] Guwahati, Assam ... OK  (360 hourly records, fields=9)
+[ 89/241] Gwalior, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[ 90/241] Hajipur, Bihar ... OK  (360 hourly records, fields=9)
+[ 91/241] Haldia, West Bengal ... OK  (360 hourly records, fields=9)
+[ 92/241] Hanumangarh, Rajasthan ... OK  (360 hourly records, fields=9)
+[ 93/241] Hapur, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[ 94/241] Hassan, Karnataka ... OK  (360 hourly records, fields=9)
+[ 95/241] Haveri, Karnataka ... OK  (360 hourly records, fields=9)
+[ 96/241] Hisar, Haryana ... OK  (360 hourly records, fields=9)
+[ 97/241] Hosur, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[ 98/241] Howrah, West Bengal ... OK  (360 hourly records, fields=9)
+[ 99/241] Hubballi, Karnataka ... OK  (360 hourly records, fields=9)
+[100/241] Hyderabad, Telangana ... OK  (360 hourly records, fields=9)
+[101/241] Imphal, Manipur ... OK  (360 hourly records, fields=9)
+[102/241] Indore, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[103/241] Jabalpur, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[104/241] Jaipur, Rajasthan ... OK  (360 hourly records, fields=9)
+[105/241] Jaisalmer, Rajasthan ... OK  (360 hourly records, fields=9)
+[106/241] Jalandhar, Punjab ... OK  (360 hourly records, fields=9)
+[107/241] Jhalawar, Rajasthan ... OK  (360 hourly records, fields=9)
+[108/241] Jhansi, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[109/241] Jhunjhunu, Rajasthan ... OK  (360 hourly records, fields=9)
+[110/241] Jind, Haryana ... OK  (360 hourly records, fields=9)
+[111/241] Jodhpur, Rajasthan ... OK  (360 hourly records, fields=9)
+[112/241] Jorapokhar, Jharkhand ... OK  (360 hourly records, fields=9)
+[113/241] Kadapa, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[114/241] Kaithal, Haryana ... OK  (360 hourly records, fields=9)
+[115/241] Kalaburagi, Karnataka ... OK  (360 hourly records, fields=9)
+[116/241] Kalyan, Maharashtra ... OK  (360 hourly records, fields=9)
+[117/241] Kanchipuram, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[118/241] Kannur, Kerala ... OK  (360 hourly records, fields=9)
+[119/241] Kanpur, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[120/241] Karauli, Rajasthan ... OK  (360 hourly records, fields=9)
+[121/241] Karnal, Haryana ... OK  (360 hourly records, fields=9)
+[122/241] Kashipur, Uttarakhand ... OK  (360 hourly records, fields=9)
+[123/241] Katihar, Bihar ... OK  (360 hourly records, fields=9)
+[124/241] Katni, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[125/241] Keonjhar, Odisha ... OK  (360 hourly records, fields=9)
+[126/241] Khanna, Punjab ... OK  (360 hourly records, fields=9)
+[127/241] Khurja, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[128/241] Kishanganj, Bihar ... OK  (360 hourly records, fields=9)
+[129/241] Kochi, Kerala ... OK  (360 hourly records, fields=9)
+[130/241] Kohima, Nagaland ... OK  (360 hourly records, fields=9)
+[131/241] Kolar, Karnataka ... OK  (360 hourly records, fields=9)
+[132/241] Kolkata, West Bengal ... OK  (360 hourly records, fields=9)
+[133/241] Kollam, Kerala ... OK  (360 hourly records, fields=9)
+[134/241] Koppal, Karnataka ... OK  (360 hourly records, fields=9)
+[135/241] Korba, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[136/241] Kota, Rajasthan ... OK  (360 hourly records, fields=9)
+[137/241] Kozhikode, Kerala ... OK  (360 hourly records, fields=9)
+[138/241] Kunjemura, Chhattisgarh ... GEOCODE MISS - skipped
+[139/241] Kurukshetra, Haryana ... OK  (360 hourly records, fields=9)
+[140/241] Lucknow, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[141/241] Ludhiana, Punjab ... OK  (360 hourly records, fields=9)
+[142/241] Madikeri, Karnataka ... OK  (360 hourly records, fields=9)
+[143/241] Maihar, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[144/241] Mandi Gobindgarh, Punjab ... GEOCODE MISS - skipped
+[145/241] Mandideep, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[146/241] Mandikhera, Haryana ... OK  (360 hourly records, fields=9)
+[147/241] Manesar, Haryana ... OK  (360 hourly records, fields=9)
+[148/241] Mangalore, Karnataka ... OK  (360 hourly records, fields=9)
+[149/241] Manguraha, Bihar ... OK  (360 hourly records, fields=9)
+[150/241] Meerut, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[151/241] Milupara, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[152/241] Moradabad, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[153/241] Motihari, Bihar ... OK  (360 hourly records, fields=9)
+[154/241] Mumbai, Maharashtra ... OK  (360 hourly records, fields=9)
+[155/241] Munger, Bihar ... OK  (360 hourly records, fields=9)
+[156/241] Muzaffarnagar, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[157/241] Muzaffarpur, Bihar ... OK  (360 hourly records, fields=9)
+[158/241] Mysuru, Karnataka ... OK  (360 hourly records, fields=9)
+[159/241] Nagaon, Assam ... OK  (360 hourly records, fields=9)
+[160/241] Nagpur, Maharashtra ... OK  (360 hourly records, fields=9)
+[161/241] Naharlagun, Arunachal Pradesh ... OK  (360 hourly records, fields=9)
+[162/241] Nalbari, Assam ... OK  (360 hourly records, fields=9)
+[163/241] Nandesari, Gujarat ... OK  (360 hourly records, fields=9)
+[164/241] Narnaul, Haryana ... OK  (360 hourly records, fields=9)
+[165/241] Nashik, Maharashtra ... OK  (360 hourly records, fields=9)
+[166/241] Navi Mumbai, Maharashtra ... OK  (360 hourly records, fields=9)
+[167/241] Nayagarh, Odisha ... OK  (360 hourly records, fields=9)
+[168/241] Noida, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[169/241] Ooty, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[170/241] Pali, Rajasthan ... OK  (360 hourly records, fields=9)
+[171/241] Palkalaiperur, Tamil Nadu ... GEOCODE MISS - skipped
+[172/241] Palwal, Haryana ... OK  (360 hourly records, fields=9)
+[173/241] Panchkula, Haryana ... OK  (360 hourly records, fields=9)
+[174/241] Panipat, Haryana ... OK  (360 hourly records, fields=9)
+[175/241] Patiala, Punjab ... OK  (360 hourly records, fields=9)
+[176/241] Patna, Bihar ... OK  (360 hourly records, fields=9)
+[177/241] Pithampur, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[178/241] Pratapgarh, Rajasthan ... OK  (360 hourly records, fields=9)
+[179/241] Prayagraj, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[180/241] Puducherry, Puducherry ... OK  (360 hourly records, fields=9)
+[181/241] Pune, Maharashtra ... OK  (360 hourly records, fields=9)
+[182/241] Purnia, Bihar ... OK  (360 hourly records, fields=9)
+[183/241] Raichur, Karnataka ... OK  (360 hourly records, fields=9)
+[184/241] Raipur, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[185/241] Rairangpur, Odisha ... OK  (360 hourly records, fields=9)
+[186/241] Rajamahendravaram, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[187/241] Rajgir, Bihar ... OK  (360 hourly records, fields=9)
+[188/241] Rajsamand, Rajasthan ... OK  (360 hourly records, fields=9)
+[189/241] Ramanagara, Karnataka ... OK  (360 hourly records, fields=9)
+[190/241] Ramanathapuram, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[191/241] Ratlam, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[192/241] Rishikesh, Uttarakhand ... OK  (360 hourly records, fields=9)
+[193/241] Rohtak, Haryana ... OK  (360 hourly records, fields=9)
+[194/241] Rourkela, Odisha ... OK  (360 hourly records, fields=9)
+[195/241] Rupnagar, Punjab ... OK  (360 hourly records, fields=9)
+[196/241] Sagar, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[197/241] Saharsa, Bihar ... OK  (360 hourly records, fields=9)
+[198/241] Salem, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[199/241] Samastipur, Bihar ... OK  (360 hourly records, fields=9)
+[200/241] Sasaram, Bihar ... OK  (360 hourly records, fields=9)
+[201/241] Satna, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[202/241] Sawai Madhopur, Rajasthan ... OK  (360 hourly records, fields=9)
+[203/241] Shillong, Meghalaya ... OK  (360 hourly records, fields=9)
+[204/241] Shivamogga, Karnataka ... OK  (360 hourly records, fields=9)
+[205/241] Sikar, Rajasthan ... OK  (360 hourly records, fields=9)
+[206/241] Silchar, Assam ... OK  (360 hourly records, fields=9)
+[207/241] Siliguri, West Bengal ... OK  (360 hourly records, fields=9)
+[208/241] Singrauli, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[209/241] Sirohi, Rajasthan ... OK  (360 hourly records, fields=9)
+[210/241] Sirsa, Haryana ... OK  (360 hourly records, fields=9)
+[211/241] Sivasagar, Assam ... GEOCODE MISS - skipped
+[212/241] Siwan, Bihar ... OK  (360 hourly records, fields=9)
+[213/241] Solapur, Maharashtra ... OK  (360 hourly records, fields=9)
+[214/241] Sonipat, Haryana ... OK  (360 hourly records, fields=9)
+[215/241] Sri Ganganagar, Rajasthan ... OK  (360 hourly records, fields=9)
+[216/241] Srinagar, Jammu and Kashmir ... OK  (360 hourly records, fields=9)
+[217/241] Suakati, Odisha ... OK  (360 hourly records, fields=9)
+[218/241] Surat, Gujarat ... OK  (360 hourly records, fields=9)
+[219/241] Talcher, Odisha ... OK  (360 hourly records, fields=9)
+[220/241] Tensa, Odisha ... OK  (360 hourly records, fields=9)
+[221/241] Thane, Maharashtra ... OK  (360 hourly records, fields=9)
+[222/241] Thiruvananthapuram, Kerala ... OK  (360 hourly records, fields=9)
+[223/241] Thoothukudi, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[224/241] Thrissur, Kerala ... OK  (360 hourly records, fields=9)
+[225/241] Tirupati, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[226/241] Tirupur, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[227/241] Tumakuru, Karnataka ... OK  (360 hourly records, fields=9)
+[228/241] Tumidih, Chhattisgarh ... OK  (360 hourly records, fields=9)
+[229/241] Udaipur, Rajasthan ... OK  (360 hourly records, fields=9)
+[230/241] Udupi, Karnataka ... OK  (360 hourly records, fields=9)
+[231/241] Ujjain, Madhya Pradesh ... OK  (360 hourly records, fields=9)
+[232/241] Vapi, Gujarat ... OK  (360 hourly records, fields=9)
+[233/241] Varanasi, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[234/241] Vatva, Gujarat ... GEOCODE MISS - skipped
+[235/241] Vellore, Tamil Nadu ... OK  (360 hourly records, fields=9)
+[236/241] Vijayapura, Karnataka ... OK  (360 hourly records, fields=9)
+[237/241] Vijayawada, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[238/241] Visakhapatnam, Andhra Pradesh ... OK  (360 hourly records, fields=9)
+[239/241] Vrindavan, Uttar Pradesh ... OK  (360 hourly records, fields=9)
+[240/241] Yadgir, Karnataka ... OK  (360 hourly records, fields=9)
+[241/241] Yamuna Nagar, Haryana ... OK  (360 hourly records, fields=9)
+
+Done: 230/241 cities fetched, 11 failed ['Bileipada', 'Byrnihat', 'Chikkaballapur', 'Davanagere', 'Eloor', 'Gummidipoondi', 'Kunjemura', 'Mandi Gobindgarh', 'Palkalaiperur', 'Sivasagar', 'Vatva']
+Raw JSON      : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\raw_json
+Manifest      : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\manifest.json
+Flattened CSV : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\semistructured_flat.csv  (82800 rows)
+    $ C:\Users\jagan\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe -u F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\00g_fetch_live_weather.py --out F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather --manifest F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\manifest.json --days 14
+Fetching weather for 230 cities (past 14d + 1d forecast, 4 workers)
+
+[  1/230] Ahmedabad              OK  360 records
+[  2/230] Aizawl                 OK  360 records
+[  3/230] Agra                   OK  360 records
+[  4/230] Agartala               OK  360 records
+[  5/230] Ajmer                  OK  360 records
+[  6/230] Alwar                  OK  360 records
+[  7/230] Amaravati              OK  360 records
+[  8/230] Amritsar               OK  360 records
+[  9/230] Ambala                 OK  360 records
+[ 10/230] Anantapur              OK  360 records
+[ 11/230] Ankleshwar             OK  360 records
+[ 12/230] Ariyalur               OK  360 records
+[ 13/230] Araria                 OK  360 records
+[ 14/230] Arrah                  OK  360 records
+[ 15/230] Asansol                OK  360 records
+[ 16/230] Baddi                  OK  360 records
+[ 17/230] Baghpat                OK  360 records
+[ 18/230] Bagalkot               OK  360 records
+[ 19/230] Bahadurgarh            OK  360 records
+[ 20/230] Aurangabad             OK  360 records
+[ 21/230] Ballabgarh             OK  360 records
+[ 22/230] Banswara               OK  360 records
+[ 23/230] Bareilly               OK  360 records
+[ 24/230] Baripada               OK  360 records
+[ 25/230] Barmer                 OK  360 records
+[ 26/230] Bathinda               OK  360 records
+[ 27/230] Begusarai              OK  360 records
+[ 28/230] Belgaum                OK  360 records
+[ 29/230] Bengaluru              OK  360 records
+[ 30/230] Bettiah                OK  360 records
+[ 31/230] Bhagalpur              OK  360 records
+[ 32/230] Bharatpur              OK  360 records
+[ 33/230] Bhilai                 OK  360 records
+[ 34/230] Bhiwadi                OK  360 records
+[ 35/230] Bidar                  OK  360 records
+[ 36/230] Bhopal                 OK  360 records
+[ 37/230] Bhiwani                OK  360 records
+[ 38/230] Bihar Sharif           OK  360 records
+[ 39/230] Bikaner                OK  360 records
+[ 40/230] Brajrajnagar           OK  360 records
+[ 41/230] Bilaspur               OK  360 records
+[ 42/230] Bulandshahr            OK  360 records
+[ 43/230] Buxar                  OK  360 records
+[ 44/230] Chandrapur             OK  360 records
+[ 45/230] Chamarajanagar         OK  360 records
+[ 46/230] Charkhi Dadri          OK  360 records
+[ 47/230] Chandigarh             OK  360 records
+[ 48/230] Chennai                OK  360 records
+[ 49/230] Chengalpattu           OK  360 records
+[ 50/230] Chhal                  OK  360 records
+[ 51/230] Chhapra                OK  360 records
+[ 52/230] Chittoor               OK  360 records
+[ 53/230] Churu                  OK  360 records
+[ 54/230] Chittorgarh            OK  360 records
+[ 55/230] Chikkamagaluru         OK  360 records
+[ 56/230] Coimbatore             OK  360 records
+[ 57/230] Damoh                  OK  360 records
+[ 58/230] Darbhanga              OK  360 records
+[ 59/230] Cuddalore              OK  360 records
+[ 60/230] Dausa                  OK  360 records
+[ 61/230] Delhi                  OK  360 records
+[ 62/230] Dehradun               OK  360 records
+[ 63/230] Dhanbad                OK  360 records
+[ 64/230] Dewas                  OK  360 records
+[ 65/230] Dharwad                OK  360 records
+[ 66/230] Dharuhera              OK  360 records
+[ 67/230] Dholpur                OK  360 records
+[ 68/230] Ernakulam              OK  360 records
+[ 69/230] Dindigul               OK  360 records
+[ 70/230] Durgapur               OK  360 records
+[ 71/230] Fatehabad              OK  360 records
+[ 72/230] Faridabad              OK  360 records
+[ 73/230] Gadag                  OK  360 records
+[ 74/230] Firozabad              OK  360 records
+[ 75/230] Gaya                   OK  360 records
+[ 76/230] Gandhinagar            OK  360 records
+[ 77/230] Gangtok                OK  360 records
+[ 78/230] Ghaziabad              OK  360 records
+[ 79/230] Gorakhpur              OK  360 records
+[ 80/230] Greater Noida          OK  360 records
+[ 81/230] Gwalior                OK  360 records
+[ 82/230] Guwahati               OK  360 records
+[ 83/230] Gurugram               OK  360 records
+[ 84/230] Haldia                 OK  360 records
+[ 85/230] Hajipur                OK  360 records
+[ 86/230] Hanumangarh            OK  360 records
+[ 87/230] Hapur                  OK  360 records
+[ 88/230] Hassan                 OK  360 records
+[ 89/230] Haveri                 OK  360 records
+[ 90/230] Hisar                  OK  360 records
+[ 91/230] Hosur                  OK  360 records
+[ 92/230] Howrah                 OK  360 records
+[ 93/230] Hubballi               OK  360 records
+[ 94/230] Indore                 OK  360 records
+[ 95/230] Hyderabad              OK  360 records
+[ 96/230] Imphal                 OK  360 records
+[ 97/230] Jabalpur               OK  360 records
+[ 98/230] Jalandhar              OK  360 records
+[ 99/230] Jaipur                 OK  360 records
+[100/230] Jaisalmer              OK  360 records
+[101/230] Jhansi                 OK  360 records
+[102/230] Jhalawar               OK  360 records
+[103/230] Jhunjhunu              OK  360 records
+[104/230] Jind                   OK  360 records
+[105/230] Kadapa                 OK  360 records
+[106/230] Kaithal                OK  360 records
+[107/230] Jorapokhar             OK  360 records
+[108/230] Jodhpur                OK  360 records
+[109/230] Kalyan                 OK  360 records
+[110/230] Kanchipuram            OK  360 records
+[111/230] Kalaburagi             OK  360 records
+[112/230] Kannur                 OK  360 records
+[113/230] Karnal                 OK  360 records
+[114/230] Kanpur                 OK  360 records
+[115/230] Kashipur               OK  360 records
+[116/230] Karauli                OK  360 records
+[117/230] Katihar                OK  360 records
+[118/230] Keonjhar               OK  360 records
+[119/230] Khanna                 OK  360 records
+[120/230] Katni                  OK  360 records
+[121/230] Khurja                 OK  360 records
+[122/230] Kishanganj             OK  360 records
+[123/230] Kochi                  OK  360 records
+[124/230] Kohima                 OK  360 records
+[125/230] Kolar                  OK  360 records
+[126/230] Kolkata                OK  360 records
+[127/230] Kollam                 OK  360 records
+[128/230] Koppal                 OK  360 records
+[129/230] Korba                  OK  360 records
+[130/230] Kota                   OK  360 records
+[131/230] Kozhikode              OK  360 records
+[132/230] Kurukshetra            OK  360 records
+[133/230] Lucknow                OK  360 records
+[134/230] Ludhiana               OK  360 records
+[135/230] Maihar                 OK  360 records
+[136/230] Madikeri               OK  360 records
+[137/230] Mandideep              OK  360 records
+[138/230] Mandikhera             OK  360 records
+[139/230] Manesar                OK  360 records
+[140/230] Mangalore              OK  360 records
+[141/230] Manguraha              OK  360 records
+[142/230] Meerut                 OK  360 records
+[143/230] Milupara               OK  360 records
+[144/230] Moradabad              OK  360 records
+[145/230] Motihari               OK  360 records
+[146/230] Mumbai                 OK  360 records
+[147/230] Munger                 OK  360 records
+[148/230] Muzaffarnagar          OK  360 records
+[149/230] Mysuru                 OK  360 records
+[150/230] Muzaffarpur            OK  360 records
+[151/230] Nagaon                 OK  360 records
+[152/230] Naharlagun             OK  360 records
+[153/230] Nandesari              OK  360 records
+[154/230] Nagpur                 OK  360 records
+[155/230] Nalbari                OK  360 records
+[156/230] Nashik                 OK  360 records
+[157/230] Narnaul                OK  360 records
+[158/230] Nayagarh               OK  360 records
+[159/230] Navi Mumbai            OK  360 records
+[160/230] Ooty                   OK  360 records
+[161/230] Noida                  OK  360 records
+[162/230] Pali                   OK  360 records
+[163/230] Palwal                 OK  360 records
+[164/230] Patiala                OK  360 records
+[165/230] Panchkula              OK  360 records
+[166/230] Panipat                OK  360 records
+[167/230] Patna                  OK  360 records
+[168/230] Pratapgarh             OK  360 records
+[169/230] Pithampur              OK  360 records
+[170/230] Prayagraj              OK  360 records
+[171/230] Puducherry             OK  360 records
+[172/230] Purnia                 OK  360 records
+[173/230] Pune                   OK  360 records
+[174/230] Raipur                 OK  360 records
+[175/230] Raichur                OK  360 records
+[176/230] Rairangpur             OK  360 records
+[177/230] Rajamahendravaram      OK  360 records
+[178/230] Rajgir                 OK  360 records
+[179/230] Rajsamand              OK  360 records
+[180/230] Ramanathapuram         OK  360 records
+[181/230] Ramanagara             OK  360 records
+[182/230] Ratlam                 OK  360 records
+[183/230] Rishikesh              OK  360 records
+[184/230] Rohtak                 OK  360 records
+[185/230] Rourkela               OK  360 records
+[186/230] Sagar                  OK  360 records
+[187/230] Rupnagar               OK  360 records
+[188/230] Saharsa                OK  360 records
+[189/230] Salem                  OK  360 records
+[190/230] Sasaram                OK  360 records
+[191/230] Samastipur             OK  360 records
+[192/230] Satna                  OK  360 records
+[193/230] Sawai Madhopur         OK  360 records
+[194/230] Shivamogga             OK  360 records
+[195/230] Shillong               OK  360 records
+[196/230] Silchar                OK  360 records
+[197/230] Sikar                  OK  360 records
+[198/230] Siliguri               OK  360 records
+[199/230] Singrauli              OK  360 records
+[200/230] Sirsa                  OK  360 records
+[201/230] Sirohi                 OK  360 records
+[202/230] Solapur                OK  360 records
+[203/230] Siwan                  OK  360 records
+[204/230] Sonipat                OK  360 records
+[205/230] Sri Ganganagar         OK  360 records
+[206/230] Suakati                OK  360 records
+[207/230] Srinagar               OK  360 records
+[208/230] Surat                  OK  360 records
+[209/230] Talcher                OK  360 records
+[210/230] Tensa                  OK  360 records
+[211/230] Thane                  OK  360 records
+[212/230] Thoothukudi            OK  360 records
+[213/230] Thiruvananthapuram     OK  360 records
+[214/230] Thrissur               OK  360 records
+[215/230] Tumakuru               OK  360 records
+[216/230] Tirupur                OK  360 records
+[217/230] Tirupati               OK  360 records
+[218/230] Tumidih                OK  360 records
+[219/230] Udupi                  OK  360 records
+[220/230] Udaipur                OK  360 records
+[221/230] Ujjain                 OK  360 records
+[222/230] Varanasi               OK  360 records
+[223/230] Vellore                OK  360 records
+[224/230] Vapi                   OK  360 records
+[225/230] Vijayapura             OK  360 records
+[226/230] Vijayawada             OK  360 records
+[227/230] Visakhapatnam          OK  360 records
+[228/230] Vrindavan              OK  360 records
+[229/230] Yamuna Nagar           OK  360 records
+[230/230] Yadgir                 OK  360 records
+
+fetched=230 skipped=0 failed=0 elapsed=1.6 min
+manifest: F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather\manifest.json (230 cities)
+
+[2/4] uploading feeds to HDFS
+    $ docker exec aq-namenode rm -rf /tmp/lc
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams" aq-namenode:/tmp/lc
+    $ docker exec aq-namenode hdfs dfs -rm -r -f /user/hadoop/raw/live_cams
+Deleted /user/hadoop/raw/live_cams
+    $ docker exec aq-namenode hdfs dfs -put /tmp/lc /user/hadoop/raw/live_cams
+    $ docker exec aq-namenode rm -rf /tmp/lw
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather" aq-namenode:/tmp/lw
+    $ docker exec aq-namenode hdfs dfs -rm -r -f /user/hadoop/raw/live_weather
+Deleted /user/hadoop/raw/live_weather
+    $ docker exec aq-namenode hdfs dfs -put /tmp/lw /user/hadoop/raw/live_weather
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\Dataset final\city_profiles.csv" aq-namenode:/tmp/city_profiles.csv
+    $ docker exec aq-namenode hdfs dfs -mkdir -p /user/hadoop/ref
+    $ docker exec aq-namenode hdfs dfs -put -f /tmp/city_profiles.csv /user/hadoop/ref/city_profiles.csv
+
+[3/4] LiveEnrichment on YARN
+    $ docker exec aq-spark sh -c HADOOP_CONF_DIR=/opt/hadoop-conf /opt/spark/bin/spark-submit --master yarn --deploy-mode client --num-executors 3 --executor-memory 1500m --executor-cores 1 --driver-memory 1500m --class LiveEnrichment /jars/scala-2.12/airquality-streaming_2.12-1.0.jar hdfs://namenode:9000/user/hadoop/raw/live_cams/raw_json hdfs://namenode:9000/user/hadoop/raw/live_weather/raw_json hdfs://namenode:9000/user/hadoop/ref/city_profiles.csv hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+==========================================================================
+  PHASE 8b - LIVE ENRICHMENT
+  cams     : hdfs://namenode:9000/user/hadoop/raw/live_cams/raw_json
+  weather  : hdfs://namenode:9000/user/hadoop/raw/live_weather/raw_json
+  profiles : hdfs://namenode:9000/user/hadoop/ref/city_profiles.csv
+  out      : hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+==========================================================================
+  manifest : hdfs://namenode:9000/user/hadoop/raw/live_cams/manifest.json
+  cams window    : 2026-10-01 00:00:00.0 .. 2026-10-15 23:00:00.0
+  weather window : 2026-10-01 00:00:00.0 .. 2026-10-15 23:00:00.0
+  joined rows    : 82,800
+  enriched rows : 82,800 across 230 cities
+  null audit on model-critical columns:
+    pm25               nulls=0
+    temperature_c      nulls=0
+    pressure           nulls=0
+    traffic_index      nulls=0
+    climate_type       nulls=0
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+|station_id   |state  |city    |from_date          |pm25|pm10|no2 |so2|co   |o3  |nh3 |wd_degree|solar_radiation|pressure         |temperature_c|humidity_percent|wind_speed_ms|rainfall_mm|weather_condition|traffic_index|is_rush_hour|year|month|day|hour|day_of_week|is_weekend|season      |climate_type     |urbanization_index|data_source|source_station|
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-01 00:00:00|30.6|31.0|12.3|5.5|0.375|49.0|NULL|148.0    |0.0            |757.1125828      |25.8         |96.0            |3.34         |1.4        |rainy            |41.70948432  |0.0         |2026|10   |1  |0   |3          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-01 01:00:00|28.6|28.9|12.5|5.6|0.35 |46.0|NULL|137.0    |0.0            |756.5125332      |24.7         |98.0            |2.87         |0.2        |rainy            |41.70948432  |0.0         |2026|10   |1  |1   |3          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-01 02:00:00|27.8|28.2|12.8|5.8|0.329|44.0|NULL|126.0    |0.0            |756.5875394000001|24.5         |98.0            |2.65         |0.0        |humid            |37.78033     |0.0         |2026|10   |1  |2   |3          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-01 03:00:00|27.0|27.5|13.1|5.6|0.317|41.0|NULL|147.0    |0.0            |756.3625208      |24.7         |98.0            |2.79         |0.0        |humid            |37.78033     |0.0         |2026|10   |1  |3   |3          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-01 04:00:00|24.7|25.2|13.4|5.4|0.31 |39.0|NULL|143.0    |0.0            |756.7375518      |24.8         |97.0            |2.96         |0.0        |humid            |37.78033     |0.0         |2026|10   |1  |4   |3          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+only showing top 5 rows
+
+  wrote -> hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+
+[4/4] handing the enriched CSV to the stream
+    $ docker exec aq-namenode sh -c hdfs dfs -ls /user/hadoop/lakehouse/live_enriched/part-*.csv | awk '{print $NF}' | head -1
+/user/hadoop/lakehouse/live_enriched/part-00000-e0ee94aa-d494-4327-aedb-b65ac18d0833-c000.csv
+    $ docker exec aq-namenode hdfs dfs -mkdir -p /user/hadoop/lakehouse/stream/input
+    $ docker exec aq-namenode hdfs dfs -cp /user/hadoop/lakehouse/live_enriched/part-00000-e0ee94aa-d494-4327-aedb-b65ac18d0833-c000.csv /user/hadoop/lakehouse/stream/input/live_20261015_131820.csv
+    delivered -> /user/hadoop/lakehouse/stream/input/live_20261015_131820.csv
+    AirQualityStream will pick this up on its next 10s trigger.
+
+DONE in 20.6 min

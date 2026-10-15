@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<!--
+  yarn-site.xml - YARN resource management
+  23AID302 - Phase 2: Apache Spark Engine Activation
+
+  MEMORY BUDGET, AND WHY IT IS SMALL
+    The host has 15.7 GB of RAM total, already running a NameNode, four
+    DataNodes and (usually) a Spark driver. The project specification asks for
+    8 GB executors, which is correct for a real cluster and impossible here:
+    4 NodeManagers x 8 GB = 32 GB, twice the physical memory.
+
+    Each NodeManager is therefore given 3 GB, supporting one 2 GB container
+    plus overhead. This is honest about the hardware rather than configuring
+    numbers the machine cannot honour - YARN would accept an 8 GB setting and
+    then kill every container that tried to use it.
+-->
+<configuration>
+
+  <!-- ======================================================================
+       RESOURCEMANAGER - the cluster scheduler. Decides which NodeManager runs
+       which container, and how much CPU and memory each may use.
+       ====================================================================== -->
+  <property>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>resourcemanager</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.address</name>
+    <value>resourcemanager:8032</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.scheduler.address</name>
+    <value>resourcemanager:8030</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.resource-tracker.address</name>
+    <value>resourcemanager:8031</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.webapp.address</name>
+    <value>0.0.0.0:8088</value>
+  </property>
+  <property>
+    <name>yarn.resourcemanager.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+
+  <!-- ======================================================================
+       NODEMANAGER RESOURCES - what each worker advertises to the scheduler.
+       ====================================================================== -->
+  <property>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>3072</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>2</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+
+  <!-- Container size bounds. A request outside these is rejected outright
+       rather than scheduled and then killed. -->
+  <property>
+    <name>yarn.scheduler.minimum-allocation-mb</name>
+    <value>512</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum-allocation-mb</name>
+    <value>2560</value>
+  </property>
+  <property>
+    <name>yarn.scheduler.maximum-allocation-vcores</name>
+    <value>2</value>
+  </property>
+
+  <!-- ======================================================================
+       MEMORY ENFORCEMENT - DISABLED DELIBERATELY.
+       The JVM reserves far more virtual address space than it commits, and
+       YARN's virtual-memory check counts the reservation. Left on, it kills
+       healthy Spark executors with "running beyond virtual memory limits".
+       Physical checking is off too because container accounting inside Docker
+       on WSL2 is unreliable.
+       ====================================================================== -->
+  <property>
+    <name>yarn.nodemanager.vmem-check-enabled</name>
+    <value>false</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.pmem-check-enabled</name>
+    <value>false</value>
+  </property>
+
+  <!-- Required for Spark on YARN: the external shuffle service lets executors
+       be removed without losing their shuffle output. -->
+  <property>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.aux-services.mapreduce_shuffle.class</name>
+    <value>org.apache.hadoop.mapred.ShuffleHandler</value>
+  </property>
+
+  <!-- Keep logs after a job finishes, so a failed run can still be inspected. -->
+  <property>
+    <name>yarn.log-aggregation-enable</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.local-dirs</name>
+    <value>/hadoop/yarn/local</value>
+  </property>
+  <property>
+    <name>yarn.nodemanager.log-dirs</name>
+    <value>/hadoop/yarn/logs</value>
+  </property>
+
+</configuration>

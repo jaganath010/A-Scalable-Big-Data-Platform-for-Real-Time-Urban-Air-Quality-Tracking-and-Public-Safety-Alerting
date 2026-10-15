@@ -1,0 +1,72 @@
+# ==============================================================================
+# PHASE 2 - YARN resource management layer
+# 23AID302 - Big Data Analytics
+#
+# Brought up ALONGSIDE docker-compose.yml, not instead of it. HDFS keeps
+# running untouched; this adds the compute-scheduling layer on top:
+#
+#   docker compose -f docker-compose.yml -f docker-compose.yarn.yml up -d
+#
+# One ResourceManager (the scheduler) and four NodeManagers (the workers), one
+# per DataNode, so compute sits with the data exactly as the execution plan
+# describes.
+#
+# MEMORY WARNING
+#   4 NodeManagers x 3 GB = 12 GB advertised on a 15.7 GB host. Do NOT start
+#   this while a Spark job is running with an 11 GB driver - between them they
+#   will exhaust physical memory. Wait for Phase 5 to finish.
+#
+#   To run a lighter cluster, comment out nodemanager3 and nodemanager4. Two
+#   NodeManagers still demonstrate distributed scheduling.
+# ==============================================================================
+
+x-nodemanager: &nodemanager
+  image: apache/hadoop:3.3.6
+  command: ["yarn", "nodemanager"]
+  user: root
+  env_file: ./hadoop.env
+  depends_on:
+    - resourcemanager
+  restart: unless-stopped
+  volumes:
+    - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+    - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+    - ./config/yarn-site.xml:/opt/hadoop/etc/hadoop/yarn-site.xml
+
+services:
+
+  resourcemanager:
+    image: apache/hadoop:3.3.6
+    container_name: aq-resourcemanager
+    hostname: resourcemanager
+    command: ["yarn", "resourcemanager"]
+    user: root
+    env_file: ./hadoop.env
+    ports:
+      - "8088:8088"   # YARN web UI - applications, nodes, scheduler state
+      - "8032:8032"   # RM client RPC - where spark-submit connects
+    volumes:
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - ./config/yarn-site.xml:/opt/hadoop/etc/hadoop/yarn-site.xml
+    restart: unless-stopped
+
+  nodemanager1:
+    <<: *nodemanager
+    container_name: aq-nodemanager1
+    hostname: nodemanager1
+
+  nodemanager2:
+    <<: *nodemanager
+    container_name: aq-nodemanager2
+    hostname: nodemanager2
+
+  nodemanager3:
+    <<: *nodemanager
+    container_name: aq-nodemanager3
+    hostname: nodemanager3
+
+  nodemanager4:
+    <<: *nodemanager
+    container_name: aq-nodemanager4
+    hostname: nodemanager4

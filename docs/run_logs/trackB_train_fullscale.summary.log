@@ -1,0 +1,181 @@
+# ==========================================================================
+# trackB_train_fullscale.summary.log
+# Track B - full-scale GBT training, 6 Sep 2026. 300 trees, 241 cities.
+# Distilled from trackB_train_fullscale.log (121,083 lines, 13.4 MB) by
+# removing MemoryStore/BlockManager cache-eviction warnings and stack frames.
+#
+# HOW TO READ THE ERROR-LOOKING LINES IN THE MIDDLE
+#   "Connection reset by peer", "Broken pipe", "EofException", and the
+#   glassfish/jersey MappableException blocks are NOT training failures. They
+#   were produced by an external monitor polling the Spark UI REST API
+#   (localhost:4040/api/v1/applications/.../jobs) every few minutes to
+#   estimate progress; each closed HTTP connection made Spark's embedded
+#   Jetty log an EOF. They coincide with the polling timestamps and stop when
+#   polling stopped.
+#
+#   The two "Bad response ERROR ... from datanode" lines are transient HDFS
+#   read errors on a 4-node cluster under memory pressure. Spark retried the
+#   affected tasks; the run continued and finished with PASS.
+#
+#   The evidence that matters is the PHASE 6 - EVALUATION block at the end.
+# ==========================================================================
+
+26/09/06 07:41:44 INFO SparkContext: Running Spark version 3.5.6
+26/09/06 07:41:44 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/09/06 07:41:44 INFO SparkContext: Java version 11.0.27
+26/09/06 07:41:44 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/06 07:41:44 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+26/09/06 07:41:44 INFO ResourceUtils: ==============================================================
+26/09/06 07:41:44 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/09/06 07:41:44 INFO ResourceUtils: ==============================================================
+26/09/06 07:41:44 INFO SparkContext: Submitted application: AirQuality_Phase5_GBT_Training
+26/09/06 07:41:44 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1024, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/09/06 07:41:44 INFO ResourceProfile: Limiting resource is cpu
+26/09/06 07:41:44 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/09/06 07:41:44 INFO SecurityManager: Changing view acls to: root
+26/09/06 07:41:44 INFO SecurityManager: Changing modify acls to: root
+26/09/06 07:41:44 INFO SecurityManager: Changing view acls groups to: 
+26/09/06 07:41:44 INFO SecurityManager: Changing modify acls groups to: 
+26/09/06 07:41:44 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/09/06 07:41:44 INFO Utils: Successfully started service 'sparkDriver' on port 39927.
+26/09/06 07:41:44 INFO SparkEnv: Registering MapOutputTracker
+26/09/06 07:41:44 INFO SparkEnv: Registering BlockManagerMaster
+26/09/06 07:41:44 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/09/06 07:41:44 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/09/06 07:41:44 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/09/06 07:41:44 INFO DiskBlockManager: Created local directory at /scratch/blockmgr-2470239b-418b-4770-a353-605bad59dbb7
+26/09/06 07:41:44 INFO MemoryStore: MemoryStore started with capacity 2.8 GiB
+26/09/06 07:41:44 INFO SparkEnv: Registering OutputCommitCoordinator
+26/09/06 07:41:45 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/09/06 07:41:45 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/09/06 07:41:45 INFO Executor: Starting executor ID driver on host spark-client
+26/09/06 07:41:45 INFO Executor: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/09/06 07:41:45 INFO Executor: Java version 11.0.27
+26/09/06 07:41:45 INFO Executor: Starting executor with user classpath (userClassPathFirst = false): ''
+26/09/06 07:41:45 INFO Executor: Created or updated repl class loader org.apache.spark.util.MutableURLClassLoader@386cf91b for default.
+26/09/06 07:41:45 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 38965.
+26/09/06 07:41:45 INFO NettyBlockTransferService: Server created on spark-client:38965
+26/09/06 07:41:45 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/09/06 07:41:45 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-client, 38965, None)
+26/09/06 07:41:45 INFO BlockManagerMasterEndpoint: Registering block manager spark-client:38965 with 2.8 GiB RAM, BlockManagerId(driver, spark-client, 38965, None)
+26/09/06 07:41:45 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-client, 38965, None)
+26/09/06 07:41:45 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-client, 38965, None)
+========================================================================
+  AQ_FS        hdfs
+  input        hdfs:///user/hadoop/lakehouse/raw/part-*.csv
+  lakehouse    hdfs://namenode:9000/user/hadoop
+========================================================================
+>>> checkpoint dir: /scratch/checkpoints
+>>> feature pipeline loaded from hdfs://namenode:9000/user/hadoop/models/feature_pipeline
+26/09/06 07:42:02 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+    feature vector rebuilt: 93,216,105 rows, 86 dimensions
+>>> quality gate: 93,216,105 -> 93,216,105 rows (100.00% retained)
+>>> training subsample: 74,544,984 -> ~10,000,000 rows (fraction 0.1341, seed 42)
+    evaluation is NOT sampled - the full test window is scored.
+>>> chronological split at ts_unix=1656651600.0
+    train 10,000,552 rows | test 18,671,121 rows
+    test window: 2022-07-01 06:00:00 -> 2023-03-31 22:00:00
+    sampled train mix: real 1,112,388 (11.12%)  synthetic 8,888,164 (88.88%)
+------------------------------------------------------------------------
+  PERSISTENCE BASELINE   R2=0.8563  RMSE=25.443  MAE=10.357
+  ... on real rows only  R2=0.8587  RMSE=24.831  MAE=9.937  (n=2,074,569)
+>>> training GBT on delta target ...
+26/09/06 11:12:24 WARN DataStreamer: Exception for BP-218131968-172.18.0.2-1786648062169:blk_1073747289_6468
+java.io.IOException: Connection reset by peer
+26/09/06 11:12:24 WARN DataStreamer: Error Recovery for BP-218131968-172.18.0.2-1786648062169:blk_1073747289_6468 in pipeline [DatanodeInfoWithStorage[172.18.0.8:9866,DS-3a2839bd-e23c-4df0-9c11-4a8e01751253,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-aeefa6ff-1f31-4287-b545-f294a77180cd,DISK]]: datanode 0(DatanodeInfoWithStorage[172.18.0.8:9866,DS-3a2839bd-e23c-4df0-9c11-4a8e01751253,DISK]) is bad.
+26/09/06 12:08:22 WARN DataStreamer: Exception for BP-218131968-172.18.0.2-1786648062169:blk_1073748129_7309
+java.io.IOException: Connection reset by peer
+26/09/06 12:08:22 WARN DataStreamer: Error Recovery for BP-218131968-172.18.0.2-1786648062169:blk_1073748129_7309 in pipeline [DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-aeefa6ff-1f31-4287-b545-f294a77180cd,DISK]]: datanode 0(DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]) is bad.
+26/09/06 12:55:09 ERROR ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.sparkproject.jetty.io.EofException
+Caused by: org.sparkproject.jetty.io.EofException
+	... 50 more
+Caused by: java.io.IOException: Broken pipe
+	... 89 more
+26/09/06 12:55:34 ERROR ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.sparkproject.jetty.io.EofException
+Caused by: org.sparkproject.jetty.io.EofException
+	... 51 more
+Caused by: java.io.IOException: Broken pipe
+	... 90 more
+26/09/06 12:58:35 ERROR ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.sparkproject.jetty.io.EofException
+Caused by: org.sparkproject.jetty.io.EofException
+	... 46 more
+Caused by: java.io.IOException: Broken pipe
+	... 85 more
+26/09/06 12:59:11 ERROR ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.sparkproject.jetty.io.EofException
+Caused by: org.sparkproject.jetty.io.EofException
+	... 51 more
+Caused by: java.io.IOException: Broken pipe
+	... 91 more
+26/09/06 13:04:54 WARN DataStreamer: Exception for BP-218131968-172.18.0.2-1786648062169:blk_1073748828_8009
+java.io.IOException: Connection reset by peer
+26/09/06 13:04:54 WARN DataStreamer: Error Recovery for BP-218131968-172.18.0.2-1786648062169:blk_1073748828_8009 in pipeline [DatanodeInfoWithStorage[172.18.0.8:9866,DS-3a2839bd-e23c-4df0-9c11-4a8e01751253,DISK], DatanodeInfoWithStorage[172.18.0.6:9866,DS-aeefa6ff-1f31-4287-b545-f294a77180cd,DISK]]: datanode 0(DatanodeInfoWithStorage[172.18.0.8:9866,DS-3a2839bd-e23c-4df0-9c11-4a8e01751253,DISK]) is bad.
+26/09/06 13:21:06 WARN DataStreamer: Exception for BP-218131968-172.18.0.2-1786648062169:blk_1073749073_8255
+java.io.IOException: Bad response ERROR for BP-218131968-172.18.0.2-1786648062169:blk_1073749073_8255 from datanode DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]
+26/09/06 13:21:06 WARN DataStreamer: Error Recovery for BP-218131968-172.18.0.2-1786648062169:blk_1073749073_8255 in pipeline [DatanodeInfoWithStorage[172.18.0.6:9866,DS-aeefa6ff-1f31-4287-b545-f294a77180cd,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]]: datanode 1(DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]) is bad.
+26/09/06 13:26:50 ERROR ServerRuntime$Responder: An I/O error has occurred while writing a response message entity to the container output stream.
+org.glassfish.jersey.server.internal.process.MappableException: org.sparkproject.jetty.io.EofException
+Caused by: org.sparkproject.jetty.io.EofException
+	... 46 more
+Caused by: java.io.IOException: Broken pipe
+	... 85 more
+26/09/06 14:11:48 WARN DataStreamer: Exception for BP-218131968-172.18.0.2-1786648062169:blk_1073749832_9015
+java.io.IOException: Bad response ERROR for BP-218131968-172.18.0.2-1786648062169:blk_1073749832_9015 from datanode DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]
+26/09/06 14:11:48 WARN DataStreamer: Error Recovery for BP-218131968-172.18.0.2-1786648062169:blk_1073749832_9015 in pipeline [DatanodeInfoWithStorage[172.18.0.5:9866,DS-8e1a7fe0-5afe-4ad1-b19f-4a889c5770e7,DISK], DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]]: datanode 1(DatanodeInfoWithStorage[172.18.0.4:9866,DS-eaa4b1fd-8d84-47b1-b3f9-6c7978958a9a,DISK]) is bad.
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.spark.util.SizeEstimator$ (file:/opt/spark/jars/spark-core_2.12-3.5.6.jar) to field java.nio.charset.Charset.name
+WARNING: Please consider reporting this to the maintainers of org.apache.spark.util.SizeEstimator$
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+26/09/06 15:02:10 WARN InstanceBuilder: Failed to load implementation from:dev.ludovic.netlib.blas.JNIBLAS
+========================================================================
+PHASE 6 - EVALUATION (raw ug/m3, chronological hold-out)
+========================================================================
+  trained on 10,000,552 rows - a seeded sample of the 74,544,984-row training window, 300 trees
+------------------------------------------------------------------------
+  ALL TEST ROWS  (n=18,671,121)  - the systems-scale figure
+                                R2       RMSE        MAE
+  persistence baseline      0.8563     25.443     10.357
+  GBT model                 0.8884     22.429      9.353
+  RMSE reduction             11.85%
+------------------------------------------------------------------------
+  REAL ROWS ONLY (n=2,074,569)  - the scientific figure, QUOTE THIS ONE
+                                R2       RMSE        MAE
+  persistence baseline      0.8587     24.831      9.937
+  GBT model                 0.8910     21.806      8.926
+  RMSE reduction             12.18%
+------------------------------------------------------------------------
+  PASS (real rows): model beats persistence by 0.0323 R2.
+========================================================================
+  top 15 features by importance (index -> importance):
+    [  0] 0.10112
+    [ 13] 0.07577
+    [ 20] 0.06884
+    [ 12] 0.05936
+    [ 14] 0.05422
+    [ 44] 0.05351
+    [ 16] 0.03967
+    [  8] 0.03313
+    [ 19] 0.03153
+    [ 15] 0.03089
+    [ 32] 0.03051
+    [ 17] 0.02463
+    [ 31] 0.02443
+    [  9] 0.02360
+    [  4] 0.02324
+  (map indices to names via the VectorAssembler input order in 02_feature_extraction.py)
+  worst 10 cities by RMSE (where the model struggles):
+    Kochi                        RMSE=  100.72  n=46,818
+    Pune                         RMSE=   98.41  n=66,078
+    Byrnihat                     RMSE=   78.70  n=19,242
+    Begusarai                    RMSE=   73.43  n=40,248
+    Baghpat                      RMSE=   60.15  n=44,280
+    Gadag                        RMSE=   57.09  n=48,312
+    Vijayawada                   RMSE=   51.82  n=11,187
+    Bettiah                      RMSE=   44.93  n=43,920
+    Brajrajnagar                 RMSE=   43.27  n=29,925
+    Kadapa                       RMSE=   43.08  n=12,123
+>>> model saved to hdfs://namenode:9000/user/hadoop/models/gbt_pm25_forecaster

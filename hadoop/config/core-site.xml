@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  core-site.xml - cluster-wide defaults
+  23AID302 - A Scalable Big Data Platform for Urban Air Quality Tracking
+-->
+<configuration>
+
+  <!-- The default filesystem. Every unqualified path (/user/hadoop/...) is
+       resolved against this, and it is what Spark's fs.defaultFS must match
+       when the pipeline runs with AQ_FS=hdfs. -->
+  <property>
+    <name>fs.defaultFS</name>
+    <value>hdfs://namenode:9000</value>
+  </property>
+
+  <!-- Scratch space for the daemons' own temp state. -->
+  <property>
+    <name>hadoop.tmp.dir</name>
+    <value>/hadoop/tmp</value>
+  </property>
+
+  <!-- Read/write buffer. 128 KB rather than the 4 KB default: this cluster
+       streams 1.2 GB CSV parts, so larger buffers cut syscall overhead
+       measurably on ingest. -->
+  <property>
+    <name>io.file.buffer.size</name>
+    <value>131072</value>
+  </property>
+
+  <!-- Allow the host user to act as the HDFS superuser through the proxy.
+       Needed so `docker exec` commands issued as root can write to /user. -->
+  <property>
+    <name>hadoop.proxyuser.root.hosts</name>
+    <value>*</value>
+  </property>
+  <property>
+    <name>hadoop.proxyuser.root.groups</name>
+    <value>*</value>
+  </property>
+
+</configuration>

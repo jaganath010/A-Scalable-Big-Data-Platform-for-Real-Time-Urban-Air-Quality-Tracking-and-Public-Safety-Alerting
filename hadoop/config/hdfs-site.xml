@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  hdfs-site.xml - HDFS block, replication and storage layout
+  23AID302 - A Scalable Big Data Platform for Urban Air Quality Tracking
+
+  THE ARITHMETIC THIS FILE ENCODES (status report section 6)
+    dataset            27.48 GB
+    dfs.blocksize      128 MB          -> 220 blocks
+    dfs.replication    3               -> 660 block replicas
+    raw storage        27.48 x 3       =  82.44 GB
+    DataNodes          4               -> ~165 replicas / ~20.61 GB per node
+-->
+<configuration>
+
+  <!-- ======================================================================
+       REPLICATION
+       Three copies survives the loss of two nodes. With four DataNodes there
+       is also somewhere to put a replacement replica when one node dies,
+       which is the whole reason for the fourth node.
+       ====================================================================== -->
+  <property>
+    <name>dfs.replication</name>
+    <value>3</value>
+  </property>
+
+  <!-- ======================================================================
+       BLOCK SIZE - 128 MB, the Hadoop default.
+       This is the unit of parallelism: Spark creates one input split, and
+       therefore one task, per block. 220 blocks is what gives the cluster
+       220 parallel tasks to distribute.
+       ====================================================================== -->
+  <property>
+    <name>dfs.blocksize</name>
+    <value>134217728</value>
+  </property>
+
+  <!-- ======================================================================
+       STORAGE DIRECTORIES
+       Both are bind-mounted from the host in docker-compose.yml.
+       ====================================================================== -->
+  <property>
+    <name>dfs.namenode.name.dir</name>
+    <value>/hadoop/dfs/name</value>
+  </property>
+  <property>
+    <name>dfs.datanode.data.dir</name>
+    <value>/hadoop/dfs/data</value>
+  </property>
+
+  <!-- The NameNode must listen on all interfaces, not just loopback, or the
+       DataNodes in sibling containers cannot register with it. -->
+  <property>
+    <name>dfs.namenode.rpc-bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+  <property>
+    <name>dfs.namenode.http-bind-host</name>
+    <value>0.0.0.0</value>
+  </property>
+
+  <!-- Containers get ephemeral IPs that rarely reverse-resolve to their
+       hostname. Without this the NameNode rejects DataNode registration and
+       the cluster comes up with zero live nodes. -->
+  <property>
+    <name>dfs.namenode.datanode.registration.ip-hostname-check</name>
+    <value>false</value>
+  </property>
+
+  <!-- Course cluster, not production: no Kerberos, no POSIX permission
+       enforcement. Keeps `hdfs dfs -put` from failing on UID mismatches
+       between the Windows host and the container's hadoop user. -->
+  <property>
+    <name>dfs.permissions.enabled</name>
+    <value>false</value>
+  </property>
+
+  <!-- Refuse to write a block to a volume with less than 5 GB free, so a
+       DataNode fails visibly rather than filling D: to zero. -->
+  <property>
+    <name>dfs.datanode.du.reserved</name>
+    <value>5368709120</value>
+  </property>
+
+  <!-- Web UI on 9870 (NameNode) and 9864 (DataNode). -->
+  <property>
+    <name>dfs.namenode.http-address</name>
+    <value>0.0.0.0:9870</value>
+  </property>
+
+</configuration>

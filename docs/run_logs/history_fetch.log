@@ -1,0 +1,235 @@
+Fetching 230 cities  2022-08-01 -> 2026-09-05  (4 workers)
+
+[  1/230] Agra                   OK  35,928 records
+[  2/230] Agartala               OK  35,928 records
+[  3/230] Aizawl                 OK  35,928 records
+[  4/230] Ajmer                  OK  35,928 records
+[  5/230] Amaravati              OK  35,928 records
+[  6/230] Amritsar               OK  35,928 records
+[  7/230] Alwar                  OK  35,928 records
+[  8/230] Ambala                 OK  35,928 records
+[  9/230] Ahmedabad              OK  35,928 records
+[ 10/230] Anantapur              OK  35,928 records
+[ 11/230] Araria                 OK  35,928 records
+[ 12/230] Asansol                OK  35,928 records
+[ 13/230] Arrah                  OK  35,928 records
+[ 14/230] Ariyalur               OK  35,928 records
+[ 15/230] Bagalkot               OK  35,928 records
+[ 16/230] Baddi                  OK  35,928 records
+[ 17/230] Ankleshwar             OK  35,928 records
+[ 18/230] Aurangabad             OK  35,928 records
+[ 19/230] Baghpat                OK  35,928 records
+[ 20/230] Banswara               OK  35,928 records
+[ 21/230] Bahadurgarh            OK  35,928 records
+[ 22/230] Baripada               OK  35,928 records
+[ 23/230] Bareilly               OK  35,928 records
+[ 24/230] Ballabgarh             OK  35,928 records
+[ 25/230] Barmer                 OK  35,928 records
+[ 26/230] Bathinda               OK  35,928 records
+[ 27/230] Bengaluru              OK  35,928 records
+[ 28/230] Begusarai              OK  35,928 records
+[ 29/230] Bettiah                OK  35,928 records
+[ 30/230] Bhagalpur              OK  35,928 records
+[ 31/230] Bharatpur              OK  35,928 records
+[ 32/230] Bhilai                 OK  35,928 records
+[ 33/230] Belgaum                OK  35,928 records
+[ 34/230] Bhiwani                OK  35,928 records
+[ 35/230] Bhopal                 OK  35,928 records
+[ 36/230] Bihar Sharif           OK  35,928 records
+[ 37/230] Bidar                  OK  35,928 records
+[ 38/230] Bhiwadi                OK  35,928 records
+[ 39/230] Bilaspur               OK  35,928 records
+[ 40/230] Bulandshahr            OK  35,928 records
+[ 41/230] Brajrajnagar           OK  35,928 records
+[ 42/230] Bikaner                OK  35,928 records
+[ 43/230] Buxar                  OK  35,928 records
+[ 44/230] Chandigarh             OK  35,928 records
+[ 45/230] Charkhi Dadri          OK  35,928 records
+[ 46/230] Chengalpattu           OK  35,928 records
+[ 47/230] Chennai                OK  35,928 records
+[ 48/230] Chhapra                OK  35,928 records
+[ 49/230] Chandrapur             OK  35,928 records
+[ 50/230] Chikkamagaluru         OK  35,928 records
+[ 51/230] Chittoor               OK  35,928 records
+[ 52/230] Churu                  OK  35,928 records
+[ 53/230] Chittorgarh            OK  35,928 records
+[ 54/230] Cuddalore              OK  35,928 records
+[ 55/230] Coimbatore             OK  35,928 records
+[ 56/230] Damoh                  OK  35,928 records
+[ 57/230] Chhal                  OK  35,928 records
+[ 58/230] Dehradun               OK  35,928 records
+[ 59/230] Chamarajanagar         OK  35,928 records
+[ 60/230] Dewas                  OK  35,928 records
+[ 61/230] Dausa                  OK  35,928 records
+[ 62/230] Darbhanga              OK  35,928 records
+[ 63/230] Dhanbad                OK  35,928 records
+[ 64/230] Dharuhera              OK  35,928 records
+[ 65/230] Dholpur                OK  35,928 records
+[ 66/230] Dindigul               OK  35,928 records
+[ 67/230] Durgapur               OK  35,928 records
+[ 68/230] Ernakulam              OK  35,928 records
+[ 69/230] Dharwad                OK  35,928 records
+[ 70/230] Faridabad              OK  35,928 records
+[ 71/230] Delhi                  OK  35,928 records
+[ 72/230] Firozabad              OK  35,928 records
+[ 73/230] Fatehabad              OK  35,928 records
+[ 74/230] Gangtok                OK  35,928 records
+[ 75/230] Gadag                  OK  35,928 records
+[ 76/230] Gaya                   OK  35,928 records
+[ 77/230] Ghaziabad              OK  35,928 records
+[ 78/230] Gandhinagar            OK  35,928 records
+[ 79/230] Greater Noida          OK  35,928 records
+[ 80/230] Guwahati               OK  35,928 records
+[ 81/230] Gwalior                OK  35,928 records
+[ 82/230] Gurugram               OK  35,928 records
+[ 83/230] Hanumangarh            OK  35,928 records
+[ 84/230] Hajipur                OK  35,928 records
+[ 85/230] Haldia                 OK  35,928 records
+[ 86/230] Hapur                  OK  35,928 records
+[ 87/230] Haveri                 OK  35,928 records
+[ 88/230] Hisar                  OK  35,928 records
+[ 89/230] Gorakhpur              OK  35,928 records
+[ 90/230] Howrah                 OK  35,928 records
+[ 91/230] Hosur                  OK  35,928 records
+[ 92/230] Hyderabad              OK  35,928 records
+[ 93/230] Imphal                 OK  35,928 records
+[ 94/230] Hassan                 OK  35,928 records
+[ 95/230] Indore                 OK  35,928 records
+[ 96/230] Jaipur                 OK  35,928 records
+[ 97/230] Jabalpur               OK  35,928 records
+[ 98/230] Jhalawar               OK  35,928 records
+[ 99/230] Jalandhar              OK  35,928 records
+[100/230] Jaisalmer              OK  35,928 records
+[101/230] Jhansi                 OK  35,928 records
+[102/230] Jhunjhunu              OK  35,928 records
+[103/230] Jind                   OK  35,928 records
+[104/230] Jodhpur                OK  35,928 records
+[105/230] Hubballi               OK  35,928 records
+[106/230] Kadapa                 OK  35,928 records
+[107/230] Jorapokhar             OK  35,928 records
+[108/230] Kaithal                OK  35,928 records
+[109/230] Kalaburagi             OK  35,928 records
+[110/230] Kalyan                 OK  35,928 records
+[111/230] Kanpur                 OK  35,928 records
+[112/230] Karauli                OK  35,928 records
+[113/230] Kannur                 OK  35,928 records
+[114/230] Katihar                OK  35,928 records
+[115/230] Katni                  OK  35,928 records
+[116/230] Kashipur               OK  35,928 records
+[117/230] Karnal                 OK  35,928 records
+[118/230] Khanna                 OK  35,928 records
+[119/230] Khurja                 OK  35,928 records
+[120/230] Keonjhar               OK  35,928 records
+[121/230] Kanchipuram            OK  35,928 records
+[122/230] Kochi                  OK  35,928 records
+[123/230] Kishanganj             OK  35,928 records
+[124/230] Kohima                 OK  35,928 records
+[125/230] Kolkata                OK  35,928 records
+[126/230] Kolar                  OK  35,928 records
+[127/230] Kollam                 OK  35,928 records
+[128/230] Koppal                 OK  35,928 records
+[129/230] Kurukshetra            OK  35,928 records
+[130/230] Kota                   OK  35,928 records
+[131/230] Kozhikode              OK  35,928 records
+[132/230] Lucknow                OK  35,928 records
+[133/230] Maihar                 OK  35,928 records
+[134/230] Madikeri               OK  35,928 records
+[135/230] Ludhiana               OK  35,928 records
+[136/230] Mandikhera             OK  35,928 records
+[137/230] Manesar                OK  35,928 records
+[138/230] Mangalore              OK  35,928 records
+[139/230] Mandideep              OK  35,928 records
+[140/230] Meerut                 OK  35,928 records
+[141/230] Milupara               OK  35,928 records
+[142/230] Moradabad              OK  35,928 records
+[143/230] Motihari               OK  35,928 records
+[144/230] Munger                 OK  35,928 records
+[145/230] Manguraha              OK  35,928 records
+[146/230] Muzaffarpur            OK  35,928 records
+[147/230] Muzaffarnagar          OK  35,928 records
+[148/230] Korba                  OK  35,928 records
+[149/230] Nagaon                 OK  35,928 records
+[150/230] Mysuru                 OK  35,928 records
+[151/230] Nagpur                 OK  35,928 records
+[152/230] Nalbari                OK  35,928 records
+[153/230] Narnaul                OK  35,928 records
+[154/230] Nandesari              OK  35,928 records
+[155/230] Naharlagun             OK  35,928 records
+[156/230] Nashik                 OK  35,928 records
+[157/230] Mumbai                 OK  35,928 records
+[158/230] Noida                  OK  35,928 records
+[159/230] Ooty                   OK  35,928 records
+[160/230] Nayagarh               OK  35,928 records
+[161/230] Pali                   OK  35,928 records
+[162/230] Palwal                 OK  35,928 records
+[163/230] Panchkula              OK  35,928 records
+[164/230] Patiala                OK  35,928 records
+[165/230] Panipat                OK  35,928 records
+[166/230] Pithampur              OK  35,928 records
+[167/230] Prayagraj              OK  35,928 records
+[168/230] Navi Mumbai            OK  35,928 records
+[169/230] Puducherry             OK  35,928 records
+[170/230] Pratapgarh             OK  35,928 records
+[171/230] Raichur                OK  35,928 records
+[172/230] Pune                   OK  35,928 records
+[173/230] Raipur                 OK  35,928 records
+[174/230] Patna                  OK  35,928 records
+[175/230] Rairangpur             OK  35,928 records
+[176/230] Rajsamand              OK  35,928 records
+[177/230] Purnia                 OK  35,928 records
+[178/230] Rajamahendravaram      OK  35,928 records
+[179/230] Ramanathapuram         OK  35,928 records
+[180/230] Ramanagara             OK  35,928 records
+[181/230] Ratlam                 OK  35,928 records
+[182/230] Rohtak                 OK  35,928 records
+[183/230] Rishikesh              OK  35,928 records
+[184/230] Rajgir                 OK  35,928 records
+[185/230] Rourkela               OK  35,928 records
+[186/230] Rupnagar               OK  35,928 records
+[187/230] Samastipur             OK  35,928 records
+[188/230] Saharsa                OK  35,928 records
+[189/230] Salem                  OK  35,928 records
+[190/230] Satna                  OK  35,928 records
+[191/230] Sawai Madhopur         OK  35,928 records
+[192/230] Sagar                  OK  35,928 records
+[193/230] Shivamogga             OK  35,928 records
+[194/230] Sikar                  OK  35,928 records
+[195/230] Siliguri               OK  35,928 records
+[196/230] Shillong               OK  35,928 records
+[197/230] Silchar                OK  35,928 records
+[198/230] Singrauli              OK  35,928 records
+[199/230] Sirsa                  OK  35,928 records
+[200/230] Siwan                  OK  35,928 records
+[201/230] Solapur                OK  35,928 records
+[202/230] Sonipat                OK  35,928 records
+[203/230] Sri Ganganagar         OK  35,928 records
+[204/230] Srinagar               OK  35,928 records
+[205/230] Sasaram                OK  35,928 records
+[206/230] Talcher                OK  35,928 records
+[207/230] Sirohi                 OK  35,928 records
+[208/230] Tensa                  OK  35,928 records
+[209/230] Thiruvananthapuram     OK  35,928 records
+[210/230] Thoothukudi            OK  35,928 records
+[211/230] Thane                  OK  35,928 records
+[212/230] Thrissur               OK  35,928 records
+[213/230] Tirupur                OK  35,928 records
+[214/230] Tumakuru               OK  35,928 records
+[215/230] Surat                  OK  35,928 records
+[216/230] Tumidih                OK  35,928 records
+[217/230] Suakati                OK  35,928 records
+[218/230] Udupi                  OK  35,928 records
+[219/230] Ujjain                 OK  35,928 records
+[220/230] Varanasi               OK  35,928 records
+[221/230] Udaipur                OK  35,928 records
+[222/230] Vijayapura             OK  35,928 records
+[223/230] Vellore                OK  35,928 records
+[224/230] Vijayawada             OK  35,928 records
+[225/230] Visakhapatnam          OK  35,928 records
+[226/230] Yadgir                 OK  35,928 records
+[227/230] Yamuna Nagar           OK  35,928 records
+[228/230] Tirupati               OK  35,928 records
+[229/230] Vrindavan              OK  35,928 records
+[230/230] Vapi                   OK  35,928 records
+
+fetched=230  skipped=0  failed=0  records_this_run=8,263,440  elapsed=37.9 min
+manifest: F:/SEM 5 NOTES/Big Data/Project_Final/airquality_expanded/semistructured_history\manifest.json  (230 cities, 8,263,440 records total)

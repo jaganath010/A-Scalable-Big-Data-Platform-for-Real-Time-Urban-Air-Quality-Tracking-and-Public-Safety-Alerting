@@ -1,0 +1,116 @@
+========================================================================
+  1. LIVE DATANODES  (expect 4)
+========================================================================
+  Configured Capacity: 837518606336 (780.00 GB)
+  DFS Remaining: 325819170816 (303.44 GB)
+  DFS Used: 89203040256 (83.08 GB)
+  DFS Used%: 21.49%
+  Live datanodes (4):
+  Name: 172.21.0.3:9866 (aq-datanode4.hadoop_default)
+  Hostname: datanode4
+  Configured Capacity: 209379651584 (195.00 GB)
+  DFS Used: 21589192704 (20.11 GB)
+  DFS Remaining: 81454792704 (75.86 GB)
+  DFS Used%: 10.31%
+  DFS Remaining%: 38.90%
+  Name: 172.21.0.4:9866 (aq-datanode2.hadoop_default)
+  Hostname: datanode2
+  Configured Capacity: 209379651584 (195.00 GB)
+  DFS Used: 23901364224 (22.26 GB)
+  DFS Remaining: 81454792704 (75.86 GB)
+  DFS Used%: 11.42%
+  DFS Remaining%: 38.90%
+  Name: 172.21.0.5:9866 (aq-datanode3.hadoop_default)
+  Hostname: datanode3
+  Configured Capacity: 209379651584 (195.00 GB)
+  DFS Used: 22605729792 (21.05 GB)
+  DFS Remaining: 81454792704 (75.86 GB)
+  DFS Used%: 10.80%
+  DFS Remaining%: 38.90%
+  Name: 172.21.0.6:9866 (aq-datanode1.hadoop_default)
+  Hostname: datanode1
+  Configured Capacity: 209379651584 (195.00 GB)
+  DFS Used: 21106753536 (19.66 GB)
+  DFS Remaining: 81454792704 (75.86 GB)
+  DFS Used%: 10.08%
+  DFS Remaining%: 38.90%
+
+========================================================================
+  2. REPLICATION AND BLOCK SIZE IN EFFECT
+========================================================================
+  dfs.replication : 3
+  dfs.blocksize   : 134217728 bytes
+                    = 128 MB
+
+========================================================================
+  3. THE DATASET IN HDFS
+========================================================================
+  files:
+    /user/hadoop/lakehouse/raw/part-11444.csv        1265.24 MB
+    /user/hadoop/lakehouse/raw/part-11804.csv        1200.86 MB
+    /user/hadoop/lakehouse/raw/part-12128.csv        1156.40 MB
+    /user/hadoop/lakehouse/raw/part-12964.csv        1294.83 MB
+    /user/hadoop/lakehouse/raw/part-13292.csv        1277.18 MB
+    /user/hadoop/lakehouse/raw/part-13600.csv        1286.02 MB
+    /user/hadoop/lakehouse/raw/part-13944.csv        1177.06 MB
+    /user/hadoop/lakehouse/raw/part-17796.csv        1192.88 MB
+    /user/hadoop/lakehouse/raw/part-19624.csv        1101.90 MB
+    /user/hadoop/lakehouse/raw/part-20852.csv        1284.65 MB
+    /user/hadoop/lakehouse/raw/part-20996.csv        1269.67 MB
+    /user/hadoop/lakehouse/raw/part-21296.csv        1198.30 MB
+    /user/hadoop/lakehouse/raw/part-21500.csv        1222.68 MB
+    /user/hadoop/lakehouse/raw/part-24304.csv        1247.04 MB
+    /user/hadoop/lakehouse/raw/part-28176.csv        1216.70 MB
+    /user/hadoop/lakehouse/raw/part-32264.csv        1182.42 MB
+    /user/hadoop/lakehouse/raw/part-34036.csv        1241.06 MB
+    /user/hadoop/lakehouse/raw/part-34056.csv        1156.62 MB
+    /user/hadoop/lakehouse/raw/part-34716.csv        1295.38 MB
+    /user/hadoop/lakehouse/raw/part-35016.csv        1115.98 MB
+    /user/hadoop/lakehouse/raw/part-35028.csv        1244.04 MB
+    /user/hadoop/lakehouse/raw/part-35432.csv        1277.91 MB
+    /user/hadoop/lakehouse/raw/part-7164.csv        1231.32 MB
+
+  logical size (one copy):
+    27.5 G  82.4 G  /user/hadoop/lakehouse/raw
+  physical size (all replicas):
+    27.5 G  82.4 G                                 /user/hadoop/lakehouse/raw
+
+========================================================================
+  4. BLOCK COUNT AND DISTRIBUTION  (expect ~220 blocks, ~660 replicas)
+========================================================================
+  total blocks    : 232
+   Total blocks (validated):	232 (avg. block size 127167635 B)
+   Under-replicated blocks:	0 (0.0 %)
+   Default replication factor:	3
+   Average block replication:	3.0
+   Missing blocks:		0
+   Corrupt blocks:		0
+   Missing replicas:		0 (0.0 %)
+   Missing block groups:		0
+   Missing internal blocks:	0
+
+  per-DataNode block replica counts:
+    datanode1    DFS Used: 21106753536 (19.66
+    datanode2    DFS Used: 23901364224 (22.26
+    datanode3    DFS Used: 22605729792 (21.05
+    datanode4    DFS Used: 21589192704 (20.11
+
+========================================================================
+  5. HEALTH
+========================================================================
+   Over-erasure-coded block groups:	0
+   Under-erasure-coded block groups:	0
+   Unsatisfactory placement block groups:	0
+   Average block group size:	0.0
+   Missing block groups:		0
+   Corrupt block groups:		0
+   Missing internal blocks:	0
+   Blocks queued for replication:	0
+  FSCK ended at Thu Aug 13 12:53:44 UTC 2026 in 4 milliseconds
+  
+  
+  The filesystem under path '/user/hadoop/lakehouse/raw' is HEALTHY
+
+========================================================================
+  Web UI: http://localhost:9870  (Overview -> Datanodes -> Utilities/Browse)
+========================================================================

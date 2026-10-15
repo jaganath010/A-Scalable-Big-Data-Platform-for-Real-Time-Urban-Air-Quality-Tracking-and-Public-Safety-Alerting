@@ -1,0 +1,25 @@
+##### replay clock = 2026-10-15 20:00
+now: 2026-10-15 20:00:00   mode: DRY RUN (no credentials set - nothing leaves this machine)
+108 city(ies) under warning in the next 6 h -> 2 to send, 0 suppressed (already sent)
+
+TO: Hisar (0 recipient(s)) - new warning
+Expected by 15 Oct, 21:00: AQI 463 (Severe), mainly coarse dust (PM10).
+TO: Fatehabad (0 recipient(s)) - new warning
+Expected by 15 Oct, 21:00: AQI 418 (Severe), mainly coarse dust (PM10).
+summary: 2 message(s) built, 0 delivered, 0 failed, 0 suppressed -> F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\docs\run_logs\alert_outbox.jsonl
+##### replay clock = 2026-10-15 21:00
+now: 2026-10-15 21:00:00   mode: DRY RUN (no credentials set - nothing leaves this machine)
+93 city(ies) under warning in the next 6 h -> 2 to send, 2 suppressed (already sent)
+
+TO: Bhiwani (0 recipient(s)) - new warning
+Expected by 15 Oct, 22:00: AQI 374 (Very Poor), mainly coarse dust (PM10).
+Stay indoors where possible. Keep windows closed. Wear an N95 mask if you must go out.
+TO: Dhanbad (0 recipient(s)) - new warning
+Expected by 16 Oct, 00:00: AQI 351 (Very Poor), mainly fine particles (PM2.5).
+Stay indoors where possible. Keep windows closed. Wear an N95 mask if you must go out.
+summary: 2 message(s) built, 0 delivered, 0 failed, 2 suppressed -> F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\docs\run_logs\alert_outbox.jsonl
+##### replay clock = 2026-10-16 02:00
+now: 2026-10-16 02:00:00   mode: DRY RUN (no credentials set - nothing leaves this machine)
+0 city(ies) under warning in the next 6 h -> 0 to send, 0 suppressed (already sent)
+
+summary: 0 message(s) built, 0 delivered, 0 failed, 0 suppressed -> F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\docs\run_logs\alert_outbox.jsonl

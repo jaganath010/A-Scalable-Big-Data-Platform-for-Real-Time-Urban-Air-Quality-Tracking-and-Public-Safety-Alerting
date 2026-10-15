@@ -1,0 +1,211 @@
+26/10/15 06:47:02 INFO SparkContext: Running Spark version 3.5.6
+26/10/15 06:47:02 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/10/15 06:47:02 INFO SparkContext: Java version 11.0.27
+26/10/15 06:47:02 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/15 06:47:02 INFO ResourceUtils: ==============================================================
+26/10/15 06:47:02 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/15 06:47:02 INFO ResourceUtils: ==============================================================
+26/10/15 06:47:02 INFO SparkContext: Submitted application: AirQuality_Phase8b_LiveEnrichment
+26/10/15 06:47:02 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/15 06:47:02 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/10/15 06:47:02 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/15 06:47:02 INFO SecurityManager: Changing view acls to: root
+26/10/15 06:47:02 INFO SecurityManager: Changing modify acls to: root
+26/10/15 06:47:02 INFO SecurityManager: Changing view acls groups to: 
+26/10/15 06:47:02 INFO SecurityManager: Changing modify acls groups to: 
+26/10/15 06:47:02 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/15 06:47:02 INFO Utils: Successfully started service 'sparkDriver' on port 35413.
+26/10/15 06:47:02 INFO SparkEnv: Registering MapOutputTracker
+26/10/15 06:47:02 INFO SparkEnv: Registering BlockManagerMaster
+26/10/15 06:47:02 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/15 06:47:02 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/15 06:47:02 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/15 06:47:02 INFO DiskBlockManager: Created local directory at /scratch/blockmgr-a03e5e51-3b95-42bd-98f5-5710f7c2063f
+26/10/15 06:47:02 INFO MemoryStore: MemoryStore started with capacity 720.0 MiB
+26/10/15 06:47:02 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/15 06:47:02 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/15 06:47:03 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/15 06:47:03 INFO SparkContext: Added JAR file:/jars/scala-2.12/airquality-streaming_2.12-1.0.jar at spark://spark-client:35413/jars/airquality-streaming_2.12-1.0.jar with timestamp 1792046822096
+26/10/15 06:47:03 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.18.0.3:8032
+26/10/15 06:47:03 INFO Configuration: resource-types.xml not found
+26/10/15 06:47:03 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/10/15 06:47:03 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (2560 MB per container)
+26/10/15 06:47:03 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+26/10/15 06:47:03 INFO Client: Setting up container launch context for our AM
+26/10/15 06:47:03 INFO Client: Setting up the launch environment for our AM container
+26/10/15 06:47:03 INFO Client: Preparing resources for our AM container
+26/10/15 06:47:03 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+26/10/15 06:47:05 INFO Client: Uploading resource file:/scratch/spark-4bae0e0b-7dd1-444e-8a52-f7a233e79806/__spark_libs__1179401603039005289.zip -> hdfs://namenode:9000/user/root/.sparkStaging/application_1792046046524_0002/__spark_libs__1179401603039005289.zip
+26/10/15 06:47:19 INFO Client: Uploading resource file:/scratch/spark-4bae0e0b-7dd1-444e-8a52-f7a233e79806/__spark_conf__7741653796005162454.zip -> hdfs://namenode:9000/user/root/.sparkStaging/application_1792046046524_0002/__spark_conf__.zip
+26/10/15 06:47:19 INFO SecurityManager: Changing view acls to: root
+26/10/15 06:47:19 INFO SecurityManager: Changing modify acls to: root
+26/10/15 06:47:19 INFO SecurityManager: Changing view acls groups to: 
+26/10/15 06:47:19 INFO SecurityManager: Changing modify acls groups to: 
+26/10/15 06:47:19 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/15 06:47:19 INFO Client: Submitting application application_1792046046524_0002 to ResourceManager
+26/10/15 06:47:19 INFO YarnClientImpl: Submitted application application_1792046046524_0002
+26/10/15 06:47:20 INFO Client: Application report for application_1792046046524_0002 (state: ACCEPTED)
+26/10/15 06:47:20 INFO Client: 
+	 client token: N/A
+	 diagnostics: AM container is launched, waiting for AM container to Register with RM
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1792046839273
+	 final status: UNDEFINED
+	 tracking URL: http://resourcemanager:8088/proxy/application_1792046046524_0002/
+	 user: root
+26/10/15 06:47:28 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> nodemanager4, PROXY_URI_BASES -> http://nodemanager4:8088/proxy/application_1792046046524_0002), /proxy/application_1792046046524_0002
+26/10/15 06:47:28 INFO Client: Application report for application_1792046046524_0002 (state: RUNNING)
+26/10/15 06:47:28 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.18.0.11
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1792046839273
+	 final status: UNDEFINED
+	 tracking URL: http://resourcemanager:8088/proxy/application_1792046046524_0002/
+	 user: root
+26/10/15 06:47:28 INFO YarnClientSchedulerBackend: Application application_1792046046524_0002 has started running.
+26/10/15 06:47:28 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 39885.
+26/10/15 06:47:28 INFO NettyBlockTransferService: Server created on spark-client:39885
+26/10/15 06:47:28 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/15 06:47:28 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-client, 39885, None)
+26/10/15 06:47:28 INFO BlockManagerMasterEndpoint: Registering block manager spark-client:39885 with 720.0 MiB RAM, BlockManagerId(driver, spark-client, 39885, None)
+26/10/15 06:47:28 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-client, 39885, None)
+26/10/15 06:47:28 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-client, 39885, None)
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 06:47:28 INFO YarnSchedulerBackend$YarnSchedulerEndpoint: ApplicationMaster registered as NettyRpcEndpointRef(spark-client://YarnAM)
+26/10/15 06:47:33 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000000000(ns)
+==========================================================================
+  PHASE 8b - LIVE ENRICHMENT
+  cams     : hdfs://namenode:9000/user/hadoop/raw/live_cams/raw_json
+  weather  : hdfs://namenode:9000/user/hadoop/raw/live_weather/raw_json
+  profiles : hdfs://namenode:9000/user/hadoop/ref/city_profiles.csv
+  out      : hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched_rerun
+==========================================================================
+  manifest : hdfs://namenode:9000/user/hadoop/raw/live_cams/manifest.json
+  cams window    : 2026-09-04 00:00:00.0 .. 2026-09-06 23:00:00.0
+  weather window : 2026-09-04 00:00:00.0 .. 2026-09-06 23:00:00.0
+  joined rows    : 16,560
+  enriched rows : 16,560 across 230 cities
+  null audit on model-critical columns:
+26/10/15 06:50:39 ERROR TransportRequestHandler: Error sending result RpcResponse[requestId=7108264141734317946,body=NioManagedBuffer[buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]]] to /172.18.0.9:55552; closing connection
+io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:39 ERROR TransportRequestHandler: Error sending result RpcResponse[requestId=6654909928158170732,body=NioManagedBuffer[buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]]] to /172.18.0.9:55552; closing connection
+io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:39 ERROR TransportRequestHandler: Error sending result RpcResponse[requestId=6735453593283576487,body=NioManagedBuffer[buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]]] to /172.18.0.9:55552; closing connection
+io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:39 ERROR TransportRequestHandler: Error sending result RpcResponse[requestId=5305891148169027672,body=NioManagedBuffer[buf=java.nio.HeapByteBuffer[pos=0 lim=81 cap=156]]] to /172.18.0.9:55552; closing connection
+io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:39 ERROR TransportClient: Failed to send RPC RPC 7619145799150359606 to /172.18.0.9:55552: io.netty.channel.StacklessClosedChannelException
+io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:39 WARN BlockManagerMasterEndpoint: Error trying to remove broadcast 57 from block manager BlockManagerId(2, nodemanager2, 37645, None)
+java.io.IOException: Failed to send RPC RPC 7619145799150359606 to /172.18.0.9:55552: io.netty.channel.StacklessClosedChannelException
+	at org.apache.spark.network.client.TransportClient$RpcChannelListener.handleFailure(TransportClient.java:395)
+	at org.apache.spark.network.client.TransportClient$StdChannelListener.operationComplete(TransportClient.java:372)
+	at io.netty.util.concurrent.DefaultPromise.notifyListener0(DefaultPromise.java:590)
+	at io.netty.util.concurrent.DefaultPromise.notifyListenersNow(DefaultPromise.java:557)
+	at io.netty.util.concurrent.DefaultPromise.notifyListeners(DefaultPromise.java:492)
+	at io.netty.util.concurrent.DefaultPromise.setValue0(DefaultPromise.java:636)
+	at io.netty.util.concurrent.DefaultPromise.setFailure0(DefaultPromise.java:629)
+	at io.netty.util.concurrent.DefaultPromise.tryFailure(DefaultPromise.java:118)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.safeSetFailure(AbstractChannel.java:999)
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(AbstractChannel.java:860)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.write(DefaultChannelPipeline.java:1367)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWrite0(AbstractChannelHandlerContext.java:877)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeWriteAndFlush(AbstractChannelHandlerContext.java:940)
+	at io.netty.channel.AbstractChannelHandlerContext$WriteTask.run(AbstractChannelHandlerContext.java:1247)
+	at io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Unknown Source)
+Caused by: io.netty.channel.StacklessClosedChannelException
+	at io.netty.channel.AbstractChannel$AbstractUnsafe.write(Object, ChannelPromise)(Unknown Source)
+26/10/15 06:50:40 ERROR YarnScheduler: Lost executor 2 on nodemanager2: Container from a bad node: container_1792046046524_0002_01_000003 on host: nodemanager2. Exit status: 137. Diagnostics: [2026-10-15 06:50:39.745]Container killed on request. Exit code is 137
+[2026-10-15 06:50:39.819]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:50:39.884]Killed by external signal
+.
+26/10/15 06:50:40 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Requesting driver to remove executor 2 for reason Container from a bad node: container_1792046046524_0002_01_000003 on host: nodemanager2. Exit status: 137. Diagnostics: [2026-10-15 06:50:39.745]Container killed on request. Exit code is 137
+[2026-10-15 06:50:39.819]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:50:39.884]Killed by external signal
+.
+    pm25               nulls=0
+    temperature_c      nulls=0
+    pressure           nulls=0
+    traffic_index      nulls=0
+    climate_type       nulls=0
+26/10/15 06:51:08 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+26/10/15 06:51:16 ERROR YarnScheduler: Lost executor 1 on nodemanager4: Container from a bad node: container_1792046046524_0002_01_000002 on host: nodemanager4. Exit status: 137. Diagnostics: [2026-10-15 06:51:16.653]Container killed on request. Exit code is 137
+[2026-10-15 06:51:16.688]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:16.692]Killed by external signal
+.
+26/10/15 06:51:16 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Requesting driver to remove executor 1 for reason Container from a bad node: container_1792046046524_0002_01_000002 on host: nodemanager4. Exit status: 137. Diagnostics: [2026-10-15 06:51:16.653]Container killed on request. Exit code is 137
+[2026-10-15 06:51:16.688]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:16.692]Killed by external signal
+.
+26/10/15 06:51:16 WARN TaskSetManager: Lost task 1.0 in stage 60.0 (TID 606) (nodemanager4 executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container from a bad node: container_1792046046524_0002_01_000002 on host: nodemanager4. Exit status: 137. Diagnostics: [2026-10-15 06:51:16.653]Container killed on request. Exit code is 137
+[2026-10-15 06:51:16.688]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:16.692]Killed by external signal
+.
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+-------+-----------------+------------------+-----------+--------------+
+|station_id   |state  |city    |from_date          |pm25|pm10|no2 |so2|co   |o3  |nh3 |wd_degree|solar_radiation|pressure   |temperature_c|humidity_percent|wind_speed_ms|rainfall_mm|weather_condition|traffic_index|is_rush_hour|year|month|day|hour|day_of_week|is_weekend|season |climate_type     |urbanization_index|data_source|source_station|
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+-------+-----------------+------------------+-----------+--------------+
+|LIVE_AGARTALA|Tripura|Agartala|2026-09-04 00:00:00|11.9|13.5|10.9|2.5|0.184|52.0|NULL|141.0    |0.0            |753.81231  |24.9         |96.0            |3.73         |0.6        |rainy            |41.70948432  |0.0         |2026|9    |4  |0   |4          |0.0       |monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-09-04 01:00:00|11.6|13.3|11.2|2.7|0.174|49.0|NULL|142.0    |0.0            |753.5872914|24.8         |97.0            |3.42         |0.5        |rainy            |41.70948432  |0.0         |2026|9    |4  |1   |4          |0.0       |monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-09-04 02:00:00|11.1|12.6|11.4|2.8|0.166|47.0|NULL|143.0    |0.0            |753.437279 |24.8         |97.0            |3.39         |0.0        |humid            |37.78033     |0.0         |2026|9    |4  |2   |4          |0.0       |monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-09-04 03:00:00|10.6|12.1|11.7|2.9|0.164|44.0|NULL|147.0    |0.0            |753.437279 |24.6         |98.0            |3.22         |0.0        |humid            |37.78033     |0.0         |2026|9    |4  |3   |4          |0.0       |monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-09-04 04:00:00|10.0|11.4|12.0|3.1|0.166|41.0|NULL|143.0    |0.0            |753.7373038|24.6         |98.0            |3.32         |0.0        |humid            |37.78033     |0.0         |2026|9    |4  |4   |4          |0.0       |monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
++-------------+-------+--------+-------------------+----+----+----+---+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+-------+-----------------+------------------+-----------+--------------+
+only showing top 5 rows
+
+26/10/15 06:51:50 ERROR YarnScheduler: Lost executor 3 on nodemanager1: Container from a bad node: container_1792046046524_0002_01_000004 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 06:51:50.462]Container killed on request. Exit code is 137
+[2026-10-15 06:51:50.491]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:50.495]Killed by external signal
+.
+26/10/15 06:51:50 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Requesting driver to remove executor 3 for reason Container from a bad node: container_1792046046524_0002_01_000004 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 06:51:50.462]Container killed on request. Exit code is 137
+[2026-10-15 06:51:50.491]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:50.495]Killed by external signal
+.
+26/10/15 06:51:50 WARN TaskSetManager: Lost task 6.0 in stage 65.0 (TID 639) (nodemanager1 executor 3): ExecutorLostFailure (executor 3 exited caused by one of the running tasks) Reason: Container from a bad node: container_1792046046524_0002_01_000004 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 06:51:50.462]Container killed on request. Exit code is 137
+[2026-10-15 06:51:50.491]Container exited with a non-zero exit code 137. 
+[2026-10-15 06:51:50.495]Killed by external signal
+.
+  wrote -> hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched_rerun

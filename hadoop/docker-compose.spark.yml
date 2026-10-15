@@ -1,0 +1,98 @@
+# ==============================================================================
+# SPARK CLIENT - runs INSIDE the cluster network
+# 23AID302 - Big Data Analytics
+#
+# Brought up alongside the HDFS cluster:
+#   docker compose -f docker-compose.yml -f docker-compose.spark.yml up -d
+#
+# ------------------------------------------------------------------------------
+# WHY THIS CONTAINER HAS TO EXIST
+# ------------------------------------------------------------------------------
+# A Spark job on the Windows host CANNOT write to this HDFS cluster, and the
+# reason is structural rather than a misconfiguration.
+#
+# An HDFS write happens in two stages. The client asks the NameNode where the
+# block should go, then contacts that DataNode DIRECTLY to stream the bytes.
+# Port 9000 is published, so stage one works from Windows. Stage two does not:
+# the NameNode answers with container-internal addresses such as
+# 172.21.0.3:9866, which the host cannot route to, and port 9866 is not
+# published. Publishing it for four DataNodes would need a distinct host port
+# per node plus a per-node dfs.datanode.address override.
+#
+# Measured symptom from the host:
+#   java.io.IOException: Could not get block locations. Source file
+#   "/user/hadoop/lakehouse/clean/_temporary/..." - Aborting...
+#
+# From inside the network the DataNodes are ordinary peers and it simply works.
+# This is also how real deployments are laid out: Spark runs on the cluster, not
+# outside it.
+# ==============================================================================
+
+services:
+
+  spark-client:
+    image: apache/spark:3.5.6
+    container_name: aq-spark
+    hostname: spark-client
+    user: root
+    # Keep the container alive so jobs can be submitted with `docker exec`.
+    # Without a long-running command it would start, find nothing to do, exit.
+    command: ["sleep", "infinity"]
+    depends_on:
+      - namenode
+    environment:
+      # Where the pipeline reads and writes. Note `namenode`, not `localhost` -
+      # inside the Docker network the service name resolves directly.
+      AQ_LAKE: "hdfs://namenode:9000/user/hadoop"
+      AQ_SHUFFLE_PARTITIONS: "64"
+      # Lets Spark pick up core-site.xml / hdfs-site.xml from the mount below,
+      # so hdfs:// URIs resolve without repeating the config on every submit.
+      HADOOP_CONF_DIR: "/opt/hadoop-conf"
+      # Shuffle spill and scratch. Backed by the spark_scratch NAMED VOLUME
+      # mounted below - see the reasoning there, which records why both the
+      # obvious alternatives were wrong.
+      #
+      # WATCH C: DURING LONG JOBS. A named volume lives in the vhdx, so spill
+      # consumes C:, and the vhdx never shrinks on its own:
+      #     docker system df -v
+      # Cleaning up between runs:
+      #     docker compose down && docker volume rm hadoop_spark_scratch
+      SPARK_LOCAL_DIRS: "/scratch"
+    volumes:
+      # The compiled Scala job. `sbt package` on the host writes here, and the
+      # container sees the new jar immediately - no rebuild, no image push.
+      - ../scala/streaming/target:/jars
+      # The PySpark scripts, so Python jobs can also run on-cluster if needed.
+      - ../scripts:/scripts
+      # Cluster configuration, so hdfs:// works without extra flags.
+      - ./config:/opt/hadoop-conf
+      # The raw dataset, for jobs that read from the local filesystem.
+      - "F:/SEM 5 NOTES/Big Data/Project_Final/airquality_expanded:/data"
+      # Spark scratch. A NAMED VOLUME, deliberately - not a bind mount.
+      #
+      # This has now been wrong in both directions, so the reasoning matters:
+      #
+      #   /tmp/spark (container filesystem)  - fast, but it is inside the vhdx
+      #     on C: and nothing bounds it. 40+ GB of shuffle spill filled C: to
+      #     zero and stopped the Docker daemon.
+      #
+      #   D:/spark_scratch (bind mount)      - safe for C:, but Windows-to-Linux
+      #     bind mounts go through virtiofs, which is slow for the thousands of
+      #     small files shuffle spill creates. Measured: a job that took 26.5
+      #     minutes with container-local scratch was still running at 76.
+      #
+      #   named volume (this)                - lives in the vhdx like the first
+      #     option, so it keeps the speed, but Docker manages it and it can be
+      #     reclaimed with `docker volume rm`. C: must still be watched during
+      #     long jobs; `docker system df -v` shows its size.
+      - spark_scratch:/scratch
+    ports:
+      - "4050:4040"   # Spark UI for jobs submitted here (4040 is often taken
+                      # on the host by another Spark session)
+    restart: unless-stopped
+
+volumes:
+  # Spark shuffle spill and scratch. Declared as a named volume so Docker owns
+  # it and it can be reclaimed with `docker volume rm hadoop_spark_scratch`
+  # without touching HDFS, which lives on bind mounts under D:\hdfs.
+  spark_scratch:

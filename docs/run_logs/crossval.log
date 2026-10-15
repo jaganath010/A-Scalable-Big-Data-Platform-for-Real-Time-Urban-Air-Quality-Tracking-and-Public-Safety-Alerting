@@ -1,0 +1,1294 @@
+﻿python : Setting default log level to "WARN".
+At line:4 char:1
++ python 04_cross_validate_overlap.py `
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Setting default log level to "WARN".:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+
+[Stage 1:>                                                        (0 + 12) / 45]
+
+[Stage 1:==============>                                         (12 + 12) / 45]
+
+[Stage 1:================================>                       (26 + 12) / 45]
+
+                                                                                
+
+[Stage 4:=============>                                          (11 + 12) / 45]
+
+[Stage 4:===========================>                            (22 + 12) / 45]
+
+[Stage 4:===========================================>            (35 + 10) / 45]
+
+                                                                                
+
+[Stage 10:===============>                                       (13 + 12) / 45]
+
+[Stage 10:=============================>                         (24 + 12) / 45]
+
+[Stage 10:=====================================>                 (31 + 12) / 45]
+
+[Stage 10:====================================================>   (42 + 3) / 45]
+
+                                                                                
+
+[Stage 13:==============>                                        (12 + 12) / 45]
+
+[Stage 13:==========================>                            (22 + 12) / 45]
+
+[Stage 13:==============================>                        (25 + 12) / 45]
+
+[Stage 13:==========================================>            (35 + 10) / 45]
+
+                                                                                
+
+[Stage 31:=======================>                               (19 + 12) / 45]
+
+[Stage 31:=============================>                         (24 + 12) / 45]
+
+[Stage 31:==========================================>            (35 + 10) / 45]
+
+                                                                                
+
+[Stage 40:========================>                              (20 + 12) / 45]
+
+[Stage 40:==================================>                    (28 + 12) / 45]
+
+[Stage 40:=========================================>             (34 + 11) / 45]
+
+                                                                                
+
+[Stage 49:=========================>                             (21 + 12) / 45]
+
+[Stage 49:=============================>                         (24 + 14) / 45]
+
+[Stage 49:==========================================>            (35 + 10) / 45]
+
+                                                                                
+
+[Stage 58:==============>                                        (12 + 12) / 45]
+
+[Stage 58:==========================>                            (22 + 12) / 45]
+
+[Stage 58:=============================>                         (24 + 12) / 45]
+
+[Stage 58:==============================================>         (37 + 8) / 45]
+
+                                                                                
+
+[Stage 67:===============>                                       (13 + 12) / 45]
+
+[Stage 67:=============================>                         (24 + 12) / 45]
+
+[Stage 67:=====================================>                 (31 + 12) / 45]
+
+[Stage 67:===============================================>        (38 + 7) / 45]
+
+                                                                                
+
+[Stage 76:============================>                          (23 + 12) / 45]
+
+[Stage 76:=============================>                         (24 + 12) / 45]
+
+[Stage 76:===============================================>        (38 + 7) / 45]
+
+                                                                                
+
+[Stage 82:>               (0 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:==>             (7 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:====>          (12 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:=====>         (15 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:========>      (24 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:========>      (25 + 12) / 45][Stage 83:>                (0 + 0) / 45]
+
+[Stage 82:===========>   (35 + 10) / 45][Stage 83:>                (0 + 2) / 45]
+
+[Stage 82:=============>  (39 + 6) / 45][Stage 83:======>         (17 + 6) / 45]
+
+[Stage 82:===============>(43 + 2) / 45][Stage 83:===============>(43 + 2) / 45]
+
+[Stage 83:=====================================================>  (43 + 2) / 45]
+
+[Stage 83:======================================================> (44 + 1) / 45]
+
+[Stage 86:>                                                       (0 + 12) / 64]
+
+[Stage 86:==========>                                            (12 + 12) / 64]
+
+[Stage 86:===================>                                   (23 + 12) / 64]
+
+[Stage 86:=============================>                         (34 + 12) / 64]
+
+[Stage 86:======================================>                (45 + 12) / 64]
+
+[Stage 86:===================================================>    (59 + 5) / 64]
+
+                                                                                
+
+[Stage 178:===>           (9 + 12) / 45][Stage 179:>               (0 + 0) / 45]
+
+[Stage 178:====>         (13 + 12) / 45][Stage 179:>               (0 + 0) / 45]
+
+[Stage 178:=======>      (23 + 12) / 45][Stage 179:>               (0 + 0) / 45]
+
+[Stage 178:=========>    (30 + 12) / 45][Stage 179:>               (0 + 0) / 45]
+
+[Stage 178:============>  (38 + 7) / 45][Stage 179:====>          (12 + 5) / 45]
+
+[Stage 179:====================================================>  (43 + 2) / 45]
+
+[Stage 179:=====================================================> (44 + 1) / 45]
+
+[Stage 185:>                                                      (0 + 12) / 13]
+
+[Stage 185:=====================>                                  (5 + 8) / 13]
+
+                                                                                
+
+[Stage 191:==============>                                       (12 + 12) / 45]
+
+[Stage 191:======>       (22 + 12) / 45][Stage 192:>               (0 + 0) / 45]
+
+[Stage 191:=========>    (29 + 12) / 45][Stage 192:>               (0 + 0) / 45]
+
+[Stage 191:============>  (38 + 7) / 45][Stage 192:=>              (3 + 5) / 45]
+
+[Stage 191:==============>(44 + 1) / 45][Stage 192:==============>(42 + 3) / 45]
+
+[Stage 192:====================================================>  (43 + 2) / 45]
+
+[Stage 192:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 204:==============>                                       (12 + 12) / 45]
+
+[Stage 204:======>       (21 + 12) / 45][Stage 205:>               (0 + 0) / 45]
+
+[Stage 204:========>     (28 + 12) / 45][Stage 205:>               (0 + 0) / 45]
+
+[Stage 204:============>  (38 + 7) / 45][Stage 205:===>           (11 + 5) / 45]
+
+[Stage 204:==============>(44 + 1) / 45][Stage 205:==============>(43 + 2) / 45]
+
+[Stage 205:====================================================>  (43 + 2) / 45]
+
+[Stage 205:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 217:===============>                                      (13 + 12) / 45]
+
+[Stage 217:======>       (22 + 12) / 45][Stage 218:>               (0 + 0) / 45]
+
+[Stage 217:=========>    (29 + 12) / 45][Stage 218:>               (0 + 0) / 45]
+
+[Stage 217:=============> (39 + 6) / 45][Stage 218:===>           (10 + 6) / 45]
+
+[Stage 217:==============>(42 + 3) / 45][Stage 218:==============>(43 + 2) / 45]
+
+[Stage 218:====================================================>  (43 + 2) / 45]
+
+[Stage 218:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 230:===============>                                      (13 + 12) / 45]
+
+[Stage 230:======>       (20 + 12) / 45][Stage 231:>               (0 + 0) / 45]
+
+[Stage 230:=======>      (25 + 12) / 45][Stage 231:>               (0 + 0) / 45]
+
+[Stage 230:==========>   (35 + 10) / 45][Stage 231:>               (2 + 2) / 45]
+
+[Stage 230:==============>(43 + 2) / 45][Stage 231:=============> (41 + 4) / 45]
+
+[Stage 231:====================================================>  (43 + 2) / 45]
+
+[Stage 231:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 243:==============>                                       (12 + 12) / 45]
+
+[Stage 243:======>       (21 + 12) / 45][Stage 244:>               (0 + 0) / 45]
+
+[Stage 243:========>     (27 + 12) / 45][Stage 244:>               (0 + 0) / 45]
+
+[Stage 243:============>  (37 + 8) / 45][Stage 244:>               (0 + 4) / 45]
+
+[Stage 243:==============>(43 + 2) / 45][Stage 244:==============>(43 + 2) / 45]
+
+[Stage 244:====================================================>  (43 + 2) / 45]
+
+[Stage 244:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 256:====>         (13 + 12) / 45][Stage 257:>               (0 + 0) / 45]
+
+[Stage 256:=======>      (23 + 12) / 45][Stage 257:>               (0 + 0) / 45]
+
+[Stage 256:========>     (28 + 12) / 45][Stage 257:>               (0 + 0) / 45]
+
+[Stage 256:============>  (38 + 7) / 45][Stage 257:=>              (3 + 5) / 45]
+
+[Stage 256:==============>(44 + 1) / 45][Stage 257:==============>(43 + 2) / 45]
+
+[Stage 257:====================================================>  (43 + 2) / 45]
+
+[Stage 257:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 269:>              (0 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:>              (1 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:==>            (6 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:==>            (8 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:===>          (10 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:===>          (12 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:====>         (13 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:====>         (16 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:======>       (20 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:======>       (22 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:=======>      (24 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:========>     (26 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:=========>    (31 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:=========>    (32 + 12) / 45][Stage 270:>               (0 + 0) / 45]
+
+[Stage 269:============>  (36 + 9) / 45][Stage 270:=====>         (15 + 3) / 45]
+
+[Stage 269:============>  (36 + 9) / 45][Stage 270:==========>    (31 + 3) / 45]
+
+[Stage 269:============>  (37 + 8) / 45][Stage 270:==============>(43 + 2) / 45]
+
+[Stage 269:============>  (38 + 7) / 45][Stage 270:==============>(43 + 2) / 45]
+
+[Stage 269:=============> (41 + 4) / 45][Stage 270:==============>(43 + 2) / 45]
+
+[Stage 269:==============>(42 + 3) / 45][Stage 270:==============>(43 + 2) / 45]
+
+[Stage 270:====================================================>  (43 + 2) / 45]
+
+[Stage 270:=====================================================> (44 + 1) / 45]
+
+[Stage 273:============================>                         (34 + 12) / 64]
+
+[Stage 273:======================================>               (46 + 12) / 64]
+
+                                                                                
+
+[Stage 365:>              (0 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:=>             (3 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:===>           (9 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:===>          (12 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:====>         (13 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:======>       (21 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:=======>      (23 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:=======>      (24 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:========>     (26 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:=========>    (31 + 12) / 45][Stage 366:>               (0 + 0) / 45]
+
+[Stage 365:============>  (36 + 9) / 45][Stage 366:===>           (11 + 3) / 45]
+
+[Stage 365:============>  (38 + 7) / 45][Stage 366:============>  (37 + 5) / 45]
+
+[Stage 365:==============>(42 + 3) / 45][Stage 366:==============>(43 + 2) / 45]
+
+[Stage 366:====================================================>  (43 + 2) / 45]
+
+[Stage 366:=====================================================> (44 + 1) / 45]
+
+[Stage 372:==================================================>    (12 + 1) / 13]
+
+                                                                                
+
+[Stage 378:>                                                      (0 + 12) / 45]
+
+[Stage 378:==>            (7 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:===>          (10 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:===>          (12 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:====>         (13 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:=====>        (19 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:======>       (22 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:=======>      (23 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:=======>      (25 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:=========>    (30 + 12) / 45][Stage 379:>               (0 + 0) / 45]
+
+[Stage 378:============>  (36 + 9) / 45][Stage 379:=>              (5 + 3) / 45]
+
+[Stage 378:============>  (36 + 9) / 45][Stage 379:========>      (24 + 4) / 45]
+
+[Stage 378:=============> (40 + 5) / 45][Stage 379:==============>(43 + 2) / 45]
+
+[Stage 378:==============>(43 + 2) / 45][Stage 379:==============>(43 + 2) / 45]
+
+[Stage 379:====================================================>  (43 + 2) / 45]
+
+[Stage 379:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 391:=>             (5 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:==>            (8 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:===>          (12 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:=====>        (17 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:======>       (20 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:=======>      (24 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:=========>    (30 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:=========>    (32 + 12) / 45][Stage 392:>               (0 + 0) / 45]
+
+[Stage 391:============>  (36 + 9) / 45][Stage 392:=====>         (17 + 3) / 45]
+
+[Stage 391:=============> (40 + 5) / 45][Stage 392:==============>(43 + 2) / 45]
+
+[Stage 391:==============>(43 + 2) / 45][Stage 392:==============>(43 + 2) / 45]
+
+[Stage 392:====================================================>  (43 + 2) / 45]
+
+[Stage 392:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 404:>                                                      (0 + 12) / 45]
+
+[Stage 404:==>            (7 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:===>          (12 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:====>         (14 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:======>       (20 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:=======>      (23 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:=======>      (24 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:========>     (27 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:=========>    (31 + 12) / 45][Stage 405:>               (0 + 0) / 45]
+
+[Stage 404:============>  (36 + 9) / 45][Stage 405:=>              (4 + 3) / 45]
+
+[Stage 404:============>  (38 + 7) / 45][Stage 405:==========>    (30 + 5) / 45]
+
+[Stage 404:=============> (40 + 5) / 45][Stage 405:==============>(43 + 2) / 45]
+
+[Stage 405:====================================================>  (43 + 2) / 45]
+
+[Stage 405:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 417:=>             (3 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:===>           (9 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:===>          (12 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:====>         (14 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:======>       (21 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:======>       (22 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:=======>      (24 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:========>     (27 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:=========>    (32 + 12) / 45][Stage 418:>               (0 + 0) / 45]
+
+[Stage 417:============>  (36 + 9) / 45][Stage 418:====>          (12 + 3) / 45]
+
+[Stage 417:============>  (38 + 7) / 45][Stage 418:==========>    (32 + 5) / 45]
+
+[Stage 417:=============> (41 + 4) / 45][Stage 418:==============>(43 + 2) / 45]
+
+[Stage 418:====================================================>  (43 + 2) / 45]
+
+[Stage 418:=====================================================> (44 + 1) / 45]
+
+[Stage 424:==================================================>    (12 + 1) / 13]
+
+                                                                                
+
+[Stage 430:=>             (5 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:==>            (7 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:===>          (12 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:====>         (15 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:======>       (20 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:=======>      (23 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:=======>      (24 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:=========>    (30 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:=========>    (32 + 12) / 45][Stage 431:>               (0 + 0) / 45]
+
+[Stage 430:============>  (36 + 9) / 45][Stage 431:====>          (14 + 3) / 45]
+
+[Stage 430:=============> (39 + 6) / 45][Stage 431:=============> (40 + 5) / 45]
+
+[Stage 430:==============>(43 + 2) / 45][Stage 431:==============>(43 + 2) / 45]
+
+[Stage 431:====================================================>  (43 + 2) / 45]
+
+[Stage 431:=====================================================> (44 + 1) / 45]
+
+[Stage 437:==================================================>    (12 + 1) / 13]
+
+                                                                                
+
+[Stage 443:>                                                      (0 + 12) / 45]
+
+[Stage 443:=>             (5 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:===>          (11 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:===>          (12 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:====>         (14 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:======>       (21 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:=======>      (23 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:=======>      (25 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:========>     (27 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:=========>    (31 + 12) / 45][Stage 444:>               (0 + 0) / 45]
+
+[Stage 443:============>  (36 + 9) / 45][Stage 444:==>             (8 + 3) / 45]
+
+[Stage 443:=============> (39 + 6) / 45][Stage 444:=========>     (27 + 6) / 45]
+
+[Stage 443:=============> (40 + 5) / 45][Stage 444:==============>(43 + 2) / 45]
+
+[Stage 444:====================================================>  (43 + 2) / 45]
+
+[Stage 444:=====================================================> (44 + 1) / 45]
+
+                                                                                
+
+[Stage 456:==============>                                       (12 + 12) / 45]
+
+[Stage 456:====>         (15 + 12) / 45][Stage 457:>               (0 + 0) / 45]
+
+[Stage 456:=======>      (25 + 12) / 45][Stage 457:>               (0 + 0) / 45]
+
+[Stage 456:=========>    (32 + 12) / 45][Stage 457:>               (0 + 0) / 45]
+
+[Stage 456:=============> (40 + 5) / 45][Stage 457:========>      (25 + 7) / 45]
+
+[Stage 457:====================================================>  (43 + 2) / 45]
+
+[Stage 457:=====================================================> (44 + 1) / 45]
+
+[Stage 460:>                                                      (0 + 12) / 13]
+
+[Stage 460:============>                                          (3 + 10) / 13]
+
+[Stage 460:==================================================>    (12 + 1) / 13]
+
+                                                                                
+
+[Stage 465:===>          (12 + 12) / 45][Stage 466:>               (0 + 0) / 45]
+
+[Stage 465:=====>        (19 + 12) / 45][Stage 466:>               (0 + 0) / 45]
+
+[Stage 465:=======>      (24 + 12) / 45][Stage 466:>               (0 + 0) / 45]
+
+[Stage 465:=========>    (32 + 12) / 45][Stage 466:>               (0 + 0) / 45]
+
+[Stage 465:=============> (39 + 6) / 45][Stage 466:=====>         (17 + 6) / 45]
+
+[Stage 466:====================================================>  (43 + 2) / 45]
+
+[Stage 466:=====================================================> (44 + 1) / 45]
+
+[Stage 469:============>                                          (3 + 10) / 13]
+
+                                                                                
+
+[Stage 474:>                                                        (0 + 1) / 1]
+26/09/06 00:11:57 ERROR Utils: Aborting task
+org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+	... 31 more
+26/09/06 00:11:57 ERROR FileFormatWriter: Job job_202609060011555606713607264813351_0474 aborted.
+26/09/06 00:11:57 ERROR Executor: Exception in task 0.0 in stage 474.0 (TID 4952)
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	... 17 more
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+	... 31 more
+26/09/06 00:11:57 WARN TaskSetManager: Lost task 0.0 in stage 474.0 (TID 4952) (JAGANATH.amritanet.edu executor 
+driver): org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 
+NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	... 17 more
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+	... 31 more
+
+26/09/06 00:11:57 ERROR TaskSetManager: Task 0 in stage 474.0 failed 1 times; aborting job
+26/09/06 00:11:57 ERROR FileFormatWriter: Aborting job d373b084-c8d7-40d2-9fba-6674934afcaf.
+org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 474.0 failed 1 times, most recent 
+failure: Lost task 0.0 in stage 474.0 (TID 4952) (JAGANATH.amritanet.edu executor driver): 
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	... 17 more
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+	... 31 more
+
+Driver stacktrace:
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)
+	at scala.Option.foreach(Option.scala:407)
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:995)
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$4(FileFormatWriter.scala:307)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.
+scala:190)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecuti
+on.scala:107)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+	at 
+org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+	at 
+org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$
+$super$transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+	at org.apache.spark.sql.DataFrameWriter.csv(DataFrameWriter.scala:860)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+	at py4j.Gateway.invoke(Gateway.java:282)
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 
+NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	... 1 more
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+	... 17 more
+Caused by: java.io.EOFException
+	at java.io.DataInputStream.readInt(Unknown Source)
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+	... 31 more
+==============================================================================
+OVERLAP WINDOW: 2022-08-01 -> 2023-04-01 (exclusive)
+==============================================================================
+  real (CPCB)      rows=   2,711,957  cities=241
+  synthetic        rows=  21,695,656  cities=241
+  cams_history     rows=   1,341,360  cities=230
+
+--- mean value by source (unit sanity check) ---
+pollutant          real    synthetic         cams
+pm25              68.31        68.53        48.38
+pm10             135.13       135.58        72.81
+no2               27.38        27.47        25.35
+so2               13.52        13.56        23.80
+o3                27.61        27.70        75.86
+co                 0.95         0.95       566.08   <-- UNIT MISMATCH (mg/m3 vs ug/m3)
+
+--- real vs CAMS: 1,152,707 matched city-hours ---
+pollutant           n     corr       bias        mae       rmse   mean_str  mean_cams
+pm25          967,589    0.565       8.55      29.13      50.75      59.96      51.41
+pm10          968,532    0.558      44.89      60.84      97.18     121.82      76.93
+no2           997,856    0.219      -2.07      22.85      35.24      24.87      26.94
+so2           981,314    0.083     -10.05      21.52      43.32      14.60      24.65
+o3            957,350    0.361     -48.54      53.26      67.17      28.54      77.07
+co*           986,745    0.264     282.87                         (* structured mg/m3 x1000 -> ug/m3)
+  timezone check (real, pm25 corr by hour offset): -3h=0.536  -2h=0.547  -1h=0.557  +0h=0.565  +1h=0.566  +2h=0.560  +3h=0.546  
+    -> peak at +1h  *** NOT 0h - timezone assumption may be wrong ***
+
+--- synthetic vs CAMS: 1,152,707 matched city-hours ---
+pollutant           n     corr       bias        mae       rmse   mean_str  mean_cams
+pm25          967,589    0.564       8.75      29.24      50.95      60.16      51.41
+pm10          968,532    0.558      45.28      61.14      97.68     122.21      76.93
+no2           997,856    0.219      -1.99      22.88      35.27      24.95      26.94
+so2           981,314    0.083     -10.00      21.54      43.32      14.64      24.65
+o3            957,350    0.361     -48.44      53.20      67.12      28.63      77.07
+co*           986,745    0.264     285.75                         (* structured mg/m3 x1000 -> ug/m3)
+  timezone check (synthetic, pm25 corr by hour offset): -3h=0.536  -2h=0.547  -1h=0.557  +0h=0.564  +1h=0.566  +2h=0.560  +3h=0.546  
+    -> peak at +1h  *** NOT 0h - timezone assumption may be wrong ***
+
+--- per-city pm25 correlation (real vs CAMS), worst and best 10 ---
+  worst 10:
++--------------+----+---------------------+-------------------+
+|city          |n   |corr                 |bias               |
++--------------+----+---------------------+-------------------+
+|Pune          |2551|-0.2094282166400589  |51.36250199734932  |
+|Nandesari     |3712|-0.12582084296855522 |-1.420942887931036 |
+|Silchar       |1747|-0.048596313059064145|-33.26572524327419 |
+|Chamarajanagar|5542|2.652287636100543E-4 |-5.073031396607723 |
+|Shivamogga    |5663|0.026450224548927356 |0.10402436870916446|
+|Srinagar      |4318|0.04545895646815978  |-26.69354099119963 |
+|Bilaspur      |5560|0.05060217681862861  |-21.284964028776976|
+|Brajrajnagar  |2876|0.056317069848054055 |-8.682851182197494 |
+|Kochi         |4428|0.057834466397664513 |46.64889114724481  |
+|Sri Ganganagar|568 |0.10459783539695026  |35.73521126760563  |
++--------------+----+---------------------+-------------------+
+only showing top 10 rows
+
+  best 10:
++-------------+----+------------------+-------------------+
+|city         |n   |corr              |bias               |
++-------------+----+------------------+-------------------+
+|Howrah       |5752|0.7940999084114847|-12.433898846777929|
+|Kolkata      |5755|0.7919106641023126|-22.102548893176518|
+|Gwalior      |5668|0.7890329519570495|32.758265702187714 |
+|Amaravati    |5438|0.7881937048615184|0.7429168039720484 |
+|Bhagalpur    |5673|0.7712889290914363|34.50393688884132  |
+|Haveri       |5023|0.7682574163910794|15.07393987656779  |
+|Yadgir       |5384|0.7640883007944803|5.577072808320952  |
+|Greater Noida|5739|0.7619918727408345|15.177543706801417 |
+|Hubballi     |5381|0.7571462168269788|16.165580963885276 |
+|Gaya         |5753|0.7498803114671474|13.348287336034474 |
++-------------+----+------------------+-------------------+
+only showing top 10 rows
+
+Traceback (most recent call last):
+  File "F:\SEM 5 NOTES\Big 
+Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\04_cross_validate_overlap.py", line 
+234, in <module>
+    main()
+  File "F:\SEM 5 NOTES\Big 
+Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\04_cross_validate_overlap.py", line 
+225, in main
+    .option("header", "true").csv(os.path.join(args.out, "summary"))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\jagan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packa
+ges\Python312\site-packages\pyspark\sql\readwriter.py", line 1864, in csv
+    self._jwrite.csv(path)
+  File "C:\Users\jagan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packa
+ges\Python312\site-packages\py4j\java_gateway.py", line 1322, in __call__
+    return_value = get_return_value(
+                   ^^^^^^^^^^^^^^^^^
+  File "C:\Users\jagan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packa
+ges\Python312\site-packages\pyspark\errors\exceptions\captured.py", line 179, in deco
+    return f(*a, **kw)
+           ^^^^^^^^^^^
+  File "C:\Users\jagan\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packa
+ges\Python312\site-packages\py4j\protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o1103.csv.
+: org.apache.spark.SparkException: Job aborted due to stage failure: Task 0 in stage 474.0 failed 1 times, most recent 
+failure: Lost task 0.0 in stage 474.0 (TID 4952) (JAGANATH.amritanet.edu executor driver): 
+org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+
+	at java.lang.Thread.run(Unknown Source)
+
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+
+	... 17 more
+
+Caused by: java.io.EOFException
+
+	at java.io.DataInputStream.readInt(Unknown Source)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+
+	... 31 more
+
+
+Driver stacktrace:
+
+	at org.apache.spark.scheduler.DAGScheduler.failJobAndIndependentStages(DAGScheduler.scala:2898)
+
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2(DAGScheduler.scala:2834)
+
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$abortStage$2$adapted(DAGScheduler.scala:2833)
+
+	at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+
+	at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+
+	at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+
+	at org.apache.spark.scheduler.DAGScheduler.abortStage(DAGScheduler.scala:2833)
+
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1(DAGScheduler.scala:1253)
+
+	at org.apache.spark.scheduler.DAGScheduler.$anonfun$handleTaskSetFailed$1$adapted(DAGScheduler.scala:1253)
+
+	at scala.Option.foreach(Option.scala:407)
+
+	at org.apache.spark.scheduler.DAGScheduler.handleTaskSetFailed(DAGScheduler.scala:1253)
+
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.doOnReceive(DAGScheduler.scala:3102)
+
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3036)
+
+	at org.apache.spark.scheduler.DAGSchedulerEventProcessLoop.onReceive(DAGScheduler.scala:3025)
+
+	at org.apache.spark.util.EventLoop$$anon$1.run(EventLoop.scala:49)
+
+	at org.apache.spark.scheduler.DAGScheduler.runJob(DAGScheduler.scala:995)
+
+	at org.apache.spark.SparkContext.runJob(SparkContext.scala:2393)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeWrite$4(FileFormatWriter.scala:307)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.writeAndCommit(FileFormatWriter.scala:271)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeWrite(FileFormatWriter.scala:304)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:190)
+
+	at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.
+scala:190)
+
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:113)
+
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:111)
+
+	at org.apache.spark.sql.execution.command.DataWritingCommandExec.executeCollect(commands.scala:125)
+
+	at org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.$anonfun$applyOrElse$1(QueryExecuti
+on.scala:107)
+
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$6(SQLExecution.scala:125)
+
+	at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:201)
+
+	at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:108)
+
+	at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:900)
+
+	at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:66)
+
+	at 
+org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:107)
+
+	at 
+org.apache.spark.sql.execution.QueryExecution$$anonfun$eagerlyExecuteCommands$1.applyOrElse(QueryExecution.scala:98)
+
+	at org.apache.spark.sql.catalyst.trees.TreeNode.$anonfun$transformDownWithPruning$1(TreeNode.scala:461)
+
+	at org.apache.spark.sql.catalyst.trees.CurrentOrigin$.withOrigin(origin.scala:76)
+
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDownWithPruning(TreeNode.scala:461)
+
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.org$apache$spark$sql$catalyst$plans$logical$AnalysisHelper$
+$super$transformDownWithPruning(LogicalPlan.scala:32)
+
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning(AnalysisHelper.scala:267)
+
+	at org.apache.spark.sql.catalyst.plans.logical.AnalysisHelper.transformDownWithPruning$(AnalysisHelper.scala:263)
+
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+
+	at org.apache.spark.sql.catalyst.plans.logical.LogicalPlan.transformDownWithPruning(LogicalPlan.scala:32)
+
+	at org.apache.spark.sql.catalyst.trees.TreeNode.transformDown(TreeNode.scala:437)
+
+	at org.apache.spark.sql.execution.QueryExecution.eagerlyExecuteCommands(QueryExecution.scala:98)
+
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted$lzycompute(QueryExecution.scala:85)
+
+	at org.apache.spark.sql.execution.QueryExecution.commandExecuted(QueryExecution.scala:83)
+
+	at org.apache.spark.sql.execution.QueryExecution.assertCommandExecuted(QueryExecution.scala:142)
+
+	at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:869)
+
+	at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:391)
+
+	at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:364)
+
+	at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:243)
+
+	at org.apache.spark.sql.DataFrameWriter.csv(DataFrameWriter.scala:860)
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+
+	at java.lang.reflect.Method.invoke(Unknown Source)
+
+	at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+
+	at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:374)
+
+	at py4j.Gateway.invoke(Gateway.java:282)
+
+	at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+
+	at py4j.commands.CallCommand.execute(CallCommand.java:79)
+
+	at py4j.ClientServerConnection.waitForCommands(ClientServerConnection.java:182)
+
+	at py4j.ClientServerConnection.run(ClientServerConnection.java:106)
+
+	at java.lang.Thread.run(Unknown Source)
+
+Caused by: org.apache.spark.SparkException: [TASK_WRITE_FAILED] Task failed while writing rows to file:/F:/SEM 5 
+NOTES/Big 
+Data/Project_Final/airquality_bigdata_project/airquality_bigdata_project/docs/cross_validation_results/summary.
+
+	at org.apache.spark.sql.errors.QueryExecutionErrors$.taskFailedWhileWritingRowsError(QueryExecutionErrors.scala:775)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:420)
+
+	at org.apache.spark.sql.execution.datasources.WriteFilesExec.$anonfun$doExecuteWrite$1(WriteFiles.scala:100)
+
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2(RDD.scala:893)
+
+	at org.apache.spark.rdd.RDD.$anonfun$mapPartitionsInternal$2$adapted(RDD.scala:893)
+
+	at org.apache.spark.rdd.MapPartitionsRDD.compute(MapPartitionsRDD.scala:52)
+
+	at org.apache.spark.rdd.RDD.computeOrReadCheckpoint(RDD.scala:367)
+
+	at org.apache.spark.rdd.RDD.iterator(RDD.scala:331)
+
+	at org.apache.spark.scheduler.ResultTask.runTask(ResultTask.scala:93)
+
+	at org.apache.spark.TaskContext.runTaskWithListeners(TaskContext.scala:166)
+
+	at org.apache.spark.scheduler.Task.run(Task.scala:141)
+
+	at org.apache.spark.executor.Executor$TaskRunner.$anonfun$run$4(Executor.scala:621)
+
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally(SparkErrorUtils.scala:64)
+
+	at org.apache.spark.util.SparkErrorUtils.tryWithSafeFinally$(SparkErrorUtils.scala:61)
+
+	at org.apache.spark.util.Utils$.tryWithSafeFinally(Utils.scala:94)
+
+	at org.apache.spark.executor.Executor$TaskRunner.run(Executor.scala:624)
+
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+
+	... 1 more
+
+Caused by: org.apache.spark.SparkException: Python worker exited unexpectedly (crashed)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:612)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator$$anonfun$1.applyOrElse(PythonRunner.scala:594)
+
+	at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:789)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:766)
+
+	at org.apache.spark.api.python.BasePythonRunner$ReaderIterator.hasNext(PythonRunner.scala:525)
+
+	at org.apache.spark.InterruptibleIterator.hasNext(InterruptibleIterator.scala:37)
+
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:491)
+
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+
+	at scala.collection.Iterator$$anon$10.hasNext(Iterator.scala:460)
+
+	at org.apache.spark.sql.catalyst.expressions.GeneratedClass$GeneratedIteratorForCodegenStage1.processNext(Unknown 
+Source)
+
+	at org.apache.spark.sql.execution.BufferedRowIterator.hasNext(BufferedRowIterator.java:43)
+
+	at org.apache.spark.sql.execution.WholeStageCodegenEvaluatorFactory$WholeStageCodegenPartitionEvaluator$$anon$1.hasNex
+t(WholeStageCodegenEvaluatorFactory.scala:43)
+
+	at scala.collection.Iterator$$anon$11.hasNext(Iterator.scala:490)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatDataWriter.writeWithIterator(FileFormatDataWriter.scala:91)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.$anonfun$executeTask$1(FileFormatWriter.scala:403)
+
+	at org.apache.spark.util.Utils$.tryWithSafeFinallyAndFailureCallbacks(Utils.scala:1397)
+
+	at org.apache.spark.sql.execution.datasources.FileFormatWriter$.executeTask(FileFormatWriter.scala:410)
+
+	... 17 more
+
+Caused by: java.io.EOFException
+
+	at java.io.DataInputStream.readInt(Unknown Source)
+
+	at org.apache.spark.api.python.PythonRunner$$anon$3.read(PythonRunner.scala:774)
+
+	... 31 more
+
+
+SUCCESS: The process with PID 4184 (child process of PID 17060) has been terminated.
+SUCCESS: The process with PID 17060 (child process of PID 3800) has been terminated.
+SUCCESS: The process with PID 3800 (child process of PID 19408) has been terminated.

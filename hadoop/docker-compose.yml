@@ -1,0 +1,125 @@
+# ==============================================================================
+# HDFS cluster: 1 NameNode + 4 DataNodes
+# 23AID302 - Big Data Analytics
+#
+# Four DataNodes, not three, per section 6.1 of the status report: with
+# replication factor 3 and only three nodes, every node must hold a copy of
+# every block, so nothing actually distributes and a failed node cannot be
+# re-replicated anywhere. Four is the smallest cluster that behaves like a real
+# distributed one.
+#
+# STORAGE
+#   DataNode directories are bind-mounted to D:\hdfs\dnN rather than kept in
+#   Docker's own volume store. Docker Desktop keeps named volumes inside the
+#   WSL2 virtual disk on C:, and 27.48 GB x 3 replicas = 82.44 GB would fill it.
+#   D: has the room; check with `df -h /d` before starting.
+# ==============================================================================
+
+x-datanode: &datanode
+  image: apache/hadoop:3.3.6
+  command: ["hdfs", "datanode"]
+  user: root
+  env_file: ./hadoop.env
+  depends_on:
+    - namenode
+  restart: unless-stopped
+
+services:
+  namenode:
+    image: apache/hadoop:3.3.6
+    container_name: aq-namenode
+    hostname: namenode
+    command: ["hdfs", "namenode"]
+    user: root
+    env_file: ./hadoop.env
+    environment:
+      # The image's entrypoint formats this directory automatically if it does
+      # not exist yet, so there is no separate `hdfs namenode -format` step and
+      # no risk of reformatting a live cluster by accident. Must match
+      # dfs.namenode.name.dir in hdfs-site.xml.
+      # The entrypoint formats this directory only if it does NOT exist. Note
+      # the volume below is therefore mounted at the PARENT, /hadoop/dfs -
+      # mounting it directly at /hadoop/dfs/name creates the directory, the
+      # check sees it already there, the format is skipped, and the NameNode
+      # dies on boot with "NameNode is not formatted."
+      ENSURE_NAMENODE_DIR: "/hadoop/dfs/name"
+    ports:
+      - "9870:9870"   # NameNode web UI - block map, live nodes, replication state
+      - "9000:9000"   # HDFS RPC - this is what fs.defaultFS points at
+    volumes:
+      # Mounted read-WRITE deliberately: the image's entrypoint rewrites files
+      # under etc/hadoop on boot, and a read-only mount makes it fail to start.
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - namenode_meta:/hadoop/dfs
+      # The dataset. Mounted rather than copied so `hdfs dfs -put` streams
+      # straight off F: without staging 27.5 GB inside the container.
+      #
+      # NOT mounted :ro, even though nothing here should ever write to it. This
+      # image's entrypoint chmods every mounted volume on boot, and against a
+      # read-only mount that fails and kills the container before the NameNode
+      # starts. Only `hdfs dfs -put` touches this path, and it reads.
+      - "F:/SEM 5 NOTES/Big Data/Project_Final/airquality_expanded:/data"
+      # The processed lakehouse (Phase 3 and 4 output), so it can be copied into
+      # HDFS from INSIDE the container.
+      #
+      # This mount exists because of a hard networking constraint. A Spark job
+      # on the Windows host can reach the NameNode - port 9000 is published -
+      # but writing a block means contacting a DataNode DIRECTLY, and the
+      # NameNode hands out container-internal addresses (172.21.0.x:9866) that
+      # the host cannot route to. Port 9866 is not published, and publishing it
+      # for four DataNodes would need a distinct host port and a per-node
+      # dfs.datanode.address for each. Running the copy inside the container
+      # sidesteps all of it: from here the DataNodes are ordinary network peers.
+      - "D:/aq_lakehouse:/lakehouse"
+      # Verification script, so it can be run with `docker exec`. Same reason
+      # for not being read-only.
+      - ./verify_cluster.sh:/scripts/verify_cluster.sh
+    restart: unless-stopped
+
+  datanode1:
+    <<: *datanode
+    container_name: aq-datanode1
+    hostname: datanode1
+    volumes:
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - "D:/hdfs/dn1:/hadoop/dfs/data"
+    ports:
+      - "9864:9864"
+
+  datanode2:
+    <<: *datanode
+    container_name: aq-datanode2
+    hostname: datanode2
+    volumes:
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - "D:/hdfs/dn2:/hadoop/dfs/data"
+    ports:
+      - "9865:9864"
+
+  datanode3:
+    <<: *datanode
+    container_name: aq-datanode3
+    hostname: datanode3
+    volumes:
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - "D:/hdfs/dn3:/hadoop/dfs/data"
+    ports:
+      - "9866:9864"
+
+  datanode4:
+    <<: *datanode
+    container_name: aq-datanode4
+    hostname: datanode4
+    volumes:
+      - ./config/core-site.xml:/opt/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/opt/hadoop/etc/hadoop/hdfs-site.xml
+      - "D:/hdfs/dn4:/hadoop/dfs/data"
+    ports:
+      - "9867:9864"
+
+volumes:
+  namenode_meta:

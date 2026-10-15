@@ -1,0 +1,478 @@
+Docker is not running - starting Docker Desktop and the cluster
+
+=== SCORE ===
+
+[1/4] fetching both live feeds (same window, on purpose)
+    $ C:\Users\jagan\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe -u F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\00e_fetch_semistructured_json.py --out F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams --days 2 --sleep 0.4
+Fetching 241 cities from F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\..\..\..\Dataset final\city_profiles.csv
+[  1/241] Agartala, Tripura ... OK  (72 hourly records, fields=9)
+[  2/241] Agra, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[  3/241] Ahmedabad, Gujarat ... OK  (72 hourly records, fields=9)
+[  4/241] Aizawl, Mizoram ... OK  (72 hourly records, fields=9)
+[  5/241] Ajmer, Rajasthan ... OK  (72 hourly records, fields=9)
+[  6/241] Alwar, Rajasthan ... OK  (72 hourly records, fields=9)
+[  7/241] Amaravati, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[  8/241] Ambala, Haryana ... OK  (72 hourly records, fields=9)
+[  9/241] Amritsar, Punjab ... OK  (72 hourly records, fields=9)
+[ 10/241] Anantapur, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[ 11/241] Ankleshwar, Gujarat ... OK  (72 hourly records, fields=9)
+[ 12/241] Araria, Bihar ... OK  (72 hourly records, fields=9)
+[ 13/241] Ariyalur, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 14/241] Arrah, Bihar ... OK  (72 hourly records, fields=9)
+[ 15/241] Asansol, West Bengal ... OK  (72 hourly records, fields=9)
+[ 16/241] Aurangabad, Bihar ... OK  (72 hourly records, fields=9)
+[ 17/241] Baddi, Himachal Pradesh ... OK  (72 hourly records, fields=9)
+[ 18/241] Bagalkot, Karnataka ... OK  (72 hourly records, fields=9)
+[ 19/241] Baghpat, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 20/241] Bahadurgarh, Haryana ... OK  (72 hourly records, fields=9)
+[ 21/241] Ballabgarh, Haryana ... OK  (72 hourly records, fields=9)
+[ 22/241] Banswara, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 23/241] Bareilly, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 24/241] Baripada, Odisha ... OK  (72 hourly records, fields=9)
+[ 25/241] Barmer, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 26/241] Bathinda, Punjab ... OK  (72 hourly records, fields=9)
+[ 27/241] Begusarai, Bihar ... OK  (72 hourly records, fields=9)
+[ 28/241] Belgaum, Karnataka ... OK  (72 hourly records, fields=9)
+[ 29/241] Bengaluru, Karnataka ... OK  (72 hourly records, fields=9)
+[ 30/241] Bettiah, Bihar ... OK  (72 hourly records, fields=9)
+[ 31/241] Bhagalpur, Bihar ... OK  (72 hourly records, fields=9)
+[ 32/241] Bharatpur, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 33/241] Bhilai, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[ 34/241] Bhiwadi, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 35/241] Bhiwani, Haryana ... OK  (72 hourly records, fields=9)
+[ 36/241] Bhopal, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[ 37/241] Bidar, Karnataka ... OK  (72 hourly records, fields=9)
+[ 38/241] Bihar Sharif, Bihar ... OK  (72 hourly records, fields=9)
+[ 39/241] Bikaner, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 40/241] Bilaspur, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[ 41/241] Bileipada, Odisha ... GEOCODE MISS - skipped
+[ 42/241] Brajrajnagar, Odisha ... OK  (72 hourly records, fields=9)
+[ 43/241] Bulandshahr, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 44/241] Buxar, Bihar ... OK  (72 hourly records, fields=9)
+[ 45/241] Byrnihat, Assam ... GEOCODE MISS - skipped
+[ 46/241] Chamarajanagar, Karnataka ... OK  (72 hourly records, fields=9)
+[ 47/241] Chandigarh, Chandigarh ... OK  (72 hourly records, fields=9)
+[ 48/241] Chandrapur, Maharashtra ... OK  (72 hourly records, fields=9)
+[ 49/241] Charkhi Dadri, Haryana ... OK  (72 hourly records, fields=9)
+[ 50/241] Chengalpattu, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 51/241] Chennai, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 52/241] Chhal, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[ 53/241] Chhapra, Bihar ... OK  (72 hourly records, fields=9)
+[ 54/241] Chikkaballapur, Karnataka ... GEOCODE MISS - skipped
+[ 55/241] Chikkamagaluru, Karnataka ... OK  (72 hourly records, fields=9)
+[ 56/241] Chittoor, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[ 57/241] Chittorgarh, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 58/241] Churu, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 59/241] Coimbatore, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 60/241] Cuddalore, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 61/241] Damoh, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[ 62/241] Darbhanga, Bihar ... OK  (72 hourly records, fields=9)
+[ 63/241] Dausa, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 64/241] Davanagere, Karnataka ... GEOCODE MISS - skipped
+[ 65/241] Dehradun, Uttarakhand ... OK  (72 hourly records, fields=9)
+[ 66/241] Delhi, Delhi ... OK  (72 hourly records, fields=9)
+[ 67/241] Dewas, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[ 68/241] Dhanbad, Jharkhand ... OK  (72 hourly records, fields=9)
+[ 69/241] Dharuhera, Haryana ... OK  (72 hourly records, fields=9)
+[ 70/241] Dharwad, Karnataka ... OK  (72 hourly records, fields=9)
+[ 71/241] Dholpur, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 72/241] Dindigul, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 73/241] Durgapur, West Bengal ... OK  (72 hourly records, fields=9)
+[ 74/241] Eloor, Kerala ... GEOCODE MISS - skipped
+[ 75/241] Ernakulam, Kerala ... OK  (72 hourly records, fields=9)
+[ 76/241] Faridabad, Haryana ... OK  (72 hourly records, fields=9)
+[ 77/241] Fatehabad, Haryana ... OK  (72 hourly records, fields=9)
+[ 78/241] Firozabad, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 79/241] Gadag, Karnataka ... OK  (72 hourly records, fields=9)
+[ 80/241] Gandhinagar, Gujarat ... OK  (72 hourly records, fields=9)
+[ 81/241] Gangtok, Sikkim ... OK  (72 hourly records, fields=9)
+[ 82/241] Gaya, Bihar ... OK  (72 hourly records, fields=9)
+[ 83/241] Ghaziabad, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 84/241] Gorakhpur, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 85/241] Greater Noida, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 86/241] Gummidipoondi, Tamil Nadu ... GEOCODE MISS - skipped
+[ 87/241] Gurugram, Haryana ... OK  (72 hourly records, fields=9)
+[ 88/241] Guwahati, Assam ... OK  (72 hourly records, fields=9)
+[ 89/241] Gwalior, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[ 90/241] Hajipur, Bihar ... OK  (72 hourly records, fields=9)
+[ 91/241] Haldia, West Bengal ... OK  (72 hourly records, fields=9)
+[ 92/241] Hanumangarh, Rajasthan ... OK  (72 hourly records, fields=9)
+[ 93/241] Hapur, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[ 94/241] Hassan, Karnataka ... OK  (72 hourly records, fields=9)
+[ 95/241] Haveri, Karnataka ... OK  (72 hourly records, fields=9)
+[ 96/241] Hisar, Haryana ... OK  (72 hourly records, fields=9)
+[ 97/241] Hosur, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[ 98/241] Howrah, West Bengal ... OK  (72 hourly records, fields=9)
+[ 99/241] Hubballi, Karnataka ... OK  (72 hourly records, fields=9)
+[100/241] Hyderabad, Telangana ... OK  (72 hourly records, fields=9)
+[101/241] Imphal, Manipur ... OK  (72 hourly records, fields=9)
+[102/241] Indore, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[103/241] Jabalpur, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[104/241] Jaipur, Rajasthan ... OK  (72 hourly records, fields=9)
+[105/241] Jaisalmer, Rajasthan ... OK  (72 hourly records, fields=9)
+[106/241] Jalandhar, Punjab ... OK  (72 hourly records, fields=9)
+[107/241] Jhalawar, Rajasthan ... OK  (72 hourly records, fields=9)
+[108/241] Jhansi, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[109/241] Jhunjhunu, Rajasthan ... OK  (72 hourly records, fields=9)
+[110/241] Jind, Haryana ... OK  (72 hourly records, fields=9)
+[111/241] Jodhpur, Rajasthan ... OK  (72 hourly records, fields=9)
+[112/241] Jorapokhar, Jharkhand ... OK  (72 hourly records, fields=9)
+[113/241] Kadapa, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[114/241] Kaithal, Haryana ... OK  (72 hourly records, fields=9)
+[115/241] Kalaburagi, Karnataka ... OK  (72 hourly records, fields=9)
+[116/241] Kalyan, Maharashtra ... OK  (72 hourly records, fields=9)
+[117/241] Kanchipuram, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[118/241] Kannur, Kerala ... OK  (72 hourly records, fields=9)
+[119/241] Kanpur, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[120/241] Karauli, Rajasthan ... OK  (72 hourly records, fields=9)
+[121/241] Karnal, Haryana ... OK  (72 hourly records, fields=9)
+[122/241] Kashipur, Uttarakhand ... OK  (72 hourly records, fields=9)
+[123/241] Katihar, Bihar ... OK  (72 hourly records, fields=9)
+[124/241] Katni, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[125/241] Keonjhar, Odisha ... OK  (72 hourly records, fields=9)
+[126/241] Khanna, Punjab ... OK  (72 hourly records, fields=9)
+[127/241] Khurja, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[128/241] Kishanganj, Bihar ... OK  (72 hourly records, fields=9)
+[129/241] Kochi, Kerala ... OK  (72 hourly records, fields=9)
+[130/241] Kohima, Nagaland ... OK  (72 hourly records, fields=9)
+[131/241] Kolar, Karnataka ... OK  (72 hourly records, fields=9)
+[132/241] Kolkata, West Bengal ... OK  (72 hourly records, fields=9)
+[133/241] Kollam, Kerala ... OK  (72 hourly records, fields=9)
+[134/241] Koppal, Karnataka ... OK  (72 hourly records, fields=9)
+[135/241] Korba, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[136/241] Kota, Rajasthan ... OK  (72 hourly records, fields=9)
+[137/241] Kozhikode, Kerala ... OK  (72 hourly records, fields=9)
+[138/241] Kunjemura, Chhattisgarh ... GEOCODE MISS - skipped
+[139/241] Kurukshetra, Haryana ... OK  (72 hourly records, fields=9)
+[140/241] Lucknow, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[141/241] Ludhiana, Punjab ... OK  (72 hourly records, fields=9)
+[142/241] Madikeri, Karnataka ... OK  (72 hourly records, fields=9)
+[143/241] Maihar, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[144/241] Mandi Gobindgarh, Punjab ... GEOCODE MISS - skipped
+[145/241] Mandideep, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[146/241] Mandikhera, Haryana ... OK  (72 hourly records, fields=9)
+[147/241] Manesar, Haryana ... OK  (72 hourly records, fields=9)
+[148/241] Mangalore, Karnataka ... OK  (72 hourly records, fields=9)
+[149/241] Manguraha, Bihar ... OK  (72 hourly records, fields=9)
+[150/241] Meerut, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[151/241] Milupara, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[152/241] Moradabad, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[153/241] Motihari, Bihar ... OK  (72 hourly records, fields=9)
+[154/241] Mumbai, Maharashtra ... OK  (72 hourly records, fields=9)
+[155/241] Munger, Bihar ... OK  (72 hourly records, fields=9)
+[156/241] Muzaffarnagar, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[157/241] Muzaffarpur, Bihar ... OK  (72 hourly records, fields=9)
+[158/241] Mysuru, Karnataka ... OK  (72 hourly records, fields=9)
+[159/241] Nagaon, Assam ... OK  (72 hourly records, fields=9)
+[160/241] Nagpur, Maharashtra ... OK  (72 hourly records, fields=9)
+[161/241] Naharlagun, Arunachal Pradesh ... OK  (72 hourly records, fields=9)
+[162/241] Nalbari, Assam ... OK  (72 hourly records, fields=9)
+[163/241] Nandesari, Gujarat ... OK  (72 hourly records, fields=9)
+[164/241] Narnaul, Haryana ... OK  (72 hourly records, fields=9)
+[165/241] Nashik, Maharashtra ... OK  (72 hourly records, fields=9)
+[166/241] Navi Mumbai, Maharashtra ... OK  (72 hourly records, fields=9)
+[167/241] Nayagarh, Odisha ... OK  (72 hourly records, fields=9)
+[168/241] Noida, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[169/241] Ooty, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[170/241] Pali, Rajasthan ... OK  (72 hourly records, fields=9)
+[171/241] Palkalaiperur, Tamil Nadu ... GEOCODE MISS - skipped
+[172/241] Palwal, Haryana ... OK  (72 hourly records, fields=9)
+[173/241] Panchkula, Haryana ... OK  (72 hourly records, fields=9)
+[174/241] Panipat, Haryana ... OK  (72 hourly records, fields=9)
+[175/241] Patiala, Punjab ... OK  (72 hourly records, fields=9)
+[176/241] Patna, Bihar ... OK  (72 hourly records, fields=9)
+[177/241] Pithampur, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[178/241] Pratapgarh, Rajasthan ... OK  (72 hourly records, fields=9)
+[179/241] Prayagraj, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[180/241] Puducherry, Puducherry ... OK  (72 hourly records, fields=9)
+[181/241] Pune, Maharashtra ... OK  (72 hourly records, fields=9)
+[182/241] Purnia, Bihar ... OK  (72 hourly records, fields=9)
+[183/241] Raichur, Karnataka ... OK  (72 hourly records, fields=9)
+[184/241] Raipur, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[185/241] Rairangpur, Odisha ... OK  (72 hourly records, fields=9)
+[186/241] Rajamahendravaram, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[187/241] Rajgir, Bihar ... OK  (72 hourly records, fields=9)
+[188/241] Rajsamand, Rajasthan ... OK  (72 hourly records, fields=9)
+[189/241] Ramanagara, Karnataka ... OK  (72 hourly records, fields=9)
+[190/241] Ramanathapuram, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[191/241] Ratlam, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[192/241] Rishikesh, Uttarakhand ... OK  (72 hourly records, fields=9)
+[193/241] Rohtak, Haryana ... OK  (72 hourly records, fields=9)
+[194/241] Rourkela, Odisha ... OK  (72 hourly records, fields=9)
+[195/241] Rupnagar, Punjab ... OK  (72 hourly records, fields=9)
+[196/241] Sagar, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[197/241] Saharsa, Bihar ... OK  (72 hourly records, fields=9)
+[198/241] Salem, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[199/241] Samastipur, Bihar ... OK  (72 hourly records, fields=9)
+[200/241] Sasaram, Bihar ... OK  (72 hourly records, fields=9)
+[201/241] Satna, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[202/241] Sawai Madhopur, Rajasthan ... OK  (72 hourly records, fields=9)
+[203/241] Shillong, Meghalaya ... OK  (72 hourly records, fields=9)
+[204/241] Shivamogga, Karnataka ... OK  (72 hourly records, fields=9)
+[205/241] Sikar, Rajasthan ... OK  (72 hourly records, fields=9)
+[206/241] Silchar, Assam ... OK  (72 hourly records, fields=9)
+[207/241] Siliguri, West Bengal ... OK  (72 hourly records, fields=9)
+[208/241] Singrauli, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[209/241] Sirohi, Rajasthan ... OK  (72 hourly records, fields=9)
+[210/241] Sirsa, Haryana ... OK  (72 hourly records, fields=9)
+[211/241] Sivasagar, Assam ... GEOCODE MISS - skipped
+[212/241] Siwan, Bihar ... OK  (72 hourly records, fields=9)
+[213/241] Solapur, Maharashtra ... OK  (72 hourly records, fields=9)
+[214/241] Sonipat, Haryana ... OK  (72 hourly records, fields=9)
+[215/241] Sri Ganganagar, Rajasthan ... OK  (72 hourly records, fields=9)
+[216/241] Srinagar, Jammu and Kashmir ... OK  (72 hourly records, fields=9)
+[217/241] Suakati, Odisha ... OK  (72 hourly records, fields=9)
+[218/241] Surat, Gujarat ... OK  (72 hourly records, fields=9)
+[219/241] Talcher, Odisha ... OK  (72 hourly records, fields=9)
+[220/241] Tensa, Odisha ... OK  (72 hourly records, fields=9)
+[221/241] Thane, Maharashtra ... OK  (72 hourly records, fields=9)
+[222/241] Thiruvananthapuram, Kerala ... OK  (72 hourly records, fields=9)
+[223/241] Thoothukudi, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[224/241] Thrissur, Kerala ... OK  (72 hourly records, fields=9)
+[225/241] Tirupati, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[226/241] Tirupur, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[227/241] Tumakuru, Karnataka ... OK  (72 hourly records, fields=9)
+[228/241] Tumidih, Chhattisgarh ... OK  (72 hourly records, fields=9)
+[229/241] Udaipur, Rajasthan ... OK  (72 hourly records, fields=9)
+[230/241] Udupi, Karnataka ... OK  (72 hourly records, fields=9)
+[231/241] Ujjain, Madhya Pradesh ... OK  (72 hourly records, fields=9)
+[232/241] Vapi, Gujarat ... OK  (72 hourly records, fields=9)
+[233/241] Varanasi, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[234/241] Vatva, Gujarat ... GEOCODE MISS - skipped
+[235/241] Vellore, Tamil Nadu ... OK  (72 hourly records, fields=9)
+[236/241] Vijayapura, Karnataka ... OK  (72 hourly records, fields=9)
+[237/241] Vijayawada, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[238/241] Visakhapatnam, Andhra Pradesh ... OK  (72 hourly records, fields=9)
+[239/241] Vrindavan, Uttar Pradesh ... OK  (72 hourly records, fields=9)
+[240/241] Yadgir, Karnataka ... OK  (72 hourly records, fields=9)
+[241/241] Yamuna Nagar, Haryana ... OK  (72 hourly records, fields=9)
+
+Done: 230/241 cities fetched, 11 failed ['Bileipada', 'Byrnihat', 'Chikkaballapur', 'Davanagere', 'Eloor', 'Gummidipoondi', 'Kunjemura', 'Mandi Gobindgarh', 'Palkalaiperur', 'Sivasagar', 'Vatva']
+Raw JSON      : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\raw_json
+Manifest      : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\manifest.json
+Flattened CSV : F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\semistructured_flat.csv  (16560 rows)
+    $ C:\Users\jagan\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe -u F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\scripts\00g_fetch_live_weather.py --out F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather --manifest F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams\manifest.json --days 2
+Fetching weather for 230 cities (past 2d + 1d forecast, 4 workers)
+
+
+fetched=0 skipped=230 failed=0 elapsed=0.0 min
+manifest: F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather\manifest.json (230 cities)
+
+[2/4] uploading feeds to HDFS
+    $ docker exec aq-namenode rm -rf /tmp/lc
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_cams" aq-namenode:/tmp/lc
+    $ docker exec aq-namenode hdfs dfs -rm -r -f /user/hadoop/raw/live_cams
+Deleted /user/hadoop/raw/live_cams
+    $ docker exec aq-namenode hdfs dfs -put /tmp/lc /user/hadoop/raw/live_cams
+    $ docker exec aq-namenode rm -rf /tmp/lw
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\airquality_expanded\live_weather" aq-namenode:/tmp/lw
+    $ docker exec aq-namenode hdfs dfs -rm -r -f /user/hadoop/raw/live_weather
+Deleted /user/hadoop/raw/live_weather
+    $ docker exec aq-namenode hdfs dfs -put /tmp/lw /user/hadoop/raw/live_weather
+    $ docker cp "F:\SEM 5 NOTES\Big Data\Project_Final\Dataset final\city_profiles.csv" aq-namenode:/tmp/city_profiles.csv
+    $ docker exec aq-namenode hdfs dfs -mkdir -p /user/hadoop/ref
+    $ docker exec aq-namenode hdfs dfs -put -f /tmp/city_profiles.csv /user/hadoop/ref/city_profiles.csv
+
+[3/4] LiveEnrichment on YARN
+    $ docker exec aq-spark sh -c HADOOP_CONF_DIR=/opt/hadoop-conf /opt/spark/bin/spark-submit --master yarn --deploy-mode client --num-executors 3 --executor-memory 1500m --executor-cores 1 --driver-memory 1500m --class LiveEnrichment /jars/scala-2.12/airquality-streaming_2.12-1.0.jar hdfs://namenode:9000/user/hadoop/raw/live_cams/raw_json hdfs://namenode:9000/user/hadoop/raw/live_weather/raw_json hdfs://namenode:9000/user/hadoop/ref/city_profiles.csv hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+26/10/15 08:26:51 INFO SparkContext: Running Spark version 3.5.6
+26/10/15 08:26:51 INFO SparkContext: OS info Linux, 6.18.33.2-microsoft-standard-WSL2, amd64
+26/10/15 08:26:51 INFO SparkContext: Java version 11.0.27
+26/10/15 08:26:51 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/10/15 08:26:51 INFO ResourceUtils: ==============================================================
+26/10/15 08:26:51 INFO ResourceUtils: No custom resources configured for spark.driver.
+26/10/15 08:26:51 INFO ResourceUtils: ==============================================================
+26/10/15 08:26:51 INFO SparkContext: Submitted application: AirQuality_Phase8b_LiveEnrichment
+26/10/15 08:26:51 INFO ResourceProfile: Default ResourceProfile created, executor resources: Map(cores -> name: cores, amount: 1, script: , vendor: , memory -> name: memory, amount: 1500, script: , vendor: , offHeap -> name: offHeap, amount: 0, script: , vendor: ), task resources: Map(cpus -> name: cpus, amount: 1.0)
+26/10/15 08:26:51 INFO ResourceProfile: Limiting resource is cpus at 1 tasks per executor
+26/10/15 08:26:51 INFO ResourceProfileManager: Added ResourceProfile id: 0
+26/10/15 08:26:51 INFO SecurityManager: Changing view acls to: root
+26/10/15 08:26:51 INFO SecurityManager: Changing modify acls to: root
+26/10/15 08:26:51 INFO SecurityManager: Changing view acls groups to: 
+26/10/15 08:26:51 INFO SecurityManager: Changing modify acls groups to: 
+26/10/15 08:26:51 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/15 08:26:52 INFO Utils: Successfully started service 'sparkDriver' on port 37901.
+26/10/15 08:26:52 INFO SparkEnv: Registering MapOutputTracker
+26/10/15 08:26:52 INFO SparkEnv: Registering BlockManagerMaster
+26/10/15 08:26:52 INFO BlockManagerMasterEndpoint: Using org.apache.spark.storage.DefaultTopologyMapper for getting topology information
+26/10/15 08:26:52 INFO BlockManagerMasterEndpoint: BlockManagerMasterEndpoint up
+26/10/15 08:26:52 INFO SparkEnv: Registering BlockManagerMasterHeartbeat
+26/10/15 08:26:52 INFO DiskBlockManager: Created local directory at /scratch/blockmgr-f82e5b1e-1786-4775-a562-d3241cee1de8
+26/10/15 08:26:52 INFO MemoryStore: MemoryStore started with capacity 720.0 MiB
+26/10/15 08:26:52 INFO SparkEnv: Registering OutputCommitCoordinator
+26/10/15 08:26:52 INFO JettyUtils: Start Jetty 0.0.0.0:4040 for SparkUI
+26/10/15 08:26:52 INFO Utils: Successfully started service 'SparkUI' on port 4040.
+26/10/15 08:26:52 INFO SparkContext: Added JAR file:/jars/scala-2.12/airquality-streaming_2.12-1.0.jar at spark://spark-client:37901/jars/airquality-streaming_2.12-1.0.jar with timestamp 1792052811433
+26/10/15 08:26:53 INFO DefaultNoHARMFailoverProxyProvider: Connecting to ResourceManager at resourcemanager/172.18.0.3:8032
+26/10/15 08:26:53 INFO Configuration: resource-types.xml not found
+26/10/15 08:26:53 INFO ResourceUtils: Unable to find 'resource-types.xml'.
+26/10/15 08:26:53 INFO Client: Verifying our application has not requested more than the maximum memory capability of the cluster (2560 MB per container)
+26/10/15 08:26:53 INFO Client: Will allocate AM container, with 896 MB memory including 384 MB overhead
+26/10/15 08:26:53 INFO Client: Setting up container launch context for our AM
+26/10/15 08:26:53 INFO Client: Setting up the launch environment for our AM container
+26/10/15 08:26:53 INFO Client: Preparing resources for our AM container
+26/10/15 08:26:53 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+26/10/15 08:26:55 INFO Client: Uploading resource file:/scratch/spark-30acc1ea-e6c9-4fbb-9e90-9f40fd040bb7/__spark_libs__6842123501321236844.zip -> hdfs://namenode:9000/user/root/.sparkStaging/application_1792051897748_0001/__spark_libs__6842123501321236844.zip
+26/10/15 08:27:12 INFO Client: Uploading resource file:/scratch/spark-30acc1ea-e6c9-4fbb-9e90-9f40fd040bb7/__spark_conf__8539955277579903372.zip -> hdfs://namenode:9000/user/root/.sparkStaging/application_1792051897748_0001/__spark_conf__.zip
+26/10/15 08:27:12 INFO SecurityManager: Changing view acls to: root
+26/10/15 08:27:12 INFO SecurityManager: Changing modify acls to: root
+26/10/15 08:27:12 INFO SecurityManager: Changing view acls groups to: 
+26/10/15 08:27:12 INFO SecurityManager: Changing modify acls groups to: 
+26/10/15 08:27:12 INFO SecurityManager: SecurityManager: authentication disabled; ui acls disabled; users with view permissions: root; groups with view permissions: EMPTY; users with modify permissions: root; groups with modify permissions: EMPTY
+26/10/15 08:27:12 INFO Client: Submitting application application_1792051897748_0001 to ResourceManager
+26/10/15 08:27:13 INFO YarnClientImpl: Submitted application application_1792051897748_0001
+26/10/15 08:27:14 INFO Client: Application report for application_1792051897748_0001 (state: ACCEPTED)
+26/10/15 08:27:14 INFO Client: 
+	 client token: N/A
+	 diagnostics: [Thu Oct 15 08:27:13 +0000 2026] Scheduler has assigned a container for AM, waiting for AM container to be launched
+	 ApplicationMaster host: N/A
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1792052832642
+	 final status: UNDEFINED
+	 tracking URL: http://resourcemanager:8088/proxy/application_1792051897748_0001/
+	 user: root
+26/10/15 08:27:25 INFO Client: Application report for application_1792051897748_0001 (state: RUNNING)
+26/10/15 08:27:25 INFO Client: 
+	 client token: N/A
+	 diagnostics: N/A
+	 ApplicationMaster host: 172.18.0.4
+	 ApplicationMaster RPC port: -1
+	 queue: default
+	 start time: 1792052832642
+	 final status: UNDEFINED
+	 tracking URL: http://resourcemanager:8088/proxy/application_1792051897748_0001/
+	 user: root
+26/10/15 08:27:25 INFO YarnClientSchedulerBackend: Application application_1792051897748_0001 has started running.
+26/10/15 08:27:25 INFO Utils: Successfully started service 'org.apache.spark.network.netty.NettyBlockTransferService' on port 43259.
+26/10/15 08:27:25 INFO NettyBlockTransferService: Server created on spark-client:43259
+26/10/15 08:27:25 INFO BlockManager: Using org.apache.spark.storage.RandomBlockReplicationPolicy for block replication policy
+26/10/15 08:27:25 INFO BlockManagerMaster: Registering BlockManager BlockManagerId(driver, spark-client, 43259, None)
+26/10/15 08:27:25 INFO BlockManagerMasterEndpoint: Registering block manager spark-client:43259 with 720.0 MiB RAM, BlockManagerId(driver, spark-client, 43259, None)
+26/10/15 08:27:25 INFO BlockManagerMaster: Registered BlockManager BlockManagerId(driver, spark-client, 43259, None)
+26/10/15 08:27:25 INFO BlockManager: Initialized BlockManager: BlockManagerId(driver, spark-client, 43259, None)
+26/10/15 08:27:25 INFO YarnClientSchedulerBackend: Add WebUI Filter. org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter, Map(PROXY_HOSTS -> nodemanager2, PROXY_URI_BASES -> http://nodemanager2:8088/proxy/application_1792051897748_0001), /proxy/application_1792051897748_0001
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /jobs: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /jobs/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /jobs/job: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /jobs/job/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/stage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/stage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/pool: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/pool/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /storage: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /storage/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /storage/rdd: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /storage/rdd/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /environment: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /environment/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors/threadDump: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors/threadDump/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors/heapHistogram: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /executors/heapHistogram/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /static: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /api: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /jobs/job/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /stages/stage/kill: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO ServerInfo: Adding filter to /metrics/json: org.apache.hadoop.yarn.server.webproxy.amfilter.AmIpFilter
+26/10/15 08:27:25 INFO YarnClientSchedulerBackend: SchedulerBackend is ready for scheduling beginning after waiting maxRegisteredResourcesWaitingTime: 30000000000(ns)
+==========================================================================
+  PHASE 8b - LIVE ENRICHMENT
+  cams     : hdfs://namenode:9000/user/hadoop/raw/live_cams/raw_json
+  weather  : hdfs://namenode:9000/user/hadoop/raw/live_weather/raw_json
+  profiles : hdfs://namenode:9000/user/hadoop/ref/city_profiles.csv
+  out      : hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+==========================================================================
+  manifest : hdfs://namenode:9000/user/hadoop/raw/live_cams/manifest.json
+  cams window    : 2026-10-13 00:00:00.0 .. 2026-10-15 23:00:00.0
+  weather window : 2026-10-01 00:00:00.0 .. 2026-10-15 23:00:00.0
+  joined rows    : 16,560
+  enriched rows : 16,560 across 230 cities
+  null audit on model-critical columns:
+    pm25               nulls=0
+26/10/15 08:29:12 WARN TransportChannelHandler: Exception in connection from /172.18.0.11:50718
+java.io.IOException: Connection reset by peer
+	at java.base/sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Unknown Source)
+26/10/15 08:29:13 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Requesting driver to remove executor 1 for reason Container from a bad node: container_1792051897748_0001_01_000002 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 08:29:12.572]Container killed on request. Exit code is 137
+[2026-10-15 08:29:12.674]Container exited with a non-zero exit code 137. 
+[2026-10-15 08:29:12.719]Killed by external signal
+.
+26/10/15 08:29:13 ERROR YarnScheduler: Lost executor 1 on nodemanager1: Container from a bad node: container_1792051897748_0001_01_000002 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 08:29:12.572]Container killed on request. Exit code is 137
+[2026-10-15 08:29:12.674]Container exited with a non-zero exit code 137. 
+[2026-10-15 08:29:12.719]Killed by external signal
+.
+26/10/15 08:29:13 WARN TaskSetManager: Lost task 2.0 in stage 42.0 (TID 564) (nodemanager1 executor 1): ExecutorLostFailure (executor 1 exited caused by one of the running tasks) Reason: Container from a bad node: container_1792051897748_0001_01_000002 on host: nodemanager1. Exit status: 137. Diagnostics: [2026-10-15 08:29:12.572]Container killed on request. Exit code is 137
+[2026-10-15 08:29:12.674]Container exited with a non-zero exit code 137. 
+[2026-10-15 08:29:12.719]Killed by external signal
+.
+    temperature_c      nulls=0
+    pressure           nulls=0
+    traffic_index      nulls=0
+    climate_type       nulls=0
+26/10/15 08:29:32 WARN SparkStringUtils: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
++-------------+-------+--------+-------------------+-----+-----+----+----+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+|station_id   |state  |city    |from_date          |pm25 |pm10 |no2 |so2 |co   |o3  |nh3 |wd_degree|solar_radiation|pressure   |temperature_c|humidity_percent|wind_speed_ms|rainfall_mm|weather_condition|traffic_index|is_rush_hour|year|month|day|hour|day_of_week|is_weekend|season      |climate_type     |urbanization_index|data_source|source_station|
++-------------+-------+--------+-------------------+-----+-----+----+----+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-13 00:00:00|103.8|105.9|58.7|16.4|0.837|41.0|NULL|191.0    |0.0            |759.6627936|25.4         |87.0            |0.51         |0.0        |humid            |37.78033     |0.0         |2026|10   |13 |0   |1          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-13 01:00:00|101.5|103.8|52.0|15.4|0.796|38.0|NULL|153.0    |0.0            |759.3627688|25.0         |88.0            |0.11         |0.0        |humid            |37.78033     |0.0         |2026|10   |13 |1   |1          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-13 02:00:00|99.9 |102.7|47.9|14.6|0.756|35.0|NULL|76.0     |0.0            |759.1377502|24.3         |93.0            |0.41         |0.0        |humid            |37.78033     |0.0         |2026|10   |13 |2   |1          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-13 03:00:00|99.7 |102.9|50.5|14.3|0.734|24.0|NULL|86.0     |0.0            |759.1377502|23.9         |96.0            |0.65         |0.0        |humid            |37.78033     |0.0         |2026|10   |13 |3   |1          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
+|LIVE_AGARTALA|Tripura|Agartala|2026-10-13 04:00:00|101.5|105.0|55.6|14.2|0.712|11.0|NULL|86.0     |0.0            |759.2877626|23.5         |98.0            |0.75         |0.0        |humid            |37.78033     |0.0         |2026|10   |13 |4   |1          |0.0       |post_monsoon|humid_subtropical|74.42             |live_api   |LIVE_AGARTALA |
++-------------+-------+--------+-------------------+-----+-----+----+----+-----+----+----+---------+---------------+-----------+-------------+----------------+-------------+-----------+-----------------+-------------+------------+----+-----+---+----+-----------+----------+------------+-----------------+------------------+-----------+--------------+
+only showing top 5 rows
+
+26/10/15 08:30:05 WARN TransportChannelHandler: Exception in connection from /172.18.0.7:46320
+java.io.IOException: Connection reset by peer
+	at java.base/sun.nio.ch.FileDispatcherImpl.read0(Native Method)
+	at java.base/sun.nio.ch.SocketDispatcher.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.readIntoNativeBuffer(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.IOUtil.read(Unknown Source)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(Unknown Source)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:254)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:788)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:724)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:650)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:562)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Unknown Source)
+26/10/15 08:30:05 ERROR YarnScheduler: Lost executor 2 on nodemanager3: Container from a bad node: container_1792051897748_0001_01_000003 on host: nodemanager3. Exit status: 137. Diagnostics: [2026-10-15 08:30:05.458]Container killed on request. Exit code is 137
+[2026-10-15 08:30:05.556]Container exited with a non-zero exit code 137. 
+[2026-10-15 08:30:05.610]Killed by external signal
+.
+26/10/15 08:30:05 WARN YarnSchedulerBackend$YarnSchedulerEndpoint: Requesting driver to remove executor 2 for reason Container from a bad node: container_1792051897748_0001_01_000003 on host: nodemanager3. Exit status: 137. Diagnostics: [2026-10-15 08:30:05.458]Container killed on request. Exit code is 137
+[2026-10-15 08:30:05.556]Container exited with a non-zero exit code 137. 
+[2026-10-15 08:30:05.610]Killed by external signal
+.
+  wrote -> hdfs://namenode:9000/user/hadoop/lakehouse/live_enriched
+enriched rows: 16,560   newer than watermark 2026-10-15 23:00:00: 0
+no new forecast hours - nothing to score this cycle
+score stage done
+stopping the cluster and Docker Desktop (this script started them)

@@ -1,0 +1,441 @@
+<title>AirWatch India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* ---------- tokens: light base; dark redefines the same names ---------- */
+  :root{
+    --bg:#F3F5F8; --panel:#FFFFFF; --panel-2:#EEF2F6; --line:#D9DFE7;
+    --ink:#1B2430; --ink-2:#4A5666; --muted:#7B8794;
+    --accent:#0E7C86; --accent-ink:#0A5F67; --accent-soft:#DDEFF1;
+    /* CPCB National AQI bands - the only colours that carry meaning on this page */
+    --good:#1E8E5A; --sat:#7FB33F; --mod:#D9A400; --poor:#E8731A; --vpoor:#C9342B; --severe:#7A1B2E;
+    --grid:#E6EAF0; --shadow:0 1px 2px rgba(27,36,48,.06), 0 4px 14px rgba(27,36,48,.05);
+    --warn-bg:#FBEAEA; --warn-ink:#8C1D1D;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0F151C; --panel:#161E27; --panel-2:#1D2732; --line:#2A3542;
+      --ink:#E6EBF0; --ink-2:#B7C1CC; --muted:#8593A1;
+      --accent:#3FB4BE; --accent-ink:#7FD0D6; --accent-soft:#163D42;
+      --good:#2FA86E; --sat:#96C556; --mod:#E5B520; --poor:#F0842E; --vpoor:#E04A3F; --severe:#B03A50;
+      --grid:#22303C; --shadow:none; --warn-bg:#3A1A1E; --warn-ink:#F2B8B8;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0F151C; --panel:#161E27; --panel-2:#1D2732; --line:#2A3542;
+    --ink:#E6EBF0; --ink-2:#B7C1CC; --muted:#8593A1;
+    --accent:#3FB4BE; --accent-ink:#7FD0D6; --accent-soft:#163D42;
+    --good:#2FA86E; --sat:#96C556; --mod:#E5B520; --poor:#F0842E; --vpoor:#E04A3F; --severe:#B03A50;
+    --grid:#22303C; --shadow:none; --warn-bg:#3A1A1E; --warn-ink:#F2B8B8;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;font-size:15px;line-height:1.5}
+  h1,h2,h3{font-family:"IBM Plex Sans Condensed","IBM Plex Sans",sans-serif;margin:0;text-wrap:balance}
+  .mono{font-family:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;font-variant-numeric:tabular-nums}
+  a{color:var(--accent-ink)}
+  svg text{font-family:"IBM Plex Sans",system-ui,sans-serif}
+
+  header{padding:20px 32px 14px;border-bottom:1px solid var(--line);background:var(--panel);
+         display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+  .brand h1{font-size:28px;font-weight:700;letter-spacing:-.01em}
+  .brand h1 span{color:var(--accent)}
+  .brand p{margin:2px 0 0;color:var(--ink-2);font-size:14px}
+  .updated{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;text-align:right}
+  .updated b{display:block;color:var(--ink);font-size:14px;text-transform:none;letter-spacing:0;font-weight:500}
+
+  main{padding:20px 32px 40px;display:grid;gap:20px;max-width:1500px;margin:0 auto}
+
+  /* ---------- the warning banner ---------- */
+  .banner{background:var(--warn-bg);border:1px solid color-mix(in srgb,var(--warn-ink) 25%,transparent);
+          border-left:6px solid var(--vpoor);border-radius:8px;padding:18px 22px;
+          display:grid;grid-template-columns:auto 1fr auto;gap:22px;align-items:center}
+  .banner .n{font-family:"IBM Plex Sans Condensed",sans-serif;font-size:56px;font-weight:700;line-height:1;color:var(--warn-ink)}
+  .banner h2{font-size:22px;color:var(--warn-ink);font-weight:600}
+  .banner p{margin:4px 0 0;color:var(--ink-2);font-size:14px}
+  .banner .worst{text-align:right;font-size:13px;color:var(--ink-2)}
+  .banner .worst b{display:block;font-family:"IBM Plex Sans Condensed",sans-serif;font-size:22px;color:var(--warn-ink)}
+  @media (max-width:800px){.banner{grid-template-columns:1fr}.banner .worst{text-align:left}}
+
+  /* ---------- controls ---------- */
+  .controls{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+  .controls input{flex:1 1 260px;max-width:420px;padding:10px 14px;border:1px solid var(--line);border-radius:6px;
+                  background:var(--panel);color:var(--ink);font:inherit;font-size:15px}
+  .controls input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+  .chips{display:flex;gap:6px;flex-wrap:wrap}
+  .chipbtn{border:1px solid var(--line);background:var(--panel);color:var(--ink-2);border-radius:999px;padding:6px 12px;
+           font:inherit;font-size:13px;cursor:pointer}
+  .chipbtn[aria-pressed="true"]{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+  .count{font-size:13px;color:var(--muted);margin-left:auto}
+
+  /* ---------- alert cards ---------- */
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px 12px;box-shadow:var(--shadow);
+        border-top:5px solid var(--b);display:grid;gap:8px}
+  .card .top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .card h3{font-size:20px;font-weight:600;line-height:1.15}
+  .card h3 .state{font-family:"IBM Plex Sans",sans-serif;font-size:13px;font-weight:400;color:var(--muted)}
+  .card .to{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .card .msgbody{background:var(--panel-2);border-radius:6px;padding:10px 12px;display:grid;gap:6px}
+  .card .msgbody p{margin:0;font-size:14px;line-height:1.45}
+  .card .msgbody .lead b{color:var(--b)}
+  .card .msgbody .health{color:var(--ink-2)}
+  .card .msgbody .do{color:var(--ink);font-weight:500}
+  .band{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:600;letter-spacing:.03em;
+        background:var(--b);color:#fff;white-space:nowrap}
+  .band.light{color:#1B2430}
+  .card .aqi{display:flex;align-items:baseline;gap:8px}
+  .card .aqi .v{font-family:"IBM Plex Sans Condensed",sans-serif;font-size:40px;font-weight:700;line-height:1;color:var(--b)}
+  .card .aqi .l{font-size:12.5px;color:var(--muted);line-height:1.2}
+  .card .facts{display:grid;grid-template-columns:1fr 1fr;gap:4px 12px;font-size:12.5px;color:var(--muted)}
+  .card .facts b{color:var(--ink);font-weight:500;display:block}
+  .card .facts .when{grid-column:1/-1;font-size:11.5px;color:var(--muted);margin-top:2px}
+  .empty{padding:28px;text-align:center;color:var(--muted);background:var(--panel);border:1px dashed var(--line);border-radius:8px}
+
+  /* ---------- panels ---------- */
+  .grid{display:grid;gap:18px}
+  .cols-2{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+  .cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+  @media (max-width:1100px){.cols-2,.cols-3{grid-template-columns:1fr}}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px 18px 14px;box-shadow:var(--shadow);min-width:0}
+  .panel h2{font-size:17px;font-weight:600}
+  .panel h2 small{font-family:"IBM Plex Sans",sans-serif;font-weight:400;font-size:12.5px;color:var(--muted);margin-left:8px}
+  .panel .note{font-size:13px;color:var(--ink-2);margin:8px 0 0}
+  .fig{width:100%;height:auto;display:block;margin-top:8px}
+  .legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:12.5px;color:var(--ink-2)}
+  .legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+
+  .tbl-wrap{overflow-x:auto;margin-top:10px}
+  table{border-collapse:collapse;width:100%;font-size:13.5px}
+  th{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:500;text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+  td{padding:8px 10px;border-bottom:1px solid var(--grid);vertical-align:top}
+  td.num,th.num{text-align:right}
+  .msg{color:var(--ink-2);max-width:62ch}
+
+  .about{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:10px}
+  .fact{background:var(--panel-2);border-radius:6px;padding:12px 14px}
+  .fact .lbl{font-size:11.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+  .fact .val{font-family:"IBM Plex Sans Condensed",sans-serif;font-size:24px;font-weight:600;margin-top:2px}
+  .fact .sub{font-size:12.5px;color:var(--ink-2);margin-top:2px}
+
+  footer{padding:14px 32px 28px;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line);line-height:1.6}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+  .alertme{display:flex;gap:12px;flex-wrap:wrap;align-items:center;background:var(--panel);border:1px solid var(--line);border-left:5px solid var(--accent);
+    border-radius:8px;padding:14px 16px;box-shadow:var(--shadow);margin-bottom:18px}
+  .alertme h2{margin:0;font-size:16px}
+  .alertme small{display:block;color:var(--muted);font-weight:400;font-size:12px;margin-top:2px}
+  .alertme select,.alertme button,.btnwa{padding:10px 14px;border-radius:6px;border:1px solid var(--line);font:inherit;background:#fff;color:inherit}
+  .alertme button.go{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;cursor:pointer}
+  .alertme .status{flex-basis:100%;font-size:13px;margin:0}
+  .btnwa{display:inline-block;margin-top:8px;font-size:12px;text-decoration:none;color:#0b6b3a;border-color:#bfe3cf;background:#f2fbf6}
+</style>
+
+<header>
+  <div class="brand">
+    <h1>Air<span>Watch</span> India</h1>
+    <p>Public air-quality warnings · next-hour forecast · CPCB National AQI</p>
+  </div>
+  <div class="updated">Latest data hour<b class="mono" id="m-updated">—</b></div>
+</header>
+
+<main>
+  <section class="banner" id="banner" aria-live="polite">
+    <div class="n" id="b-n">—</div>
+    <div><h2 id="b-h">Loading warnings…</h2><p id="b-p"></p></div>
+    <div class="worst"><span>Worst forecast</span><b id="b-worst">—</b><span id="b-worst-sub"></span></div>
+  </section>
+
+
+  <section class="alertme" id="alertme">
+    <div><h2>Get this warning on your phone</h2><small>Pick your city. When it is under a warning you get a notification on this device.</small></div>
+    <select id="am-city" aria-label="City to alert"></select>
+    <button class="go" id="am-go">Alert me</button>
+    <p class="status" id="am-status" aria-live="polite"></p>
+  </section>
+
+  <section class="panel" style="padding-top:14px">
+    <h2 style="margin-bottom:10px">Warnings being sent to residents<small>one hour ahead · the message each city receives · newest first</small></h2>
+    <div class="controls">
+      <input id="q" type="search" placeholder="Find your city…" aria-label="Find your city" autocomplete="off">
+      <div class="chips" id="chips" role="group" aria-label="Filter by severity"></div>
+      <span class="count" id="count"></span>
+    </div>
+    <div class="cards" id="cards" style="margin-top:12px"></div>
+  </section>
+
+  <div class="grid cols-2">
+    <section class="panel">
+      <h2>Air quality across India right now<small>latest hour per city · colour = CPCB band · size = PM₂.₅</small></h2>
+      <svg id="map" class="fig" viewBox="0 0 640 620" role="img" aria-label="Map of current air quality by city"></svg>
+      <div class="legend">
+        <span style="--c:var(--good)">Good</span><span style="--c:var(--sat)">Satisfactory</span><span style="--c:var(--mod)">Moderate</span>
+        <span style="--c:var(--poor)">Poor</span><span style="--c:var(--vpoor)">Very Poor</span><span style="--c:var(--severe)">Severe</span>
+      </div>
+    </section>
+    <div class="grid" style="gap:18px">
+      <section class="panel">
+        <h2>Warnings issued per hour<small>forecast hour</small></h2>
+        <svg id="timeline" class="fig" viewBox="0 0 640 220" role="img" aria-label="Alerts per hour"></svg>
+      </section>
+      <section class="panel">
+        <h2>What is causing the warnings<small>dominant pollutant</small></h2>
+        <svg id="drivers" class="fig" viewBox="0 0 640 170" role="img" aria-label="Alerts by dominant pollutant"></svg>
+        <p class="note" id="driver-note"></p>
+      </section>
+    </div>
+  </div>
+
+  <section class="panel">
+    <h2>Strongest warnings<small>highest forecast AQI · the exact message issued</small></h2>
+    <div class="tbl-wrap"><table id="alert-table">
+      <thead><tr><th>City</th><th>Forecast for</th><th class="num">PM₂.₅ now</th><th class="num">PM₂.₅ +1h</th><th class="num">AQI +1h</th><th>Band</th><th>Cause</th><th>Message</th></tr></thead>
+      <tbody></tbody></table></div>
+  </section>
+
+  <section class="panel">
+    <h2>How these warnings are made<small>the system behind the page</small></h2>
+    <div class="about" id="about"></div>
+    <p class="note">A gradient-boosted model trained on thirteen years of CPCB station history forecasts each city's PM₂.₅ one hour ahead from live Copernicus CAMS readings and live weather. A warning is issued when the forecast National AQI exceeds 150. Health advice follows the CPCB AQI bulletin.</p>
+  </section>
+</main>
+
+<footer>Data: Central Pollution Control Board (station history 2010–2023) · Copernicus CAMS via Open-Meteo (live) · Open-Meteo weather. Warnings are next-hour forecasts, not measurements. 23AID302 — Big Data Analytics.</footer>
+
+<script>
+const D = /*__DASHBOARD_DATA__*/null;
+
+/* ---------- guard: this file is only a template until build_dashboard.py fills it ---------- */
+if (!D) {
+  document.getElementById('b-n').textContent = '!';
+  document.getElementById('b-h').textContent = 'This is the page template, not the dashboard';
+  document.getElementById('b-p').textContent = 'It has no data in it. Open AirWatch_India.html - that is the built page with everything filled in.';
+  throw new Error('dashboard template opened directly (no data)');
+}
+
+/* ---------- safety net: one failing section must never blank the page ---------- */
+const errors = [];
+function section(name, fn){ try { fn(); } catch (e) { errors.push(name + ': ' + (e && e.message || e)); console.error('[' + name + ']', e); } }
+
+/* ---------- CPCB National AQI: bands, colours, official health advisories ---------- */
+const BANDS = [
+  {max:50,  key:'good',   name:'Good',         light:false, advice:'Minimal impact.',                                                          act:'Normal activities.'},
+  {max:100, key:'sat',    name:'Satisfactory', light:true,  advice:'Minor breathing discomfort to sensitive people.',                          act:'Sensitive groups: limit prolonged exertion.'},
+  {max:200, key:'mod',    name:'Moderate',     light:true,  advice:'Breathing discomfort to people with lung disease, children and older adults.', act:'Reduce prolonged or heavy outdoor exertion.'},
+  {max:300, key:'poor',   name:'Poor',         light:false, advice:'Breathing discomfort to most people on prolonged exposure.',              act:'Avoid prolonged outdoor exertion. Wear a mask outdoors.'},
+  {max:400, key:'vpoor',  name:'Very Poor',    light:false, advice:'Respiratory illness on prolonged exposure.',                              act:'Stay indoors where possible. Keep windows closed.'},
+  {max:1e9, key:'severe', name:'Severe',       light:false, advice:'Affects healthy people; seriously impacts those with existing disease.', act:'Avoid all outdoor activity. Seek care if breathing is difficult.'},
+];
+const bandOf = (aqi) => BANDS.find(b => aqi <= b.max) || BANDS[BANDS.length-1];
+const css = (v) => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const col = (b) => css('--' + b.key);
+const fmt = (n, d=0) => (n==null||isNaN(n)) ? '—' : Number(n).toLocaleString('en-IN',{maximumFractionDigits:d,minimumFractionDigits:d});
+const POL = {o3:'Ozone (O₃)', pm10:'Coarse dust (PM₁₀)', pm25:'Fine particles (PM₂.₅)', so2:'Sulphur dioxide', no2:'Nitrogen dioxide', co:'Carbon monoxide', nh3:'Ammonia'};
+const TIP = {o3:'Ozone peaks in afternoon sun — avoid midday exertion.', pm10:'Dust — a mask helps; keep windows closed.', pm25:'Fine particles — an N95 mask helps; keep windows closed.', so2:'Industrial fumes — avoid the area if you have asthma.', no2:'Traffic fumes — avoid busy roads.', co:'Combustion gas — ventilate indoor spaces.', nh3:'Agricultural / waste emissions.'};
+
+/* CPCB PM2.5 sub-index, same breakpoints as the pipeline, so "now" is on the same scale as the forecast */
+const PM25_BP = [[0,30,0,50],[30,60,51,100],[60,90,101,200],[90,120,201,300],[120,250,301,400],[250,500,401,500]];
+function pm25Index(c){ if(c==null) return null; for(const [cl,ch,il,ih] of PM25_BP){ if(c<=ch) return il+(c-cl)*(ih-il)/(ch-cl);} return 500; }
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* ---------- assemble the per-city picture ---------- */
+const liveByCity = Object.fromEntries((D.live_latest||[]).map(r => [r.city, r]));
+const warned = (D.alert_summary||[]).map(a => {
+  const live = liveByCity[a.city] || {};
+  return {...a, state: live.state || '', pm25_now: a.peak_pm25_now, driver: a.peak_driver,
+          band: bandOf(a.worst_forecast_aqi), nowIdx: pm25Index(a.peak_pm25_now)};
+}).sort((x,y) => y.worst_forecast_aqi - x.worst_forecast_aqi);
+
+/* ---------- header + banner ---------- */
+section('banner', () => {
+  const totalAlerts = (D.severity_mix||[]).reduce((a,s)=>a+s.n,0);
+  const rw = D.run_window || {};
+  document.getElementById('m-updated').textContent = String((D.run_window||{}).observed_to||D.generated_utc||'').slice(0,16) + ' IST';
+  document.getElementById('b-n').textContent = warned.length;
+  document.getElementById('b-h').textContent = 'cities under an air-quality warning';
+  document.getElementById('b-p').textContent = `${fmt(totalAlerts)} warnings issued for the coming hours across ${(D.live_latest||[]).length} monitored cities` + (rw.forecast_from ? ` · forecasts for ${String(rw.forecast_from).slice(0,10)} → ${String(rw.forecast_to).slice(0,10)}` : '');
+  const w = warned[0];
+  if (w) {
+    document.getElementById('b-worst').textContent = `${w.city} · AQI ${fmt(w.worst_forecast_aqi)}`;
+    document.getElementById('b-worst-sub').textContent = `${w.band.name} · ${POL[w.driver]||w.driver||''}`;
+    document.getElementById('banner').style.borderLeftColor = col(w.band);
+  }
+});
+
+/* ---------- filter chips + search + cards ---------- */
+let sev = 'all', q = '';
+function renderCards(){
+  const rows = warned.filter(w => (sev==='all' || w.band.key===sev) && (!q || w.city.toLowerCase().includes(q) || (w.state||'').toLowerCase().includes(q)));
+  document.getElementById('count').textContent = `${rows.length} of ${warned.length} warned cities`;
+  const el = document.getElementById('cards');
+  if (!rows.length){ el.innerHTML = `<div class="empty">No warned city matches “${esc(q)}”. That is good news for that city — check the map below for its current reading.</div>`; return; }
+  el.innerHTML = rows.map(w => {
+    const when = String(w.peak_forecast_for||'').slice(11,16);
+    const date = String(w.peak_forecast_for||'').slice(0,10);
+    const obs  = String(w.peak_observed_at||'').slice(11,16);
+    const cause = POL[w.driver]||w.driver||'air pollution';
+    return `
+    <article class="card" style="--b:${col(w.band)}">
+      <div class="top">
+        <div><div class="to">Warning sent to residents of</div><h3>${esc(w.city)}<span class="state"> · ${esc(w.state)}</span></h3></div>
+        <span class="band ${w.band.light?'light':''}">${w.band.name}</span>
+      </div>
+      <div class="msgbody">
+        <p class="lead">Air quality in ${esc(w.city)} is expected to reach <b>AQI ${fmt(w.worst_forecast_aqi)} (${w.band.name})</b> by <b class="mono">${when}</b> on <b class="mono">${date}</b>, caused by ${cause.toLowerCase()}.</p>
+        <p class="health">${w.band.advice}</p>
+        <p class="do">What to do: ${w.band.act} ${TIP[w.driver]||''}</p>
+      </div>
+      <a class="btnwa" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent('Air quality warning - ' + w.city + ': forecast AQI ' + Math.round(w.worst_forecast_aqi) + ' (' + w.band.name + ') by ' + when + ' on ' + date + '. ' + w.band.act)}">Share this warning on WhatsApp</a>
+      <div class="facts">
+        <span>PM₂.₅ at ${obs} <b class="mono">${fmt(w.pm25_now,1)} µg/m³</b></span>
+        <span>Forecast ${when} <b class="mono">AQI ${fmt(w.worst_forecast_aqi)}</b></span>
+        <span>Warnings in this run <b class="mono">${w.alert_count}</b></span>
+        <span class="mono when">peak of ${w.alert_count} warnings · ${date}</span>
+      </div>
+    </article>`;}).join('');
+}
+section('cards', () => {
+  const present = [...new Set(warned.map(w=>w.band.key))];
+  const chipDefs = [['all','All'], ...BANDS.filter(b=>present.includes(b.key)).map(b=>[b.key, b.name])];
+  document.getElementById('chips').innerHTML = chipDefs.map(([k,n]) => `<button class="chipbtn" data-k="${k}" aria-pressed="${k==='all'}">${n}</button>`).join('');
+  document.getElementById('chips').addEventListener('click', e => {
+    const b = e.target.closest('.chipbtn'); if(!b) return;
+    sev = b.dataset.k;
+    document.querySelectorAll('.chipbtn').forEach(x => x.setAttribute('aria-pressed', x===b));
+    renderCards();
+  });
+  document.getElementById('q').addEventListener('input', e => { q = e.target.value.trim().toLowerCase(); renderCards(); });
+  renderCards();
+});
+
+/* ---------- 'Alert me': a real browser notification for the chosen city ---------- */
+section('alertme', () => {
+  const sel = document.getElementById('am-city'), st = document.getElementById('am-status'), go = document.getElementById('am-go');
+  const cities = [...new Set([...(D.live_latest||[]).map(r=>r.city), ...warned.map(w=>w.city)])].sort();
+  sel.innerHTML = cities.map(c => `<option>${esc(c)}</option>`).join('');
+  const KEY = 'airwatch_city';
+  let saved = null; try { saved = localStorage.getItem(KEY); } catch(e) {}
+  if (saved && cities.includes(saved)) sel.value = saved;
+
+  const msgFor = (c) => {
+    const w = warned.find(x => x.city === c);
+    if (!w) return {warn:false, title:'No warning for ' + c, body:'Air quality in ' + c + ' is not forecast to cross AQI 150 in this run.'};
+    const when = String(w.peak_forecast_for||'').slice(11,16);
+    return {warn:true, title:'Air quality warning - ' + c,
+            body:'Expected AQI ' + fmt(w.worst_forecast_aqi) + ' (' + w.band.name + ') by ' + when + '. ' + w.band.act};
+  };
+  const notify = (m) => {
+    st.textContent = m.title + ' - ' + m.body;
+    st.style.color = m.warn ? css('--severe') : css('--accent');
+    if ('Notification' in window && Notification.permission === 'granted') {
+      try { new Notification(m.title, {body: m.body}); } catch(e) {}
+    }
+  };
+  go.addEventListener('click', async () => {
+    try { localStorage.setItem(KEY, sel.value); } catch(e) {}
+    let perm = 'unsupported';
+    if ('Notification' in window) { try { perm = await Notification.requestPermission(); } catch(e) { perm = 'denied'; } }
+    notify(msgFor(sel.value));
+    if (perm !== 'granted') st.textContent += '  (Browser notifications are blocked or unavailable here - the message above is shown on the page instead.)';
+  });
+  if (saved && cities.includes(saved)) notify(msgFor(saved));
+});
+
+/* ---------- SVG helpers ---------- */
+const NS = 'http://www.w3.org/2000/svg';
+const S = (tag, attrs={}, text) => { const e = document.createElementNS(NS, tag); for (const [k,v] of Object.entries(attrs)) e.setAttribute(k, v); if (text!=null) e.textContent = text; return e; };
+
+/* ---------- map: equirectangular scatter over India's bounding box ---------- */
+section('map', () => {
+  const svg = document.getElementById('map'); const W=640, H=620, P=28;
+  const LON=[67,98], LAT=[6,38];
+  const x = lon => P + (lon-LON[0])/(LON[1]-LON[0])*(W-2*P);
+  const y = lat => H-P - (lat-LAT[0])/(LAT[1]-LAT[0])*(H-2*P);
+  svg.appendChild(S('rect',{x:P,y:P,width:W-2*P,height:H-2*P,fill:css('--panel-2'),stroke:css('--line'),rx:6}));
+  for (let lo=70; lo<=95; lo+=5){ svg.appendChild(S('line',{x1:x(lo),y1:P,x2:x(lo),y2:H-P,stroke:css('--grid')})); svg.appendChild(S('text',{x:x(lo),y:H-P+16,'font-size':10,fill:css('--muted'),'text-anchor':'middle'},lo+'°E')); }
+  for (let la=10; la<=35; la+=5){ svg.appendChild(S('line',{x1:P,y1:y(la),x2:W-P,y2:y(la),stroke:css('--grid')})); svg.appendChild(S('text',{x:P-4,y:y(la)+3,'font-size':10,fill:css('--muted'),'text-anchor':'end'},la+'°N')); }
+  const pts = (D.live_latest||[]).filter(r=>r.latitude!=null && r.pm25!=null).map(r=>({...r, idx:pm25Index(r.pm25)}));
+  pts.sort((a,b)=>a.idx-b.idx);           // draw the worst on top
+  for (const r of pts){
+    const b = bandOf(r.idx); const rad = Math.max(3.5, Math.min(13, 2.5+Math.sqrt(r.pm25)*1.1));
+    const c = S('circle',{cx:x(r.longitude).toFixed(1),cy:y(r.latitude).toFixed(1),r:rad,fill:col(b),'fill-opacity':.82,stroke:css('--panel'),'stroke-width':1});
+    c.appendChild(S('title',{},`${r.city}, ${r.state}\nPM₂.₅ ${fmt(r.pm25,1)} µg/m³ · ${b.name} (index ${fmt(r.idx)})\n${r.latest_hour}`));
+    svg.appendChild(c);
+  }
+  // Label the worst cities, worst first, never letting two labels collide - the
+  // Delhi / Haryana / Punjab cluster stacks four names otherwise.
+  const placed = [];
+  const overlaps = (a,b) => !(a.x2 < b.x1 || a.x1 > b.x2 || a.y2 < b.y1 || a.y1 > b.y2);
+  for (const r of pts.slice().reverse().slice(0, 14)){
+    const lx = x(r.longitude)+9, ly = y(r.latitude)+4;
+    const box = {x1:lx-2, y1:ly-11, x2:lx+r.city.length*6.4+2, y2:ly+3};
+    if (placed.some(p => overlaps(p, box))) continue;
+    placed.push(box);
+    svg.appendChild(S('text',{x:lx,y:ly,'font-size':11,'font-weight':600,fill:css('--ink'),stroke:css('--panel-2'),'stroke-width':3,'paint-order':'stroke'},r.city));
+  }
+});
+
+/* ---------- timeline: bars per forecast hour ---------- */
+section('timeline', () => {
+  const svg = document.getElementById('timeline'); const W=640, H=220, L=40, R=12, T=14, B=40;
+  const T_ = D.alerts_by_hour||[]; const max = Math.max(...T_.map(r=>r.n), 1);
+  const bw = (W-L-R)/Math.max(T_.length,1);
+  const yv = v => T + (H-T-B) - v/max*(H-T-B);
+  for (const f of [0,.5,1]){ const yy = yv(f*max); svg.appendChild(S('line',{x1:L,y1:yy,x2:W-R,y2:yy,stroke:css('--grid')})); svg.appendChild(S('text',{x:L-6,y:yy+4,'font-size':10.5,fill:css('--muted'),'text-anchor':'end'},Math.round(f*max))); }
+  T_.forEach((r,i)=>{
+    const h = (H-T-B) * r.n/max;
+    const rect = S('rect',{x:(L+i*bw+1).toFixed(1),y:(H-B-h).toFixed(1),width:Math.max(1,bw-2).toFixed(1),height:h.toFixed(1),fill:css('--accent'),rx:2});
+    rect.appendChild(S('title',{},`${r.hour}\n${r.n} warnings`)); svg.appendChild(rect);
+  });
+  const step = Math.max(1, Math.ceil(T_.length/6));
+  T_.forEach((r,i)=>{ if(i%step===0){ svg.appendChild(S('text',{x:(L+i*bw+bw/2).toFixed(1),y:H-B+16,'font-size':10.5,fill:css('--muted'),'text-anchor':'middle'},String(r.hour).slice(5,13).replace('-','/'))); }});
+  svg.appendChild(S('text',{x:L,y:H-6,'font-size':10.5,fill:css('--muted')},'date / hour of forecast'));
+});
+
+/* ---------- drivers: horizontal bars ---------- */
+section('drivers', () => {
+  const svg = document.getElementById('drivers'); const W=640, L=170, R=60, rowH=34, T=10;
+  const R_ = D.driver_mix||[]; const tot = R_.reduce((a,r)=>a+r.n,0)||1; const max = Math.max(...R_.map(r=>r.n),1);
+  svg.setAttribute('viewBox', `0 0 ${W} ${T+R_.length*rowH+6}`);
+  R_.forEach((r,i)=>{
+    const yy = T+i*rowH; const w = (W-L-R)*r.n/max;
+    svg.appendChild(S('text',{x:L-10,y:yy+21,'font-size':13,fill:css('--ink'),'text-anchor':'end'},POL[r.pollutant]||r.pollutant));
+    const rect = S('rect',{x:L,y:yy+6,width:w.toFixed(1),height:rowH-12,fill:i===0?css('--accent'):css('--muted'),rx:3});
+    rect.appendChild(S('title',{},`${r.n} warnings`)); svg.appendChild(rect);
+    svg.appendChild(S('text',{x:L+w+8,y:yy+21,'font-size':12.5,fill:css('--ink-2')},`${Math.round(100*r.n/tot)}%`));
+  });
+  const top = R_[0];
+  if (top) document.getElementById('driver-note').textContent = `${POL[top.pollutant]||top.pollutant} is behind ${Math.round(100*top.n/tot)}% of current warnings. ${TIP[top.pollutant]||''}`;
+});
+
+/* ---------- table ---------- */
+section('table', () => {
+  document.querySelector('#alert-table tbody').innerHTML = (D.alerts_recent||[]).slice(0,20).map(r => {
+    const b = bandOf(r.aqi_forecast);
+    return `<tr><td><b>${esc(r.city)}</b></td><td class="mono">${esc(String(r.forecast_for).slice(0,16))}</td>
+      <td class="num mono">${fmt(r.pm25_now,1)}</td><td class="num mono">${fmt(r.pm25_forecast,1)}</td><td class="num mono"><b>${fmt(r.aqi_forecast)}</b></td>
+      <td><span class="band ${b.light?'light':''}" style="--b:${col(b)}">${b.name}</span></td><td>${POL[r.aqi_dominant_pollutant]||esc(r.aqi_dominant_pollutant)}</td>
+      <td class="msg">${esc(r.message)}</td></tr>`;}).join('');
+});
+
+/* ---------- about ---------- */
+section('about', () => {
+  const m = D.model.real_rows, c = D.model.config;
+  const rows = (D.volume||[]).reduce((a,v)=>a+Number(v.rows_),0);
+  document.getElementById('about').innerHTML = [
+    ['Forecast skill', `R² ${m.gbt.r2.toFixed(3)}`, `${m.rmse_reduction_pct}% lower error than “same as now”, on ${fmt(c.real_test_rows)} real hours`],
+    ['Cities monitored', fmt((D.live_latest||[]).length), 'live CAMS + weather, every hour'],
+    ['History behind the model', (rows/1e6).toFixed(0)+' M rows', 'CPCB stations 2010–2023 + CAMS 2022–now'],
+    ['Warning threshold', 'AQI > 150', 'CPCB National AQI, forecast one hour ahead'],
+  ].map(([l,v,s])=>`<div class="fact"><div class="lbl">${l}</div><div class="val mono">${v}</div><div class="sub">${s}</div></div>`).join('');
+});
+
+/* ---------- if anything above failed, say so on the page rather than silently ---------- */
+if (errors.length) {
+  const box = document.createElement('div');
+  box.style.cssText = 'margin:20px 32px;padding:14px 18px;border:1px solid #C9342B;border-radius:8px;background:#FBEAEA;color:#8C1D1D;font-size:14px;font-family:monospace;white-space:pre-wrap';
+  box.textContent = 'Some sections could not render:\n' + errors.join('\n');
+  document.body.appendChild(box);
+}
+</script>

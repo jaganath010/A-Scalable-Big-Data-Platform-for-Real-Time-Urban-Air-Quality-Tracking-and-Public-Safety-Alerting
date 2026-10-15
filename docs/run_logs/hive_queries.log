@@ -1,0 +1,102 @@
+=== demonstration queries ===
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+26/09/06 15:40:18 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+26/09/06 15:40:20 WARN SparkConf: Note that spark.local.dir will be overridden by the value set by the cluster manager (via SPARK_LOCAL_DIRS in mesos/standalone/kubernetes and LOCAL_DIRS in YARN).
+26/09/06 15:40:22 WARN HiveConf: HiveConf of name hive.stats.jdbc.timeout does not exist
+26/09/06 15:40:22 WARN HiveConf: HiveConf of name hive.stats.retries.wait does not exist
+26/09/06 15:40:25 WARN ObjectStore: Version information not found in metastore. hive.metastore.schema.verification is not enabled so recording the schema version 2.3.0
+26/09/06 15:40:25 WARN ObjectStore: setMetaStoreSchemaVersion called but recording version is disabled: version = 2.3.0, comment = Set by MetaStore UNKNOWN@172.18.0.12
+Spark Web UI available at http://spark-client:4040
+Spark master: local[2], Application Id: local-1788709220884
+26/09/06 15:40:27 WARN ObjectStore: Failed to get database global_temp, returning NoSuchObjectException
+Time taken: 1.523 seconds
+--- Q1: rows by source ---
+Time taken: 1.186 seconds, Fetched 1 row(s)
+semistructured_json	cams_history	8263440	230	2022-07-31 18:30:00	2026-09-05 17:30:00
+semistructured_json	live_api	44160	230	2026-08-08 18:30:00	2026-08-16 17:30:00
+structured_csv	real	16252931	241	2009-12-31 18:30:00	2023-03-31 17:30:00
+structured_csv	synthetic	130023448	241	2009-12-31 18:30:00	2023-03-31 17:30:00
+Time taken: 39.568 seconds, Fetched 4 row(s)
+--- Q2: current live readings, worst 15 cities ---
+Time taken: 0.04 seconds, Fetched 1 row(s)
+Jaisalmer	Rajasthan	236.6	1217.0	2026-08-16 17:30:00
+Hisar	Haryana	76.8	319.0	2026-08-16 17:30:00
+Bhiwani	Haryana	62.6	185.0	2026-08-16 17:30:00
+Panipat	Haryana	69.2	169.0	2026-08-16 17:30:00
+Karnal	Haryana	55.9	169.0	2026-08-16 17:30:00
+Bathinda	Punjab	80.8	168.0	2026-08-16 17:30:00
+Fatehabad	Haryana	55.4	164.0	2026-08-16 17:30:00
+Kurukshetra	Haryana	55.8	163.0	2026-08-16 17:30:00
+Sirsa	Haryana	73.6	163.0	2026-08-16 17:30:00
+Delhi	Delhi	69.6	160.0	2026-08-16 17:30:00
+Khanna	Punjab	67.8	160.0	2026-08-16 17:30:00
+Ghaziabad	Uttar Pradesh	88.5	160.0	2026-08-16 17:30:00
+Hapur	Uttar Pradesh	88.5	160.0	2026-08-16 17:30:00
+Baghpat	Uttar Pradesh	69.6	160.0	2026-08-16 17:30:00
+Meerut	Uttar Pradesh	88.5	160.0	2026-08-16 17:30:00
+Time taken: 2.574 seconds, Fetched 15 row(s)
+--- Q3: alert leaderboard ---
+Time taken: 0.058 seconds, Fetched 1 row(s)
+Jaisalmer	72	500.0	NULL	NULL
+Hisar	47	406.0	NULL	NULL
+Khanna	34	236.0	NULL	NULL
+Ambala	33	403.0	NULL	NULL
+Sirsa	31	217.0	NULL	NULL
+Chandigarh	30	281.0	NULL	NULL
+Bathinda	30	259.0	NULL	NULL
+Panchkula	29	279.0	NULL	NULL
+Baddi	29	279.0	NULL	NULL
+Jalandhar	28	237.0	NULL	NULL
+Amritsar	26	313.0	NULL	NULL
+Patiala	26	209.0	NULL	NULL
+Fatehabad	25	186.0	NULL	NULL
+Ludhiana	23	210.0	NULL	NULL
+Patna	21	192.0	NULL	NULL
+Time taken: 8.51 seconds, Fetched 15 row(s)
+--- Q4: structured vs semi-structured, per city ---
+Time taken: 0.025 seconds, Fetched 1 row(s)
+Begusarai	82881	36120	164.4	60.3	104.2
+Chhapra	227376	36120	114.3	33.5	80.7
+Siwan	115461	36120	142.5	63.3	79.2
+Katihar	113580	36120	120.7	53.2	67.5
+Nalbari	58590	36120	108.9	46.0	62.9
+Purnia	231003	36120	115.9	53.2	62.8
+Saharsa	113697	36120	117.6	60.0	57.6
+Jodhpur	630369	36120	82.3	26.8	55.5
+Dharwad	55287	36120	73.2	18.9	54.3
+Munger	282141	36120	108.3	54.5	53.8
+Bettiah	285660	36120	113.4	59.9	53.5
+Surat	34227	36120	94.6	41.1	53.5
+Samastipur	85824	36120	113.5	62.2	51.3
+Kolar	400824	36120	69.3	18.7	50.5
+Tumakuru	26847	36120	68.9	18.7	50.2
+Time taken: 27.991 seconds, Fetched 15 row(s)
+--- Q5: measured vs imputed PM2.5, 10 largest cities ---
+Time taken: 0.025 seconds, Fetched 1 row(s)
+Delhi	26744121	17753481	33.6
+Bengaluru	6593958	3356100	49.1
+Mumbai	6109110	4504770	26.3
+Chennai	4511520	2758572	38.9
+Patna	4478769	3392298	24.3
+Lucknow	4305186	2422080	43.7
+Hyderabad	4129164	3345480	19.0
+Kolkata	2706831	2161350	20.2
+Pune	2476323	1148292	53.6
+Ahmedabad	2242665	1367532	39.0
+Time taken: 27.227 seconds, Fetched 10 row(s)
+--- Q6: Delhi PM2.5 by month, real measurements only ---
+Time taken: 0.025 seconds, Fetched 1 row(s)
+1	1597473	180.5
+2	1525158	127.9
+3	1667178	88.6
+4	1372923	86.8
+5	1379682	79.5
+6	1347264	66.3
+7	1406268	44.0
+8	1402020	38.8
+9	1431729	47.1
+10	1473876	120.1
+11	1553544	213.6
+12	1596366	199.4
+Time taken: 4.034 seconds, Fetched 12 row(s)

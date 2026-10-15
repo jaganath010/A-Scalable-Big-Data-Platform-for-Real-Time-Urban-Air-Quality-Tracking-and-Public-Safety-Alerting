@@ -1,0 +1,23 @@
+mode: DRY RUN (no credentials set - nothing leaves this machine)
+3 alert(s) selected (forecast AQI >= 151)
+
+----------------------------------------------------------------------
+TO: Hisar subscribers (0 recipient(s))
+AIR QUALITY WARNING - Hisar
+Expected by 12 Oct, 08:00: AQI 500 (Severe), mainly coarse dust (PM10).
+Avoid all outdoor activity. Seek care if breathing is difficult. Keep windows closed.
+Source: AirWatch India forecast, CPCB National AQI.
+----------------------------------------------------------------------
+TO: Fatehabad subscribers (0 recipient(s))
+AIR QUALITY WARNING - Fatehabad
+Expected by 12 Oct, 00:00: AQI 500 (Severe), mainly coarse dust (PM10).
+Avoid all outdoor activity. Seek care if breathing is difficult. Keep windows closed.
+Source: AirWatch India forecast, CPCB National AQI.
+----------------------------------------------------------------------
+TO: Bhiwani subscribers (0 recipient(s))
+AIR QUALITY WARNING - Bhiwani
+Expected by 11 Oct, 22:00: AQI 500 (Severe), mainly coarse dust (PM10).
+Avoid all outdoor activity. Seek care if breathing is difficult. Keep windows closed.
+Source: AirWatch India forecast, CPCB National AQI.
+----------------------------------------------------------------------
+summary: 3 message(s) built, 0 delivered, 0 failed -> F:\SEM 5 NOTES\Big Data\Project_Final\airquality_bigdata_project\airquality_bigdata_project\docs\run_logs\alert_outbox.jsonl

@@ -1,0 +1,21 @@
+# big / generated / local-only
+lakehouse_smoke/
+_sparktmp/
+nlp_text_classification/
+scala/streaming/target/
+scala/streaming/project/target/
+scala/streaming/project/project/
+__pycache__/
+*.pyc
+dashboard/_hourly_tmp/
+docs/run_logs/trackB_train_fullscale.log
+docs/run_logs/october_stream_full.log
+# runtime state and personal data (Telegram chat ids etc.)
+scripts/subscribers.csv
+scripts/alert_state.json
+scripts/stream_watermark.txt
+docs/run_logs/alert_outbox.jsonl
+# secrets
+*.env
+.env
+~$*
