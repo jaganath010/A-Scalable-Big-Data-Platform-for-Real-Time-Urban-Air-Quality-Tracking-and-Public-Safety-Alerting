@@ -508,7 +508,7 @@ if (errors.length) {
       const myLive = (D.live_forecast || {}).digest;
       if ((v.generated_utc && v.generated_utc !== mine) || (v.live_digest && myLive && v.live_digest !== myLive)) { txt.textContent = 'New data published - reloading\u2026'; location.reload(); return; }
       badge.className = 'livebadge on';
-      txt.textContent = 'LIVE \u00b7 checked ' + hh() + ' (every 10 s) \u00b7 data from ' + String(v.observed_to||'').slice(0,16);
+      txt.textContent = 'LIVE \u00b7 checked ' + hh() + ' (every 10 s) \u00b7 ' + (D.live_forecast ? 'live CAMS API, fetched ' + D.live_forecast.fetched_at.slice(11,16) : 'data from ' + String(v.observed_to||'').slice(0,16));
     } catch (e) {
       badge.className = 'livebadge off';
       txt.textContent = 'Live server not reachable \u00b7 last check ' + hh();
