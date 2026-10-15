@@ -96,7 +96,7 @@ Delivery is a dry run until `TELEGRAM_BOT_TOKEN` is set (people subscribe by mes
 
 ## Evidence
 
-Every number above traces to a preserved log in `docs/run_logs/` (training evaluation, Phase 4 summary, Spark-on-YARN recount, October live cycle and stream scoring, cross-validation, Hive queries, de-duplication replay) and to the screenshots in the appendix of `presentation/Final_Review_10_Slides.pptx`.
+Every number above traces to a preserved log in `docs/run_logs/` (training evaluation, Phase 4 summary, Spark-on-YARN recount, October live cycle and stream scoring, cross-validation, Hive queries, de-duplication replay) and to the screenshots in the appendix of `presentation/Final_Project_Presentation.pptx`.
 
 ## Honest limitations
 

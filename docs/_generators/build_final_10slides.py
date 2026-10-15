@@ -195,6 +195,7 @@ def bar(s, cats, vals, x, y, w, h, horizontal=False, colors=None, fmt="0.0", siz
 
 
 NOTES_TOTAL = "15 min talk: ~1.5 min per slide"
+NAVY, TEALC = RGBColor(0x0D, 0x3B, 0x5E), RGBColor(0x0E, 0x7C, 0x86)
 SIZE = Pt
 
 
@@ -262,26 +263,29 @@ bullets(s, ["Volume: 33 GB vs 15.7 GB RAM on the host — only partitioned, dist
             "Variety: flat CSV and nested JSON on one schema",
             "Veracity: 88.9 % synthetic rows must be validated, not trusted"], 9.05, 3.1, 3.55, 3.7, 14, 10)
 
-# ============================ SLIDE 3 - dataset ============================
-s = new_slide("Dataset — Source, Size, Volume / Variety / Velocity, Key Attributes",
-              "(1.5 min) Three layers with three jobs: structured CPCB trains, semi-structured CAMS history validates, live data alerts. Be upfront that 88.9 percent of structured rows are synthetic and that every accuracy figure is quoted on real rows.")
+# ============================ SLIDE 3 - dataset + the five V's ============================
+s = new_slide("Dataset \u2014 Source, Size and the Five V's",
+              "(1.5 min) Three data layers with three jobs: structured CPCB trains, semi-structured CAMS history validates, live data alerts. Then the five V's with one measured fact each. Be upfront that 88.9 percent of structured rows are synthetic and that accuracy is quoted on real rows.")
 table(s, ["Layer", "Source", "Format", "Rows", "Size", "Period"], [
-    ["Structured", "CPCB stations (+ validated synthetic expansion)", "Flat CSV", "146,276,379", "27.5 GB", "2010 – 2023"],
-    ["Semi-structured", "CAMS reanalysis via Open-Meteo (history)", "Nested JSON", "8,263,440", "458 MB", "2022-08 → 2026-09"],
-    ["Semi-structured", "CAMS + weather, live (keyless API, CC-BY 4.0)", "Nested JSON", "82,800 / refresh", "≈ 20 MB", "1–15 Oct 2026"],
-], 0.6, 1.3, 12.15, [1.7, 4.6, 1.5, 1.7, 1.1, 1.55], 12, 0.5)
-stat(s, 0.6, 3.35, 2.9, 1.1, "154,583,979", "rows in the unified table", BLUE, 22)
-stat(s, 3.65, 3.35, 2.9, 1.1, "241 / 4,077", "cities / stations", BLUE, 22)
-stat(s, 6.7, 3.35, 2.9, 1.1, "33 GB", "Parquet + CSV in HDFS", BLUE, 22)
-stat(s, 9.75, 3.35, 3.0, 1.1, "88.9 %", "of structured rows synthetic", MAROON, 22)
-region(s, 0.6, 4.65, 4.0, 2.25, "Volume · Variety · Velocity")
-bullets(s, ["Volume: 154.6 M rows, 232 HDFS blocks per raw copy", "Variety: CSV + nested JSON, one 17-column schema", "Velocity: 10 s micro-batches, 7 s latency"], 0.75, 5.15, 3.75, 1.7, 12, 6)
-region(s, 4.75, 4.65, 8.0, 2.25, "Key attributes")
-bullets(s, ["Identity / time: station_id, city, state, timestamp (hourly)",
-            "Pollutants: pm25, pm10, no2, so2, co, o3, nh3  →  CPCB AQI and the T+1 label (next-hour PM₂.₅)",
-            "Weather: temperature, humidity, wind speed / direction, pressure, rain, solar radiation",
-            "Context: traffic_index, urbanization_index, climate_type, is_rush_hour; provenance: data_source, *_was_imputed",
-            "Clean layer 32 columns → model input 54 numeric + 32 one-hot = 86 features"], 4.9, 5.15, 7.7, 1.75, 11.5, 4)
+    ["Structured", "CPCB stations (+ validated synthetic expansion)", "Flat CSV", "146,276,379", "27.5 GB", "2010 \u2013 2023"],
+    ["Semi-structured", "CAMS reanalysis via Open-Meteo (history)", "Nested JSON", "8,263,440", "458 MB", "2022-08 \u2192 2026-09"],
+    ["Semi-structured", "CAMS + weather, live (keyless API, CC-BY 4.0)", "Nested JSON", "82,800 per refresh", "\u2248 20 MB", "1\u201315 Oct 2026"],
+], 0.6, 1.25, 12.15, [1.7, 4.6, 1.5, 1.7, 1.1, 1.55], 12, 0.45)
+text(s, "Unified table: 154,583,979 rows \u00b7 33 GB \u00b7 241 cities / 4,077 stations \u00b7 one 17-column schema", 0.6, 3.05, 12.15, 0.3, 12.5, True, BLUE)
+vs = [("V", "Volume", "154.6 M rows, 33 GB", "Far more than the 15.7 GB RAM of one machine; HDFS splits it into 128 MB blocks, 3\u00d7 copies", NAVY),
+      ("V", "Variety", "CSV + nested JSON + live API", "Flat structured tables and nested semi-structured JSON, read by native Spark readers into one schema", TEALC),
+      ("V", "Velocity", "10 s micro-batches", "Live feed scored by Structured Streaming, \u2248 7 s latency; hourly alert loop", RGBColor(0xC2, 0x5E, 0x00)),
+      ("V", "Veracity", "88.9 % synthetic, validated", "5 paired tests, independent CPCB-vs-CAMS check, 11 defects fixed, every filled value flagged", MAROON),
+      ("V", "Value", "R\u00b2 0.8910 vs 0.8587", "12.18 % lower error; 27,543 warnings in Oct, delivered one hour ahead with health advice", GREEN)]
+for i, (_, name, big, desc, colr) in enumerate(vs):
+    x = 0.6 + i * 2.45
+    rect(s, x, 3.45, 2.3, 2.3, PANEL, LINE)
+    rect(s, x, 3.45, 2.3, 0.45, colr)
+    text(s, name, x + 0.12, 3.45, 2.1, 0.45, 15, True, WHITE, anchor=MSO_ANCHOR.MIDDLE)
+    text(s, big, x + 0.12, 3.97, 2.08, 0.5, 13, True, colr)
+    text(s, desc, x + 0.12, 4.5, 2.08, 1.2, 10.5, False, INK)
+text(s, "Key attributes", 0.6, 5.9, 3, 0.3, 12.5, True, BLUE)
+text(s, "Identity / time: station_id, city, state, hourly timestamp \u00b7 Pollutants: pm25, pm10, no2, so2, co, o3, nh3 (\u2192 CPCB AQI, T+1 label) \u00b7 Weather: temperature, humidity, wind, pressure, rain, solar \u00b7 Context: traffic_index, urbanization_index, climate_type \u00b7 Provenance: data_source, *_was_imputed \u00b7 Model input: 54 numeric + 32 one-hot = 86 features", 0.6, 6.2, 12.15, 0.8, 11, False, GREY)
 
 # ============================ SLIDE 4 - architecture ============================
 s = new_slide("System Architecture",
@@ -375,26 +379,29 @@ for i, t in enumerate(["Docker Compose · 11 containers", "HDFS 128 MB blocks ·
     box(0.45 + i * 2.5, 5.85, 2.4, 0.5, t, PANEL, INK, 10, False, LINE)
 text(s, "Blue = storage · light = Scala jobs · maroon = ML model / alert logic · teal = live path. Arrows show data flow; the model is read from HDFS by the streaming job.", 0.45, 6.55, 12.4, 0.5, 10.5, False, MUTED, True)
 
-# ============================ SLIDE 5 - Spark workflow ============================
-s = new_slide("Spark Workflow — DataFrame Operations, DAG, Partitioning, Caching",
-              "(1.5 min) We work at the DataFrame level; Catalyst compiles it to RDD stages. The DAG for the feature job has three shuffles. Partitioning: 128 MB HDFS blocks give 232 input tasks, disk partitioning by city gives 241 directories, and shuffle partitions are tuned per job. Caching is used only where a DataFrame is reused.")
-text(s, "DAG of the feature-engineering job (Phase 4)", 0.6, 1.2, 8, 0.3, 14, True, BLUE)
-stages = [("Scan Parquet", "232 tasks\n(1 per block)"), ("Dedupe", "window by\nstation, hour"), ("Rolling\nfeatures", "window\nrangeBetween"), ("T+1 label", "lead join,\nts + 3600 s"), ("Assemble\nvector", "54 + 32\n= 86 dims"), ("Write", "repartition(city)\n241 dirs")]
-for i, (a, b) in enumerate(stages):
+# ============================ SLIDE 5 - Spark workflow (simple) ============================
+s = new_slide("Spark Workflow \u2014 How the Data Flows",
+              "(1.5 min) Keep it simple. The job is a chain of six steps; Spark builds this chain as a DAG and splits it into stages wherever data must move between machines (a shuffle, shown in orange). Partitioning decides how the data is cut up; caching keeps a table in memory when it is reused.")
+text(s, "The feature-engineering job as a chain of steps (Spark builds this DAG)", 0.6, 1.2, 12.1, 0.35, 15, True, BLUE)
+steps = [("1  Read", "Parquet from HDFS\n232 parallel tasks", False), ("2  Remove\nduplicates", "one row per\nstation + hour", True), ("3  Add history", "rolling averages,\nlag, trend", True),
+         ("4  Add the label", "next-hour PM\u2082.\u2085\n(only if exactly 1 h later)", False), ("5  Pack features", "86 numbers\nper row", False), ("6  Write", "one folder\nper city (241)", True)]
+for i, (a, b, wide) in enumerate(steps):
     x = 0.6 + i * 2.05
-    rect(s, x, 1.6, 1.85, 1.15, RGBColor(0xDC, 0xEB, 0xF4) if i not in (1, 2, 5) else RGBColor(0xFB, 0xEF, 0xD0), LINE)
-    text(s, a.split("\n"), x + 0.05, 1.63, 1.75, 0.5, 12, True, INK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
-    text(s, b.split("\n"), x + 0.05, 2.15, 1.75, 0.55, 10.5, False, GREY, align=PP_ALIGN.CENTER)
-text(s, "Amber stages = wide transformations (shuffle). Blue = narrow (pipelined within a stage). Measured: 146.3 M → 128.7 M → 93.2 M rows, 73.5 min.", 0.6, 2.85, 12.15, 0.3, 11, False, MUTED, True)
-region(s, 0.6, 3.3, 4.0, 3.55, "DataFrame / RDD operations")
-bullets(s, ["read.parquet / csv with explicit schema", "Window: row_number (dedupe), rangeBetween rolling means, lag", "groupBy + percentile_approx → median tables",
-            "broadcast join of the small tables", "withColumn / when / coalesce feature logic", "RDD: none hand-written — MLlib GBT runs on RDDs internally (1,300+ jobs)"], 0.75, 3.8, 3.75, 3.05, 12.5, 5)
-region(s, 4.75, 3.3, 4.0, 3.55, "Partitioning")
-bullets(s, ["HDFS: 128 MB blocks → 232 input splits for the 27.5 GB raw copy", "Disk: partitionBy(city) = 241 directories (by year/month made 5,237 tiny files — rejected)",
-            "Unified table: partitionBy(source_format) = 2", "Shuffle partitions tuned per job: 400 / 200 / 120 / 64 / 16", "repartition(city) before write → a few large files per city"], 4.9, 3.8, 3.75, 3.05, 12.5, 5)
-region(s, 8.9, 3.3, 3.85, 3.55, "Caching choices")
-bullets(s, ["Clean job: df.cache() — reused by median tables, the join and the write; unpersist at the end", "GBT: train.cache(), test.cache() — scanned every iteration",
-            "Stream: predictions.cache() — used by count, write and alert filter", "Small median tables: broadcast, not cached", "GBT checkpoint dir: breaks long lineage (earlier StackOverflow)"], 9.05, 3.8, 3.6, 3.05, 12.5, 5)
+    rect(s, x, 1.65, 1.85, 1.5, RGBColor(0xFB, 0xE3, 0xC8) if wide else RGBColor(0xDC, 0xEB, 0xF4), LINE)
+    text(s, a.split("\n"), x + 0.05, 1.7, 1.75, 0.6, 13, True, INK, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+    text(s, b.split("\n"), x + 0.05, 2.35, 1.75, 0.7, 11, False, GREY, align=PP_ALIGN.CENTER)
+    if i < 5:
+        text(s, "\u2192", x + 1.85, 1.65, 0.2, 1.5, 16, True, MUTED, align=PP_ALIGN.CENTER, anchor=MSO_ANCHOR.MIDDLE)
+text(s, "Orange = shuffle (data moves between machines, a new stage). Blue = runs inside one stage.  Measured: 146.3 M \u2192 128.7 M \u2192 93.2 M rows in 73.5 min.", 0.6, 3.25, 12.1, 0.3, 11.5, False, MUTED, True)
+cards = [("DataFrames, not RDDs", BLUE, ["We work with DataFrames (tables); Spark turns them into RDDs inside.", "Window functions give every station its own history.", "Small lookup tables are broadcast to all machines \u2014 no shuffle needed."]),
+         ("Partitioning \u2014 how data is cut", TEALC, ["HDFS stores 128 MB blocks \u2192 232 tasks read in parallel.", "Results are saved one folder per city (241), so one city reads one folder.", "Shuffle partitions tuned per job (from 16 up to 400)."]),
+         ("Caching \u2014 what we keep in memory", MAROON, ["cache() keeps a table in memory when it is used more than once.", "We cache: the cleaning table, the training data, the stream predictions.", "unpersist() frees the memory when we are done."])]
+for i, (h, colr, items) in enumerate(cards):
+    x = 0.6 + i * 4.1
+    rect(s, x, 3.75, 3.95, 3.15, PANEL, LINE)
+    rect(s, x, 3.75, 3.95, 0.5, colr)
+    text(s, h, x + 0.15, 3.75, 3.7, 0.5, 14, True, WHITE, anchor=MSO_ANCHOR.MIDDLE)
+    bullets(s, items, x + 0.18, 4.4, 3.6, 2.5, 13, 8)
 
 # ============================ SLIDE 6 - Scala implementation ============================
 s = new_slide("Scala Implementation — Project Structure and Key Code",
