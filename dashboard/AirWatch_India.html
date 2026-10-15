@@ -261,8 +261,14 @@ const refTime = (isLiveMode && !dataStale) ? nowClock : dataEnd;
 const refEnd = new Date(refTime.getTime() + HORIZON_H * 36e5);
 const pad2 = (n) => String(n).padStart(2, '0');
 const fmtTs = (d) => d.getFullYear() + '-' + pad2(d.getMonth()+1) + '-' + pad2(d.getDate()) + ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+const LF = D.live_forecast && Array.isArray(D.live_forecast.warnings) ? D.live_forecast : null;
 let warned;
-if (Array.isArray(D.alerts_window) && D.alerts_window.length && D.alerts_window[0].pm25_now !== undefined) {
+if (LF) {   // live API warnings, computed by serve_live.py when this page was loaded
+  warned = LF.warnings.map(w => ({city: w.city, state: w.state || (liveByCity[w.city]||{}).state || '', alert_count: w.alert_count,
+    worst_forecast_aqi: w.aqi_forecast, peak_forecast_for: w.forecast_for, peak_observed_at: w.observed_at,
+    peak_pm25_now: w.pm25_now, peak_pm25_forecast: w.pm25_forecast, pm25_now: w.pm25_now, driver: w.driver,
+    band: bandOf(w.aqi_forecast), nowIdx: pm25Index(w.pm25_now)})).sort((x,y) => y.worst_forecast_aqi - x.worst_forecast_aqi);
+} else if (Array.isArray(D.alerts_window) && D.alerts_window.length && D.alerts_window[0].pm25_now !== undefined) {
   const best = {};
   for (const r of D.alerts_window) {
     const t = parseTs(r.forecast_for);
@@ -293,10 +299,15 @@ section('banner', () => {
   document.getElementById('m-updated').textContent = String((D.run_window||{}).observed_to||D.generated_utc||'').slice(0,16) + ' IST';
   document.getElementById('b-n').textContent = warned.length;
   document.getElementById('b-h').textContent = warned.length ? 'cities under an air-quality warning' : 'cities under warning for the next hours \u2014 none forecast above AQI 150';
+  if (LF) {
+    document.getElementById('b-p').textContent = `LIVE forecast from the CAMS API, fetched ${LF.fetched_at.slice(11,16)} · AQI above 150 within the next ${LF.horizon_h} hours after ${LF.as_of} · ${LF.cities_checked} cities checked`;
+    document.getElementById('m-updated').textContent = LF.fetched_at.slice(0,16) + ' IST';
+  } else {
   const asOf = fmtTs(refTime);
   document.getElementById('b-p').textContent = `Forecast above AQI 150 within the next ${HORIZON_H} hours (after ${asOf}) \u00b7 ${(D.live_latest||[]).length} cities monitored` +
     (dataStale ? ` \u00b7 DATA IS ${Math.round(staleHours)} h OLD - showing the last scored hour; run a scoring cycle for fresh warnings` : (isLiveMode ? '' : ' \u00b7 snapshot as of the last scored hour'));
   if (dataStale) document.getElementById('banner').style.borderLeftColor = '#8a6a00';
+  }
   const w = warned[0];
   if (w) {
     document.getElementById('b-worst').textContent = `${w.city} · AQI ${fmt(w.worst_forecast_aqi)}`;
@@ -494,7 +505,8 @@ if (errors.length) {
       const r = await fetch('/api/version?_=' + Date.now(), {cache:'no-store'});
       if (!r.ok) throw new Error(r.status);
       const v = await r.json();
-      if (v.generated_utc && v.generated_utc !== mine) { txt.textContent = 'New data published - reloading\u2026'; location.reload(); return; }
+      const myLive = (D.live_forecast || {}).digest;
+      if ((v.generated_utc && v.generated_utc !== mine) || (v.live_digest && myLive && v.live_digest !== myLive)) { txt.textContent = 'New data published - reloading\u2026'; location.reload(); return; }
       badge.className = 'livebadge on';
       txt.textContent = 'LIVE \u00b7 checked ' + hh() + ' (every 10 s) \u00b7 data from ' + String(v.observed_to||'').slice(0,16);
     } catch (e) {

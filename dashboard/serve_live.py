@@ -27,6 +27,7 @@ import json
 import os
 import sys
 from datetime import datetime
+import live_cams
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 DASH = os.path.dirname(os.path.abspath(__file__))
@@ -37,12 +38,14 @@ PORT = int(sys.argv[1]) if len(sys.argv) > 1 else 8000
 
 def version():
     d = json.load(open(DATA, encoding="utf-8"))
+    lv = live_cams.get() or {}
     return {"generated_utc": d.get("generated_utc"), "observed_to": (d.get("run_window") or {}).get("observed_to"),
-            "mtime": os.path.getmtime(DATA)}
+            "mtime": os.path.getmtime(DATA), "live_digest": lv.get("digest"), "live_fetched": lv.get("fetched_at")}
 
 
 def page():
     data = json.load(open(DATA, encoding="utf-8"))
+    data["live_forecast"] = live_cams.get()          # fresh live warnings (cached 5 min); None if the API is unreachable
     html = open(TEMPLATE, encoding="utf-8").read()
     blob = json.dumps(data, separators=(",", ":")).replace("</", "<\\/")
     html = html.replace("/*__DASHBOARD_DATA__*/null", blob).replace("__BUILT_AT__", datetime.now().strftime("%d %b %Y %H:%M"))

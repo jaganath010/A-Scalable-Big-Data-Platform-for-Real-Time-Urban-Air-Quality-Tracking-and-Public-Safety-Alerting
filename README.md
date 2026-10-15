@@ -10,7 +10,7 @@ Built on **Hadoop HDFS, YARN, Spark 3.5 (Scala 2.12 + PySpark MLlib), Spark Stru
 
 **Public warning board:** https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/
 
-> **Live mode:** `python dashboard/serve_live.py` serves the same page at http://localhost:8000; it re-checks every 10 s and reloads when the pipeline publishes new data. The GitHub Pages copy is a static snapshot.
+> **Live mode:** `python dashboard/serve_live.py` serves the same page at http://localhost:8000. On every page load (refresh) it asks the live Open-Meteo/CAMS API for all 230 cities and shows the warnings for the next 6 hours (CAMS forecast converted to CPCB AQI; cached 5 min; this fast path does not use the GBT). The page re-checks every 10 s. The GitHub Pages copy is a static snapshot.
 >
 > Served by GitHub Pages from `docs/index.html` (enable once under *Settings → Pages → Branch: main, folder: /docs*).
 > It is a single static file: it also opens directly from `dashboard/AirWatch_India.html` with no server.

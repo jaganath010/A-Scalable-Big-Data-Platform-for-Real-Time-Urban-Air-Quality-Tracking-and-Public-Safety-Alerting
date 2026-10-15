@@ -45,3 +45,9 @@ python scripts\run_hourly_cycle.py --loop --manage-docker         # forever: dis
 ## Which warnings the board shows (fixed 15 Oct 2026)
 The cards used each city's PEAK warning over the whole 1-15 Oct run, so on 15 Oct a card could say "by 20:00 on 2026-10-11". The board now shows, per city, the worst forecast hour in the NEXT 6 hours after "now": the clock in live mode (served by serve_live.py), or the last scored hour in the static snapshot. If the live data is more than 3 h older than the clock the banner says so. The whole-run charts (warnings per hour, causes) are labelled as such. The export (`alerts_window`) now carries observed_at, pm25_now and pm25_forecast for the last 24 forecast hours.
 Result at 23:20 on 15 Oct: 72 cities forecast above AQI 150 for 00:00 on 16 Oct (worst Hisar, AQI 429). The data ends at 2026-10-16 00:00, so after that a new scoring run is needed.
+
+## Live warnings on every page refresh (dashboard/live_cams.py)
+`serve_live.py` calls `live_cams.get()` each time the page is built: Open-Meteo CAMS hourly forecast for the 230 cities (multi-location calls, a few seconds, cached 5 min) is converted to CPCB AQI with the same breakpoints and averaging windows as AirQualityStream.scala, and the cards show the worst hour in the next 6 h above AQI 150. Verified at 23:25 on 15 Oct: 230/230 cities fetched, 41 warned (Hisar 430, Fatehabad 419, Kaithal 366).
+- This is the CAMS model's own forecast turned into AQI. It does NOT use the trained GBT (which needs the Spark cluster). The banner says "LIVE forecast from the CAMS API". The GBT results remain the Spark path (run_hourly_cycle.py).
+- The page re-checks every 10 s and reloads when the live warnings change.
+- If the API is unreachable the page falls back to the last Spark run.
