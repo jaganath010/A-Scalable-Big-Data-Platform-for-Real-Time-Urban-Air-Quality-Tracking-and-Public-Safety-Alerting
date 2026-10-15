@@ -211,6 +211,18 @@ def code(s, x, y, w, h, title, body, size=9.5):
     text(s, body.split("\n"), x + 0.12, y + 0.32, w - 0.24, h - 0.36, size, False, RGBColor(0xD7, 0xE2, 0xEA), font="Courier New")
 
 
+GH_URL = "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting"
+WS_URL = "https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/"
+
+
+def link(tb, url):
+    for p in tb.text_frame.paragraphs:
+        for r in p.runs:
+            r.hyperlink.address = url
+            r.font.underline = True
+            r.font.color.rgb = BLUE
+
+
 # ============================ SLIDE 1 - title ============================
 s = prs.slides.add_slide(blank)
 for ph in list(s.placeholders):
@@ -225,6 +237,10 @@ table(s, ["Team member", "Register number"], [
 text(s, "Faculty:", 7.6, 3.9, 1.3, 0.4, 14, True)
 text(s, "[ enter faculty name ]", 8.7, 3.9, 4.2, 0.4, 14, False, RED)
 text(s, "Stack:  Hadoop HDFS · YARN · Spark 3.5 · Scala 2.12 · PySpark MLlib · Structured Streaming · Hive", 7.6, 4.5, 5.2, 1.0, 13, False, GREY)
+text(s, "GitHub:", 0.9, 6.2, 1.1, 0.35, 12, True)
+link(text(s, GH_URL, 2.0, 6.2, 10.8, 0.35, 11.5, False, BLUE), GH_URL)
+text(s, "Website:", 0.9, 6.65, 1.1, 0.35, 12, True)
+link(text(s, WS_URL, 2.0, 6.65, 10.8, 0.35, 11.5, False, BLUE), WS_URL)
 s.notes_slide.notes_text_frame.text = ("(1 min) Introduce the team and the one-line goal: forecast each city's PM2.5 one hour ahead on a distributed platform and warn people before it arrives. "
                                       "Fill in the faculty name on this slide before presenting.")
 
@@ -425,9 +441,9 @@ for p in tb.text_frame.paragraphs:
     p.space_after = Pt(8)
 rect(s, 0.6, 5.0, 12.15, 1.95, PANEL, LINE)
 text(s, "GitHub repository", 0.8, 5.08, 4, 0.35, 14, True, BLUE)
-text(s, "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting", 0.8, 5.43, 11.7, 0.35, 12.5, True, INK)
+link(text(s, "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting", 0.8, 5.43, 11.7, 0.35, 12.5, True, INK), GH_URL)
 text(s, "Website (warning board, GitHub Pages)", 0.8, 5.85, 6, 0.35, 14, True, BLUE)
-text(s, "https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/", 0.8, 6.2, 11.7, 0.35, 12.5, True, INK)
+link(text(s, "https://jaganath010.github.io/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting/", 0.8, 6.2, 11.7, 0.35, 12.5, True, INK), WS_URL)
 text(s, "Uploaded: this PPT (presentation/) + PROJECT_REPORT.pdf (docs/), code (scala/, scripts/, hive/, dashboard/), run logs (docs/run_logs/)", 0.8, 6.58, 11.7, 0.3, 10.5, False, GREY)
 
 # ============================================================================
