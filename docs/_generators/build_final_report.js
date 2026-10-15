@@ -80,7 +80,7 @@ body.push(
     children: [new TextRun({ text: "A Scalable Big Data Platform for Real-Time Urban Air Quality Tracking and Public Safety Alerting", font: "Calibri", size: 44, bold: true })] }),
   new Paragraph({ spacing: { after: 300 }, alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Group A14", font: "Calibri", size: 28, bold: true, color: BLUE })] }),
   ...table(["Team member", "Register number"], [["Sangeeth S", "CB.AI.U4AID24050"], ["Jaganath R", "CB.AI.U4AID24021"], ["Niranjan S", "CB.AI.U4AID24035"], ["PL Kowshik", "CB.AI.U4AID24036"]], [4500, 4526], { size: 22 }),
-  new Paragraph({ spacing: { before: 200, after: 60 }, children: [bold("Faculty: "), run("________________________________")] }),
+  new Paragraph({ spacing: { before: 200, after: 60 }, children: [bold("Faculty: "), run("Sreeja B P")] }),
   new Paragraph({ spacing: { after: 60 }, children: [bold("Date: "), run("October 2026")] }),
   new Paragraph({ spacing: { after: 60 }, children: [bold("GitHub: "), link(GH, GH)] }),
   new Paragraph({ spacing: { after: 60 }, children: [bold("Website: "), link(WS, WS)] }),

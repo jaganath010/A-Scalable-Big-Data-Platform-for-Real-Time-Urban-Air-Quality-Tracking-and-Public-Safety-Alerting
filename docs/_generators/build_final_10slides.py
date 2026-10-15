@@ -236,7 +236,7 @@ table(s, ["Team member", "Register number"], [
     ["Sangeeth S", "CB.AI.U4AID24050"], ["Jaganath R", "CB.AI.U4AID24021"],
     ["Niranjan S", "CB.AI.U4AID24035"], ["PL Kowshik", "CB.AI.U4AID24036"]], 0.9, 3.85, 6.2, [3.2, 3.0], 13, 0.42)
 text(s, "Faculty:", 7.6, 3.9, 1.3, 0.4, 14, True)
-text(s, "[ enter faculty name ]", 8.7, 3.9, 4.2, 0.4, 14, False, RED)
+text(s, "Sreeja B P", 8.7, 3.9, 4.2, 0.4, 14, True, INK)
 text(s, "Stack:  Hadoop HDFS · YARN · Spark 3.5 · Scala 2.12 · PySpark MLlib · Structured Streaming · Hive", 7.6, 4.5, 5.2, 1.0, 13, False, GREY)
 s.notes_slide.notes_text_frame.text = ("(1 min) Introduce the team and the one-line goal: forecast each city's PM2.5 one hour ahead on a distributed platform and warn people before it arrives. "
                                       "Fill in the faculty name on this slide before presenting.")
