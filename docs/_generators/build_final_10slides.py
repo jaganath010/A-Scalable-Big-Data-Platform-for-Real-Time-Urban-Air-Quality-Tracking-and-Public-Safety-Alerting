@@ -425,8 +425,8 @@ for p in tb.text_frame.paragraphs:
     p.space_after = Pt(8)
 rect(s, 0.6, 5.3, 12.15, 1.45, PANEL, LINE)
 text(s, "GitHub repository", 0.8, 5.4, 4, 0.35, 14, True, BLUE)
-text(s, "[ paste repository link here ]", 0.8, 5.8, 7.5, 0.4, 15, False, RED)
-text(s, "Uploaded: this PPT + PROJECT_REPORT.pdf (docs/), code (scala/, scripts/, hive/, dashboard/), run logs (docs/run_logs/)", 0.8, 6.25, 11.7, 0.4, 12, False, GREY)
+text(s, "https://github.com/jaganath010/A-Scalable-Big-Data-Platform-for-Real-Time-Urban-Air-Quality-Tracking-and-Public-Safety-Alerting", 0.8, 5.8, 11.7, 0.4, 13, True, INK)
+text(s, "Uploaded: this PPT (presentation/) + PROJECT_REPORT.pdf (docs/), code (scala/, scripts/, hive/, dashboard/), run logs (docs/run_logs/)", 0.8, 6.25, 11.7, 0.4, 12, False, GREY)
 
 # ============================================================================
 # APPENDIX - EVIDENCE (after the 10 required slides; every item is a real screenshot or a verbatim log excerpt)
