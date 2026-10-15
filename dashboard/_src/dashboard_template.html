@@ -182,11 +182,11 @@
     </section>
     <div class="grid" style="gap:18px">
       <section class="panel">
-        <h2>Warnings issued per hour<small>forecast hour</small></h2>
+        <h2>Warnings issued per hour<small>whole run, 1\u201315 Oct \u00b7 forecast hour</small></h2>
         <svg id="timeline" class="fig" viewBox="0 0 640 220" role="img" aria-label="Alerts per hour"></svg>
       </section>
       <section class="panel">
-        <h2>What is causing the warnings<small>dominant pollutant</small></h2>
+        <h2>What is causing the warnings<small>whole run, 1\u201315 Oct \u00b7 dominant pollutant</small></h2>
         <svg id="drivers" class="fig" viewBox="0 0 640 170" role="img" aria-label="Alerts by dominant pollutant"></svg>
         <p class="note" id="driver-note"></p>
       </section>
@@ -194,7 +194,7 @@
   </div>
 
   <section class="panel">
-    <h2>Strongest warnings<small>highest forecast AQI · the exact message issued</small></h2>
+    <h2>Strongest warnings right now<small>highest forecast AQI in the next hours \u00b7 the message issued</small></h2>
     <div class="tbl-wrap"><table id="alert-table">
       <thead><tr><th>City</th><th>Forecast for</th><th class="num">PM₂.₅ now</th><th class="num">PM₂.₅ +1h</th><th class="num">AQI +1h</th><th>Band</th><th>Cause</th><th>Message</th></tr></thead>
       <tbody></tbody></table></div>
@@ -247,11 +247,44 @@ const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&l
 
 /* ---------- assemble the per-city picture ---------- */
 const liveByCity = Object.fromEntries((D.live_latest||[]).map(r => [r.city, r]));
-const warned = (D.alert_summary||[]).map(a => {
-  const live = liveByCity[a.city] || {};
-  return {...a, state: live.state || '', pm25_now: a.peak_pm25_now, driver: a.peak_driver,
-          band: bandOf(a.worst_forecast_aqi), nowIdx: pm25Index(a.peak_pm25_now)};
-}).sort((x,y) => y.worst_forecast_aqi - x.worst_forecast_aqi);
+/* ---------- WHICH WARNINGS: the next hours after "now", not each city's peak over the whole run ----------
+   Reference time: live (served over http) = the clock; static snapshot = the last scored hour.
+   If the live data is more than 3 h older than the clock we say so and fall back to the data's own time. */
+const HORIZON_H = 6;
+const parseTs = (x) => new Date(String(x).replace(' ', 'T'));
+const dataEnd = parseTs((D.run_window || {}).observed_to || D.generated_utc);
+const isLiveMode = /^https?:/.test(location.protocol);
+const nowClock = new Date();
+const staleHours = isLiveMode ? (nowClock - dataEnd) / 36e5 : 0;
+const dataStale = isLiveMode && staleHours > 3;
+const refTime = (isLiveMode && !dataStale) ? nowClock : dataEnd;
+const refEnd = new Date(refTime.getTime() + HORIZON_H * 36e5);
+const pad2 = (n) => String(n).padStart(2, '0');
+const fmtTs = (d) => d.getFullYear() + '-' + pad2(d.getMonth()+1) + '-' + pad2(d.getDate()) + ' ' + pad2(d.getHours()) + ':' + pad2(d.getMinutes());
+let warned;
+if (Array.isArray(D.alerts_window) && D.alerts_window.length && D.alerts_window[0].pm25_now !== undefined) {
+  const best = {};
+  for (const r of D.alerts_window) {
+    const t = parseTs(r.forecast_for);
+    if (!(t > refTime && t <= refEnd)) continue;
+    const c = (best[r.city] ||= {rows: 0, top: r});
+    c.rows += 1;
+    if (r.aqi_forecast > c.top.aqi_forecast) c.top = r;
+  }
+  warned = Object.entries(best).map(([city, c]) => {
+    const r = c.top, live = liveByCity[city] || {};
+    return {city, state: live.state || '', alert_count: c.rows, worst_forecast_aqi: r.aqi_forecast,
+            peak_forecast_for: r.forecast_for, peak_observed_at: r.observed_at, peak_pm25_now: r.pm25_now,
+            peak_pm25_forecast: r.pm25_forecast, pm25_now: r.pm25_now, driver: r.aqi_dominant_pollutant,
+            band: bandOf(r.aqi_forecast), nowIdx: pm25Index(r.pm25_now), message: r.message};
+  }).sort((x,y) => y.worst_forecast_aqi - x.worst_forecast_aqi);
+} else {   // older data file without the upcoming-hours export: fall back to the run's peak per city
+  warned = (D.alert_summary||[]).map(a => {
+    const live = liveByCity[a.city] || {};
+    return {...a, state: live.state || '', pm25_now: a.peak_pm25_now, driver: a.peak_driver,
+            band: bandOf(a.worst_forecast_aqi), nowIdx: pm25Index(a.peak_pm25_now)};
+  }).sort((x,y) => y.worst_forecast_aqi - x.worst_forecast_aqi);
+}
 
 /* ---------- header + banner ---------- */
 section('banner', () => {
@@ -259,8 +292,11 @@ section('banner', () => {
   const rw = D.run_window || {};
   document.getElementById('m-updated').textContent = String((D.run_window||{}).observed_to||D.generated_utc||'').slice(0,16) + ' IST';
   document.getElementById('b-n').textContent = warned.length;
-  document.getElementById('b-h').textContent = 'cities under an air-quality warning';
-  document.getElementById('b-p').textContent = `${fmt(totalAlerts)} warnings issued for the coming hours across ${(D.live_latest||[]).length} monitored cities` + (rw.forecast_from ? ` · forecasts for ${String(rw.forecast_from).slice(0,10)} → ${String(rw.forecast_to).slice(0,10)}` : '');
+  document.getElementById('b-h').textContent = warned.length ? 'cities under an air-quality warning' : 'cities under warning for the next hours \u2014 none forecast above AQI 150';
+  const asOf = fmtTs(refTime);
+  document.getElementById('b-p').textContent = `Forecast above AQI 150 within the next ${HORIZON_H} hours (after ${asOf}) \u00b7 ${(D.live_latest||[]).length} cities monitored` +
+    (dataStale ? ` \u00b7 DATA IS ${Math.round(staleHours)} h OLD - showing the last scored hour; run a scoring cycle for fresh warnings` : (isLiveMode ? '' : ' \u00b7 snapshot as of the last scored hour'));
+  if (dataStale) document.getElementById('banner').style.borderLeftColor = '#8a6a00';
   const w = warned[0];
   if (w) {
     document.getElementById('b-worst').textContent = `${w.city} · AQI ${fmt(w.worst_forecast_aqi)}`;
@@ -296,8 +332,8 @@ function renderCards(){
       <div class="facts">
         <span>PM₂.₅ at ${obs} <b class="mono">${fmt(w.pm25_now,1)} µg/m³</b></span>
         <span>Forecast ${when} <b class="mono">AQI ${fmt(w.worst_forecast_aqi)}</b></span>
-        <span>Warnings in this run <b class="mono">${w.alert_count}</b></span>
-        <span class="mono when">peak of ${w.alert_count} warnings · ${date}</span>
+        <span>Warned hours ahead <b class="mono">${w.alert_count} of ${HORIZON_H}</b></span>
+        <span class="mono when">worst of the next ${HORIZON_H} h · ${date}</span>
       </div>
     </article>`;}).join('');
 }
@@ -417,12 +453,13 @@ section('drivers', () => {
 
 /* ---------- table ---------- */
 section('table', () => {
-  document.querySelector('#alert-table tbody').innerHTML = (D.alerts_recent||[]).slice(0,20).map(r => {
-    const b = bandOf(r.aqi_forecast);
-    return `<tr><td><b>${esc(r.city)}</b></td><td class="mono">${esc(String(r.forecast_for).slice(0,16))}</td>
-      <td class="num mono">${fmt(r.pm25_now,1)}</td><td class="num mono">${fmt(r.pm25_forecast,1)}</td><td class="num mono"><b>${fmt(r.aqi_forecast)}</b></td>
-      <td><span class="band ${b.light?'light':''}" style="--b:${col(b)}">${b.name}</span></td><td>${POL[r.aqi_dominant_pollutant]||esc(r.aqi_dominant_pollutant)}</td>
-      <td class="msg">${esc(r.message)}</td></tr>`;}).join('');
+  document.querySelector('#alert-table tbody').innerHTML = warned.slice(0,20).map(w => {
+    const b = w.band;
+    const msg = w.message || `Air quality warning for ${w.city}: forecast AQI ${fmt(w.worst_forecast_aqi)} (${b.name}), driven by ${w.driver}. Forecast PM2.5 ${fmt(w.peak_pm25_forecast,1)} ug/m3 by ${String(w.peak_forecast_for).slice(0,16)}.`;
+    return `<tr><td><b>${esc(w.city)}</b></td><td class="mono">${esc(String(w.peak_forecast_for).slice(0,16))}</td>
+      <td class="num mono">${fmt(w.pm25_now,1)}</td><td class="num mono">${fmt(w.peak_pm25_forecast,1)}</td><td class="num mono"><b>${fmt(w.worst_forecast_aqi)}</b></td>
+      <td><span class="band ${b.light?'light':''}" style="--b:${col(b)}">${b.name}</span></td><td>${POL[w.driver]||esc(w.driver)}</td>
+      <td class="msg">${esc(msg)}</td></tr>`;}).join('');
 });
 
 /* ---------- about ---------- */

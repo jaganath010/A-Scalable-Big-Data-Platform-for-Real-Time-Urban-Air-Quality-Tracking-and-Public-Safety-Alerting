@@ -119,9 +119,10 @@ data["alerts_recent"] = rows(spark.sql("""
 # every alert in the last 48 h of forecast hours - what the hourly dispatcher
 # (scripts/send_alerts.py --mode window) picks from, relative to the clock
 data["alerts_window"] = rows(spark.sql("""
-    SELECT city, station_id, forecast_for, aqi_forecast, aqi_band, aqi_dominant_pollutant, severity
+    SELECT city, station_id, observed_at, forecast_for, pm25_now, pm25_forecast,
+           aqi_forecast, aqi_band, aqi_dominant_pollutant, severity
     FROM stream_alerts
-    WHERE forecast_for >= (SELECT MAX(forecast_for) - INTERVAL 48 HOURS FROM stream_alerts)"""))
+    WHERE forecast_for >= (SELECT MAX(forecast_for) - INTERVAL 24 HOURS FROM stream_alerts)"""))
 
 data["severity_mix"] = rows(spark.sql("""
     SELECT severity, COUNT(*) AS n FROM stream_alerts
