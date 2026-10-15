@@ -14,6 +14,14 @@ Built on **Hadoop HDFS, YARN, Spark 3.5 (Scala 2.12 + PySpark MLlib), Spark Stru
 > It is a single static file: it also opens directly from `dashboard/AirWatch_India.html` with no server.
 > It shows the warnings from the October 1–15, 2026 live run (221 cities), the message each city would receive, a map, and an "Alert me" notification button.
 
+## Documents
+
+| | |
+|---|---|
+| Full project report (25 pages) | [`docs/PROJECT_REPORT.pdf`](docs/PROJECT_REPORT.pdf) · [`docs/PROJECT_REPORT.docx`](docs/PROJECT_REPORT.docx) |
+| Final presentation (10 slides + evidence appendix) | [`presentation/Final_Project_Presentation.pptx`](presentation/Final_Project_Presentation.pptx) |
+| First review presentation | [`presentation/1st_Review_Presentation.pptx`](presentation/1st_Review_Presentation.pptx) |
+
 ## Results at a glance
 
 | | |
@@ -70,7 +78,7 @@ Lambda-style: a **batch layer** trains on 13 years of history; a **speed layer**
 | `dashboard/` | Export from Hive → one JSON → static warning board (`AirWatch_India.html`) |
 | `demo/` | Review demo: Spark job on YARN against HDFS (`start_demo.ps1`) |
 | `presentation/` | Final review deck (10 slides + evidence appendix) and the first-review deck |
-| `docs/` | `PROJECT_REPORT.pdf`, `WORK_LOG.md`, `ARCHITECTURE.md`, `ALERTING.md`, `CODE_GUIDE.md`, dataset report, **`run_logs/`** (evidence) |
+| `docs/` | `PROJECT_REPORT.pdf` / `.docx`, `WORK_LOG.md`, `ARCHITECTURE.md`, `ALERTING.md`, `CODE_GUIDE.md`, dataset report, **`run_logs/`** (evidence) |
 | `RUNBOOK.md` | Every command, in order |
 
 ## Run it
